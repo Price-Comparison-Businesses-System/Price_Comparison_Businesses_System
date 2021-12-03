@@ -183,23 +183,88 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void loginJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginJButton1ActionPerformed
         // Get user name
-        if (userNameJTextField1.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Please enter a valid user name");
-        } else {
-            try {
-                UserAccount useraccount = system.getUserAccountDirectory().authenticateUser(userNameJTextField1.getText(), passwordField1.getText());
-                CardLayout crdLyt = (CardLayout) container.getLayout();
-                container.add("Login", useraccount.getRole().createWorkArea(container, useraccount, system));
-                crdLyt.next(container);
-                //logoutJButton.setEnabled(true);
-                JOptionPane.showMessageDialog(null, "Login Success");
-            } catch(Exception e) {
-                JOptionPane.showMessageDialog(null, "User not found");
+//        if (userNameJTextField1.getText().equals("")) {
+//            JOptionPane.showMessageDialog(null, "Please enter a valid user name");
+//        } else {
+//            try {
+//                UserAccount useraccount = system.getUserAccountDirectory().authenticateUser(userNameJTextField1.getText(), passwordField1.getText());
+//                CardLayout crdLyt = (CardLayout) container.getLayout();
+//                container.add("Login", useraccount.getRole().createWorkArea(container, useraccount, system));
+//                crdLyt.next(container);
+//                //logoutJButton.setEnabled(true);
+//                JOptionPane.showMessageDialog(null, "Login Success");
+//            } catch(Exception e) {
+//                JOptionPane.showMessageDialog(null, "User not found");
+//                userNameJTextField1.setText("");
+//                passwordField1.setText("");
+//                 e.printStackTrace();
+//            }
+//        }  String userName = userNameJTextField1.getText();
+                // Get Password
+                char[] passwordCharArray = passwordField1.getPassword();
+                String password = String.valueOf(passwordCharArray);
+
+                //Step1: Check in the system admin user account directory if you have the user
+                UserAccount userAccount=system.getUserAccountDirectory().authenticateUser(userName, password);
+
+                Enterprise inEnterprise=null;
+                Organization inOrganization=null;
+
+                if(userAccount==null){
+                        //Step 2: Go inside each network and check each enterprise
+                        for(Network network:system.getNetworkList()){
+                                //Step 2.a: check against each enterprise
+                                for(Enterprise enterprise:network.getEnterpriseDirectory().getEnterpriseList()){
+                                        userAccount=enterprise.getUserAccountDirectory().authenticateUser(userName, password);
+                                        if(userAccount==null){
+                                                //Step 3:check against each organization for each enterprise
+                                                for(Organization organization:enterprise.getOrganizationDirectory().getOrganizationList()){
+                                                        userAccount=organization.getUserAccountDirectory().authenticateUser(userName, password);
+                                                        if(userAccount!=null){
+                                                                inEnterprise=enterprise;
+                                                                inOrganization=organization;
+                                                                break;
+                                                        }
+                                                }
+
+                                        }
+                                        else{
+                                                inEnterprise=enterprise;
+                                                break;
+                                        }
+                                        if(inOrganization!=null){
+                                                break;
+                                        }
+                                }
+                                if(inEnterprise!=null){
+                                        break;
+                                }
+                        }
+                }
+
+                if(userAccount==null){
+                        JOptionPane.showMessageDialog(null, "Invalid credentials");
+                        return;
+                }
+                else{
+
+                        jPanel3.setVisible(false);
+                        jPanel1.setVisible(true);
+                        container.setVisible(true);
+                        CardLayout layout=(CardLayout)container.getLayout();
+                        container.add("workArea",userAccount.getRole().createWorkArea(container, userAccount, inOrganization, inEnterprise, system));
+                        layout.next(container);
+                }
+
+                loginJButton1.setEnabled(true);
+                jButton1.setEnabled(true);
+                jPanel3.setVisible(false);
+                jPanel1.setVisible(true);
+                container.setVisible(true);
+                //logoutJButton1.setEnabled(true);
                 userNameJTextField1.setText("");
                 passwordField1.setText("");
-                 e.printStackTrace();
-            }
-        }
+
     }//GEN-LAST:event_loginJButton1ActionPerformed
 
     private void passwordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordField1ActionPerformed
