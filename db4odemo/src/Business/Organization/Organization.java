@@ -3,19 +3,64 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Business.Organization;
+
+import Business.Customer.CustomerDirectory;
+import Business.Employee.EmployeeDirectory;
+import Business.UserAccount.UserAccountDirectory;
 import Business.WorkQueue.WorkQueue;
 import java.util.Random;
+
 /**
  *
  * @author tarushukla
  */
 public abstract class Organization {
     private String OrgName;
-    private int OrgPhone;
-    private String OrgType;
+    private String OrgPhone;
     private String OrgAddress;
     private String OrgCountry;
     private String OrgCity;
+    private EmployeeDirectory employeeDirectory;
+    private CustomerDirectory customerdirectory;
+    private UserAccountDirectory userAccountDirectory;
+    private int OrgZipCode;
+    private String OrgEmail;
+    private WorkQueue workQueue;
+    private int OrgID;
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+  private String type;
+
+    public EmployeeDirectory getEmployeeDirectory() {
+        return employeeDirectory;
+    }
+
+    public void setEmployeeDirectory(EmployeeDirectory employeeDirectory) {
+        this.employeeDirectory = employeeDirectory;
+    }
+
+    public CustomerDirectory getCustomerdirectory() {
+        return customerdirectory;
+    }
+
+    public void setCustomerdirectory(CustomerDirectory customerdirectory) {
+        this.customerdirectory = customerdirectory;
+    }
+
+    public UserAccountDirectory getUserAccountDirectory() {
+        return userAccountDirectory;
+    }
+
+    public void setUserAccountDirectory(UserAccountDirectory userAccountDirectory) {
+        this.userAccountDirectory = userAccountDirectory;
+    }
+  
 
     public String getOrgName() {
         return OrgName;
@@ -25,20 +70,12 @@ public abstract class Organization {
         this.OrgName = OrgName;
     }
 
-    public int getOrgPhone() {
+    public String getOrgPhone() {
         return OrgPhone;
     }
 
-    public void setOrgPhone(int OrgPhone) {
+    public void setOrgPhone(String OrgPhone) {
         this.OrgPhone = OrgPhone;
-    }
-
-    public String getOrgType() {
-        return OrgType;
-    }
-
-    public void setOrgType(String OrgType) {
-        this.OrgType = OrgType;
     }
 
     public String getOrgAddress() {
@@ -96,25 +133,21 @@ public abstract class Organization {
     public void setOrgID(int OrgID) {
         this.OrgID = OrgID;
     }
-    private int OrgZipCode;
-    private String OrgEmail;
-    private WorkQueue workQueue;
-    private int OrgID;
+  
     
-    
-     public enum OrgType{
+    public enum Type{
         Admin("Admin Organization"), BuyCar("Buy Car"), RentCar("Rent Car"), CarRideServices("Car Ride Services"), ReadyMadeClothes("Ready Made Clothes"), BuyFabric("Buy Fabric"), TailorService("Tailor Service"), ElectronicKit("Electronic Kit"), SpareParts("Spare Parts"), Accessories("Accessories"), Restaurant("Restaurant"), VeggiesFruits("Veggies Or Fruits"), FrozenPackaged("Frozen or Packaged"), Medicine("Medicine"), DoctorsTherapists("Doctors or Therapists"), Hospitals("Hospital"), InsurancePlanService("Insurance Plan Service");
         private String value;
-        private OrgType(String value) {
+        private Type(String value) {
             this.value = value;
         }
         public String getValue() {
             return value;
         }
     }
-      public Organization(String OrgType, String OrgName, String OrgAddress, String OrgCity, String OrgCountry, int OrgZipCode, String OrgEmail, int OrgPhone) {
+      public Organization(String OrgType, String OrgName, String OrgAddress, String OrgCity, String OrgCountry, int OrgZipCode, String OrgEmail, String OrgPhone) {
         this.OrgName = OrgName;
-        this.OrgType = OrgType;
+        this.type = type;
         this.OrgAddress = OrgAddress;
         this.OrgEmail = OrgEmail;
         this.OrgCountry = OrgCountry;
@@ -122,6 +155,9 @@ public abstract class Organization {
         this.OrgZipCode = OrgZipCode;
         this.OrgPhone = OrgPhone;
         workQueue = new WorkQueue();
+         employeeDirectory = new EmployeeDirectory();
+        userAccountDirectory = new UserAccountDirectory();
+        customerdirectory = new CustomerDirectory();
         OrgID = gen();
         
     }
@@ -131,3 +167,4 @@ public abstract class Organization {
     }
     
 }
+

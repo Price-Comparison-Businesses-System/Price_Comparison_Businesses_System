@@ -6,7 +6,7 @@ package Business.Role;
 
 import Business.EcoSystem;
 
-import Business.Organization;
+import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import userinterface.CustomerRole.CustomerAreaJPanel;
 import javax.swing.JPanel;

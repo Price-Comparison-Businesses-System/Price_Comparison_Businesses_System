@@ -4,10 +4,53 @@
  */
 package Business.Enterprise;
 
+import Business.Organization.Organization;
+import Business.Organization.OrganizationDirectory;
+
 /**
  *
  * @author tarushukla
  */
-public class Enterprise {
+public abstract class Enterprise extends Organization{
     
+    private EnterpriseType enterpriseType;
+    private OrganizationDirectory organizationDirectory;
+    
+
+    public OrganizationDirectory getOrganizationDirectory() {
+        return organizationDirectory;
+    }
+    
+    public enum EnterpriseType{
+        Automobile("Automobile"), Clothing("Clothing"), HealthCare("HealthCare"), Electronics("Electronics"), FoodProducts("FoodProducts");
+        private String value;
+        
+        private EnterpriseType(String value){
+            this.value=value;
+        }
+        public String getValue() {
+            return value;
+        }
+        @Override
+        public String toString(){
+        return value;
+    }
+    }
+
+    public EnterpriseType getEnterpriseType() {
+        return enterpriseType;
+    }
+
+    public void setEnterpriseType(EnterpriseType enterpriseType) {
+        this.enterpriseType = enterpriseType;
+    }
+
+   
+
+    public Enterprise(String OrgName,EnterpriseType type, String OrgAddress, String OrgCity, String OrgCountry, int OrgZipCode, String OrgEmail, String OrgPhone){
+        super(type.toString(), OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
+        this.enterpriseType=type;
+        organizationDirectory=new OrganizationDirectory();
+        
+    }
 }

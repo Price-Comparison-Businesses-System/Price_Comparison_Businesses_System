@@ -6,8 +6,11 @@ package userinterface;
 
 import Business.EcoSystem;
 import Business.DB4OUtil.DB4OUtil;
+import Business.Enterprise.Enterprise;
+import Business.Network.Network;
+import Business.Organization.Organization;
 
-import Business.Organization;
+
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import javax.swing.JOptionPane;
@@ -183,23 +186,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void loginJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginJButton1ActionPerformed
         // Get user name
-//        if (userNameJTextField1.getText().equals("")) {
-//            JOptionPane.showMessageDialog(null, "Please enter a valid user name");
-//        } else {
-//            try {
-//                UserAccount useraccount = system.getUserAccountDirectory().authenticateUser(userNameJTextField1.getText(), passwordField1.getText());
-//                CardLayout crdLyt = (CardLayout) container.getLayout();
-//                container.add("Login", useraccount.getRole().createWorkArea(container, useraccount, system));
-//                crdLyt.next(container);
-//                //logoutJButton.setEnabled(true);
-//                JOptionPane.showMessageDialog(null, "Login Success");
-//            } catch(Exception e) {
-//                JOptionPane.showMessageDialog(null, "User not found");
-//                userNameJTextField1.setText("");
-//                passwordField1.setText("");
-//                 e.printStackTrace();
-//            }
-//        }  String userName = userNameJTextField1.getText();
+          String userName = userNameJTextField1.getText();
                 // Get Password
                 char[] passwordCharArray = passwordField1.getPassword();
                 String password = String.valueOf(passwordCharArray);
