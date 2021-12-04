@@ -27,6 +27,7 @@ public abstract class Organization {
     private String OrgEmail;
     private WorkQueue workQueue;
     private int OrgID;
+     private String type;
 
     public String getType() {
         return type;
@@ -35,7 +36,7 @@ public abstract class Organization {
     public void setType(String type) {
         this.type = type;
     }
-  private String type;
+ 
 
     public EmployeeDirectory getEmployeeDirectory() {
         return employeeDirectory;

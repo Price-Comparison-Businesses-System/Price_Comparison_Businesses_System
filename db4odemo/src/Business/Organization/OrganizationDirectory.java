@@ -18,73 +18,72 @@ public class OrganizationDirectory {
     public OrganizationDirectory() {
         organizationList = new ArrayList();
     }
-
     public ArrayList<Organization> getOrganizationList() {
         return organizationList;
     }
     
-    public Organization createOrganization(Type type, String name, String streetaddress, String city, String country, int zipcode, String email, String phone){
+    public Organization createOrganization(Type type, String OrgName, String OrgAddress, String OrgCity, String OrgCountry, int OrgZipCode, String OrgEmail, String OrgPhone){
         Organization organization = null;
         if (type.getValue().equals(Type.BuyCar.getValue())){
-            organization = new DoctorOrganization(name, streetaddress, city, country, zipcode, email, phone);
+            organization = new BuyCarOrganization(OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
             organizationList.add(organization);
         }
         else if (type.getValue().equals(Type.RentCar.getValue())){
-            organization = new LabOrganization(name, streetaddress, city, country, zipcode, email, phone);
+            organization = new RentCarOrganization(OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
             organizationList.add(organization);
         }
         else if (type.getValue().equals(Type.CarRideServices.getValue())){
-            organization = new CleaningOrganization(name, streetaddress, city, country, zipcode, email, phone);
+            organization = new CarRideServicesOrganization(OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
             organizationList.add(organization);
         }
         else if (type.getValue().equals(Type.ReadyMadeClothes.getValue())){
-            organization = new MechanicOrganization(name, streetaddress, city, country, zipcode, email, phone);
+            organization = new ReadyMadeClothesOrganization(OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
             organizationList.add(organization);
         }
         else if (type.getValue().equals(Type.BuyFabric.getValue())){
-            organization = new ElectricianOrganization(name, streetaddress, city, country, zipcode, email, phone);
+            organization = new BuyFabricOrganization(OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
             organizationList.add(organization);
         }
         else if (type.getValue().equals(Type.TailorService.getValue())){
-            organization = new WholesaleOrganization(name, streetaddress, city, country, zipcode, email, phone);
+            organization = new TailorServiceOrganization(OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
             organizationList.add(organization);
         }
         else if (type.getValue().equals(Type.ElectronicKit.getValue())){
-            organization = new PlumbingOrganization(name, streetaddress, city, country, zipcode, email, phone);
+            organization = new ElectronicKitOrganization(OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
             organizationList.add(organization);
         }
         else if (type.getValue().equals(Type.SpareParts.getValue())){
-            organization = new SuppliersOrganization(name, streetaddress, city, country, zipcode, email, phone);
+            organization = new SparePartsOrganization(OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
             organizationList.add(organization);
         }
         else if (type.getValue().equals(Type.Accessories.getValue())){
-            organization = new VendorsOrganization(name, streetaddress, city, country, zipcode, email, phone);
+            organization = new AccessoriesOrganization(OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
             organizationList.add(organization);
         }
         else if (type.getValue().equals(Type.Restaurant.getValue())){
-            organization = new DeliveryOrganization(name, streetaddress, city, country, zipcode, email, phone);
+            organization = new RestaurantOrganization(OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
             organizationList.add(organization);
         }
         else if (type.getValue().equals(Type.VeggiesFruits.getValue())){
-            organization = new FactoriesOrganization(name, streetaddress, city, country, zipcode, email, phone);
+            organization = new VeggiesFruitsOrganization(OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
             organizationList.add(organization);
         }
         else if (type.getValue().equals(Type.FrozenPackaged.getValue())){
-            organization = new TransportOrganization(name, streetaddress, city, country, zipcode, email, phone);
+            organization = new FrozenPackagedOrganization(OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
             organizationList.add(organization);
         }
         else if (type.getValue().equals(Type.Medicine.getValue())){
-            organization = new TransportOrganization(name, streetaddress, city, country, zipcode, email, phone);
+            organization = new MedicineOrganization(OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
             organizationList.add(organization);
         }else if (type.getValue().equals(Type.DoctorsTherapists.getValue())){
-            organization = new TransportOrganization(name, streetaddress, city, country, zipcode, email, phone);
+            organization = new DoctorsTherapistsOrganization(OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
             organizationList.add(organization);
         }else if (type.getValue().equals(Type.Hospitals.getValue())){
-            organization = new TransportOrganization(name, streetaddress, city, country, zipcode, email, phone);
+            organization = new HospitalsOrganization(OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
             organizationList.add(organization);
         }
         else if (type.getValue().equals(Type.InsurancePlanService.getValue())){
-            organization = new TransportOrganization(name, streetaddress, city, country, zipcode, email, phone);
+            organization = new InsurancePlanServiceOrganization(OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
             organizationList.add(organization);
         }
         return organization;

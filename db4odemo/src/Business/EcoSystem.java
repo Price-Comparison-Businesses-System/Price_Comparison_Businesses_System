@@ -48,7 +48,7 @@ public class EcoSystem extends Organization{
     private EcoSystem(){
         super(null, null, null, null, null, parseInt(null), null,(null));
 //        super(null);
-       // networkList=new ArrayList<Network>();
+       networkList=new ArrayList<Network>();
     }
 
     public ArrayList<Network> getNetworkList() {

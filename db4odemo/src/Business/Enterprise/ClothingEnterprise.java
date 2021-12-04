@@ -8,6 +8,11 @@ package Business.Enterprise;
  *
  * @author tarushukla
  */
-public class ClothingEnterprise {
+public class ClothingEnterprise extends Enterprise {
+    
+    public ClothingEnterprise(String OrgName,String OrgAddress, String OrgCity, String OrgCountry, int OrgZipCode, String OrgEmail, String OrgPhone) {
+        super(OrgName, EnterpriseType.Clothing, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
+    }
+
     
 }

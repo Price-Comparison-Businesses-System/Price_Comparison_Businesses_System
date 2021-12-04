@@ -28,26 +28,26 @@ public class EnterpriseDirectory {
     }
     
     //Create enterprise
-    public Enterprise createAndAddEnterprise(String name, String streetaddress, String city, String country, int zipcode, String email, Enterprise.EnterpriseType type, String phone){
+    public Enterprise createAndAddEnterprise(String OrgName, String OrgAddress, String OrgCity, String OrgCountry, int OrgZipCode, String OrgEmail, String OrgPhone, Enterprise.EnterpriseType type){
         Enterprise enterprise=null;
         if(type==Enterprise.EnterpriseType.Automobile){
-            enterprise = new HospitalEnterprise(name, streetaddress, city, country, zipcode, email, phone);
+            enterprise = new AutomobileEnterprise(OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
             enterpriseList.add(enterprise);
         }
         else if(type==Enterprise.EnterpriseType.Clothing){
-            enterprise = new EateriesEnterprise(name, streetaddress, city, country, zipcode, email, phone);
+            enterprise = new ClothingEnterprise(OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
             enterpriseList.add(enterprise);
         }
         else if(type==Enterprise.EnterpriseType.HealthCare){
-            enterprise = new ServiceEnterprise(name, streetaddress, city, country, zipcode, email, phone);
+            enterprise = new HealthCareEnterprise(OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
             enterpriseList.add(enterprise);
         }
         else if(type==Enterprise.EnterpriseType.Electronics){
-            enterprise = new EssentialsEnterprise(name, streetaddress, city, country, zipcode, email, phone);
+            enterprise = new ElectronicsEnterprise(OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
             enterpriseList.add(enterprise);
         }
         else if(type==Enterprise.EnterpriseType.FoodProducts){
-            enterprise = new RetailEnterprise(name, streetaddress, city, country, zipcode, email, phone);
+            enterprise = new FoodProductsEnterprise(OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
             enterpriseList.add(enterprise);
         }
         
