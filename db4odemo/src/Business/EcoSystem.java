@@ -31,7 +31,7 @@ public class EcoSystem extends Organization{
         return business;
     }
 
-    public EcoSystem(String OrgType, String OrgName, String OrgAddress, String OrgCity, String OrgCountry, int OrgZipCode, String OrgEmail, int OrgPhone) {
+    public EcoSystem(String OrgType, String OrgName, String OrgAddress, String OrgCity, String OrgCountry, int OrgZipCode, String OrgEmail, String OrgPhone) {
         super(OrgType, OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
     }
     public Network createAndAddNetwork(){
@@ -46,7 +46,7 @@ public class EcoSystem extends Organization{
         return roleList;
     }
     private EcoSystem(){
-        super(null, null, null, null, null, parseInt(null), null, parseInt(null));
+        super(null, null, null, null, null, parseInt(null), null,(null));
 //        super(null);
        // networkList=new ArrayList<Network>();
     }

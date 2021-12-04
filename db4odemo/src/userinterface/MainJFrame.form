@@ -204,11 +204,11 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Local Business Management System"/>
+            <Property name="text" type="java.lang.String" value="Price_Comparison_Businesses_System"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="188" y="41" width="269" height="18"/>
+              <AbsoluteConstraints x="188" y="41" width="290" height="18"/>
             </Constraint>
           </Constraints>
         </Component>

@@ -126,8 +126,8 @@ public class MainJFrame extends javax.swing.JFrame {
         jPanel3.add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(165, 146, -1, -1));
 
         lblTitle.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        lblTitle.setText("Local Business Management System");
-        jPanel3.add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(188, 41, 269, 18));
+        lblTitle.setText("Price_Comparison_Businesses_System");
+        jPanel3.add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(188, 41, 290, 18));
 
         jLabel3.setBackground(new java.awt.Color(25, 56, 82));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
