@@ -17,16 +17,10 @@ import javax.swing.JPanel;
  * @author raunak
  */
 public abstract class Role {
-
-    public Component createWorkArea(JPanel container, UserAccount userAccount, Organization inOrganization, Enterprise inEnterprise, EcoSystem system) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    public enum RoleType{
-        RestaurantAdmin("RestaurantAdmin"),
-        Customer("Customer"),
-        DeliveryMan("Delivery"),
-        SysAdmin("Sysadmin");
+ public enum RoleType{
+        Admin("Admin"),
+        Doctor("Doctor"),
+        LabAssistant("Lab Assistant");
         
         private String value;
         private RoleType(String value){
@@ -45,6 +39,8 @@ public abstract class Role {
     
     public abstract JPanel createWorkArea(JPanel userProcessContainer, 
             UserAccount account,  
+	    Organization organization, 
+            Enterprise enterprise, 
             EcoSystem business);
 
     @Override
