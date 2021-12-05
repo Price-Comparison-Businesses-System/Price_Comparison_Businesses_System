@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class AccessoriesOrganization extends Organization {
     
-    public AccessoriesOrganization( String OrgName, String OrgAddress, String OrgCity, String OrgCountry, String OrgZipCode, String OrgEmail, String OrgPhone) {
+    public AccessoriesOrganization( String OrgName, String OrgAddress, String OrgCity, String OrgCountry, Integer OrgZipCode, String OrgEmail, String OrgPhone) {
         super(Organization.Type.Accessories.getValue(), OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
     }
 

@@ -25,7 +25,7 @@ public abstract class Organization {
     private String OrgAddress;
     private String OrgCountry;
     private String OrgCity;
-    private String OrgZipCode;
+    private Integer OrgZipCode;
     private String OrgEmail;
     private String type;
     private WorkQueue workQueue;
@@ -51,7 +51,7 @@ public abstract class Organization {
             return value;
         }
     }
-      public Organization(String OrgType, String OrgName, String OrgAddress, String OrgCity, String OrgCountry, String OrgZipCode, String OrgEmail, String OrgPhone) {
+      public Organization(String OrgType, String OrgName, String OrgAddress, String OrgCity, String OrgCountry, Integer OrgZipCode, String OrgEmail, String OrgPhone) {
         this.OrgName = OrgName;
         this.type = type;
         this.OrgAddress = OrgAddress;
@@ -210,11 +210,11 @@ public void setItemsDirectory(ItemsDirectory itemsDirectory) {
         this.OrgCity = OrgCity;
     }
 
-    public String getOrgZipCode() {
+    public Integer getOrgZipCode() {
         return OrgZipCode;
     }
 
-    public void setOrgZipCode(String OrgZipCode) {
+    public void setOrgZipCode(Integer OrgZipCode) {
         this.OrgZipCode = OrgZipCode;
     }
 
