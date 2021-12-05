@@ -5,10 +5,20 @@
  */
 package Business.Role;
 
+import Business.EcoSystem;
+import Business.Organization;
+import Business.UserAccount.UserAccount;
+import javax.swing.JPanel;
+
 /**
  *
  * @author sakshi
  */
 public class BuyCarRole {
+    @Override
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
+        return new BuyCarRoleWorkAreaJPanel(userProcessContainer, account, organization, enterprise, business);
+    }
+    
     
 }

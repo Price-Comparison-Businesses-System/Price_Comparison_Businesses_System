@@ -5,10 +5,18 @@
  */
 package Business.Role;
 
+import Business.EcoSystem;
+import Business.Organization;
+import Business.UserAccount.UserAccount;
+import javax.swing.JPanel;
+
 /**
  *
  * @author sakshi
  */
 public class TailorServiceRole {
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
+        return new TailorServiceRoleWorkAreaJPanel(userProcessContainer, account, organization, enterprise, business);
+    }
     
 }
