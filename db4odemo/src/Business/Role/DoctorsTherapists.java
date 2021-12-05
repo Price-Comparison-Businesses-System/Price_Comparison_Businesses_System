@@ -10,16 +10,17 @@ import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
+import userinterface.DoctorsTherapists.DoctorsTherapistsWorkAreaJPanel;
 
 /**
  *
  * @author NetrA
  */
-public class DoctorTherapists extends Role{
+public class DoctorsTherapists extends Role{
     
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new DoctorTherapistsWorkAreaJPanel(userProcessContainer, account, organization, enterprise, business);
+        return new DoctorsTherapistsWorkAreaJPanel(userProcessContainer, account, organization, enterprise, business);
     }
     
 }
