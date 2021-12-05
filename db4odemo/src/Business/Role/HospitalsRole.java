@@ -10,16 +10,16 @@ import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
-import userinterface.Medicine.MedicineWorkAreaJPanel;
+import userinterface.Hospitals.HospitalsWorkAreaJPanel;
+import userinterface.InsurancePlanService.InsurancePlanServiceWorkAreaJPanel;
 
 /**
  *
  * @author NetrA
  */
-public class Medicine extends Role{
-    @Override
+public class HospitalsRole extends Role{
+     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new MedicineWorkAreaJPanel(userProcessContainer, account, organization, enterprise, business);
+        return new HospitalsWorkAreaJPanel(userProcessContainer, account, organization, enterprise, business);
     }
-    
 }
