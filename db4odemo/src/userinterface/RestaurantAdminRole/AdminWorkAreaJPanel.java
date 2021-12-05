@@ -3,6 +3,7 @@
 package userinterface.RestaurantAdminRole;
 
 
+import Business.Enterprise.Enterprise;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 
@@ -13,12 +14,13 @@ import javax.swing.JPanel;
 public class AdminWorkAreaJPanel extends javax.swing.JPanel {
     
     JPanel userProcessContainer;
+    Enterprise enterprise;
     
     /** Creates new form AdminWorkAreaJPanel */
-    public AdminWorkAreaJPanel(JPanel userProcessContainer) {
-        initComponents();
+    public AdminWorkAreaJPanel(JPanel userProcessContainer, Enterprise enterprise) {
+       initComponents();
         this.userProcessContainer = userProcessContainer;
-      
+        this.enterprise = enterprise;
         //valueLabel.setText();
     }
     

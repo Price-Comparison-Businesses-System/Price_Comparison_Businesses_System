@@ -33,7 +33,8 @@ public class EcoSystem extends Organization{
         networkList.add(network);
         return network;
     }
-
+    
+    @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roleList=new ArrayList<Role>();
         roleList.add(new SystemAdminRole());

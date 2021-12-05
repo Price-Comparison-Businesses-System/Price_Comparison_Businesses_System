@@ -4,7 +4,11 @@
  */
 package userinterface.CustomerRole;
 
+import Business.Customer.Customer;
+import Business.Customer.CustomerDirectory;
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Organization.Organization;
 
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.WorkRequest;
@@ -16,22 +20,26 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author raunak
  */
-public class CustomerAreaJPanel extends javax.swing.JPanel {
+public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
 
-    private JPanel userProcessContainer;
-
-    private UserAccount userAccount;
+ private JPanel userProcessContainer;
+    private EcoSystem ecosystem;
+    private Organization organization;
+    private Enterprise enterprise;
+    private UserAccount account;
+    private CustomerDirectory customerDirectory;
+    private Customer customer;
     /**
      * Creates new form DoctorWorkAreaJPanel
      */
-    public CustomerAreaJPanel(JPanel userProcessContainer, UserAccount account) {
-        initComponents();
-        
+    public CustomerWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization Organization, Enterprise enterprise, EcoSystem business) {
+       initComponents();
         this.userProcessContainer = userProcessContainer;
-      
-        this.userAccount = account;
-        //valueLabel.setText(enterprise.getName());
-        populateRequestTable();
+        this.ecosystem = business;
+        this.customerDirectory = business.getCustomerdirectory();
+        this.account = account;
+        this.organization = organization;
+        this.enterprise = enterprise;
     }
     
     public void populateRequestTable(){
