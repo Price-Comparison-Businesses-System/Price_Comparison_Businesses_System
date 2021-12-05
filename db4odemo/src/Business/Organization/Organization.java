@@ -9,6 +9,7 @@ import Business.Employee.EmployeeDirectory;
 import Business.Role.Role;
 import Business.UserAccount.UserAccountDirectory;
 import Business.WorkQueue.WorkQueue;
+import ItemCatalogue.ItemsDirectory;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -29,6 +30,11 @@ public abstract class Organization {
     private EmployeeDirectory employeeDirectory;
     private CustomerDirectory customerdirectory;
     private UserAccountDirectory userAccountDirectory;
+    private ItemsDirectory itemsDirectory;
+    private ArrayList<Orders> ordersList;
+    private ArrayList<Orders> deliveryOrderList;
+    private ArrayList<Orders> inventoryOrderList;
+    private ArrayList<ServiceWorkRequest> requestList;
     private int OrgID;
     
 
