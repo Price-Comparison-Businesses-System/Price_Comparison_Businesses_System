@@ -9,6 +9,6 @@ package Business.Role;
  *
  * @author NetrA
  */
-public class Hospitals {
+public class HospitalsRole {
     
 }

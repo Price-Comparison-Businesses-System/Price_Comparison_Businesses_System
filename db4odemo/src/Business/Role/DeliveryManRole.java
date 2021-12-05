@@ -10,16 +10,17 @@ import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
-import userinterface.InsurancePlanService.InsurancePlanServiceWorkAreaJPanel;
+import userinterface.DeliveryManRole.DeliveryManWorkAreaJPanel;
 
 /**
  *
- * @author NetrA
+ * @author harold
  */
-public class InsurancePlanService extends Role{
-    
+public class DeliveryManRole extends Role {
+
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new InsurancePlanServiceWorkAreaJPanel(userProcessContainer, account, organization, enterprise, business);
+        return new DeliveryManWorkAreaJPanel(userProcessContainer, account, organization, enterprise, business);//To change body of generated methods, choose Tools | Templates.
     }
+    
 }
