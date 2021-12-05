@@ -24,8 +24,6 @@ public class EcoSystem extends Organization{
     public static EcoSystem getInstance(){
         if(business==null){
             business=new EcoSystem();
-        }else{
-            System.out.println("error");
         }
         return business;
     }
