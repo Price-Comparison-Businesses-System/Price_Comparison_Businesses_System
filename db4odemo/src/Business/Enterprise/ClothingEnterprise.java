@@ -13,7 +13,7 @@ import java.util.ArrayList;
  */
 public class ClothingEnterprise extends Enterprise {
     
-    public ClothingEnterprise(String OrgName,String OrgAddress, String OrgCity, String OrgCountry, String OrgZipCode, String OrgEmail, String OrgPhone) {
+    public ClothingEnterprise(String OrgName,String OrgAddress, String OrgCity, String OrgCountry, Integer OrgZipCode, String OrgEmail, String OrgPhone) {
         super(OrgName, EnterpriseType.Clothing, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
     }
  @Override

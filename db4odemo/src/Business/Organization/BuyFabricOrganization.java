@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class BuyFabricOrganization extends Organization {
     
-    public BuyFabricOrganization( String OrgName, String OrgAddress, String OrgCity, String OrgCountry, String OrgZipCode, String OrgEmail, String OrgPhone) {
+    public BuyFabricOrganization( String OrgName, String OrgAddress, String OrgCity, String OrgCountry, Integer OrgZipCode, String OrgEmail, String OrgPhone) {
         super(Organization.Type.BuyFabric.getValue(), OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
     }
 
