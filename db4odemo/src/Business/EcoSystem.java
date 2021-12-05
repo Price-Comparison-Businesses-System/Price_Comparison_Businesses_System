@@ -40,7 +40,7 @@ public class EcoSystem extends Organization{
         return roleList;
     }
     private EcoSystem(){
-       super(null, null, null, null, null, parseInt(null), null, null);
+       super(null, null, null, null, null, null, null, null);
        networkList=new ArrayList<Network>();
     }
 

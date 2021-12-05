@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class HospitalsOrganization extends Organization{
     
-    public HospitalsOrganization(String OrgName, String OrgAddress, String OrgCity, String OrgCountry, int OrgZipCode, String OrgEmail, String OrgPhone) {
+    public HospitalsOrganization(String OrgName, String OrgAddress, String OrgCity, String OrgCountry, String OrgZipCode, String OrgEmail, String OrgPhone) {
         super(Organization.Type.Hospitals.getValue(), OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
     }
 
