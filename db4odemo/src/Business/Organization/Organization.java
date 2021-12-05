@@ -6,8 +6,10 @@ package Business.Organization;
 
 import Business.Customer.CustomerDirectory;
 import Business.Employee.EmployeeDirectory;
+import Business.Role.Role;
 import Business.UserAccount.UserAccountDirectory;
 import Business.WorkQueue.WorkQueue;
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -20,15 +22,49 @@ public abstract class Organization {
     private String OrgAddress;
     private String OrgCountry;
     private String OrgCity;
+    private int OrgZipCode;
+    private String OrgEmail;
+    private String type;
+    private WorkQueue workQueue;
     private EmployeeDirectory employeeDirectory;
     private CustomerDirectory customerdirectory;
     private UserAccountDirectory userAccountDirectory;
-    private int OrgZipCode;
-    private String OrgEmail;
-    private WorkQueue workQueue;
     private int OrgID;
-     private String type;
+    
 
+    
+    public enum Type{
+        Admin("Admin Organization"), BuyCar("Buy Car"), RentCar("Rent Car"), CarRideServices("Car Ride Services"), ReadyMadeClothes("Ready Made Clothes"), BuyFabric("Buy Fabric"), TailorService("Tailor Service"), ElectronicKit("Electronic Kit"), SpareParts("Spare Parts"), Accessories("Accessories"), Restaurant("Restaurant"), VeggiesFruits("Veggies Or Fruits"), FrozenPackaged("Frozen or Packaged"), Medicine("Medicine"), DoctorsTherapists("Doctors or Therapists"), Hospitals("Hospital"), InsurancePlanService("Insurance Plan Service");
+        private String value;
+        private Type(String value) {
+            this.value = value;
+        }
+        public String getValue() {
+            return value;
+        }
+    }
+      public Organization(String OrgType, String OrgName, String OrgAddress, String OrgCity, String OrgCountry, int OrgZipCode, String OrgEmail, String OrgPhone) {
+        this.OrgName = OrgName;
+        this.type = type;
+        this.OrgAddress = OrgAddress;
+        this.OrgEmail = OrgEmail;
+        this.OrgCountry = OrgCountry;
+        this.OrgCity = OrgCity;
+        this.OrgZipCode = OrgZipCode;
+        this.OrgPhone = OrgPhone;
+        workQueue = new WorkQueue();
+         employeeDirectory = new EmployeeDirectory();
+        userAccountDirectory = new UserAccountDirectory();
+        customerdirectory = new CustomerDirectory();
+        OrgID = gen();
+        
+    }
+      public static int gen() {
+        Random r = new Random( System.currentTimeMillis() );
+        return ((1 + r.nextInt(2)) * 10000 + r.nextInt(10000));
+    }
+    public abstract ArrayList<Role> getSupportedRole();
+    
     public String getType() {
         return type;
     }
@@ -47,6 +83,9 @@ public abstract class Organization {
     }
 
     public CustomerDirectory getCustomerdirectory() {
+        if(customerdirectory == null){
+            customerdirectory = new CustomerDirectory();
+        }
         return customerdirectory;
     }
 
@@ -134,38 +173,10 @@ public abstract class Organization {
     public void setOrgID(int OrgID) {
         this.OrgID = OrgID;
     }
+    @Override
+    public String toString() {
+        return OrgName;
+    }
   
-    
-    public enum Type{
-        Admin("Admin Organization"), BuyCar("Buy Car"), RentCar("Rent Car"), CarRideServices("Car Ride Services"), ReadyMadeClothes("Ready Made Clothes"), BuyFabric("Buy Fabric"), TailorService("Tailor Service"), ElectronicKit("Electronic Kit"), SpareParts("Spare Parts"), Accessories("Accessories"), Restaurant("Restaurant"), VeggiesFruits("Veggies Or Fruits"), FrozenPackaged("Frozen or Packaged"), Medicine("Medicine"), DoctorsTherapists("Doctors or Therapists"), Hospitals("Hospital"), InsurancePlanService("Insurance Plan Service");
-        private String value;
-        private Type(String value) {
-            this.value = value;
-        }
-        public String getValue() {
-            return value;
-        }
-    }
-      public Organization(String OrgType, String OrgName, String OrgAddress, String OrgCity, String OrgCountry, int OrgZipCode, String OrgEmail, String OrgPhone) {
-        this.OrgName = OrgName;
-        this.type = type;
-        this.OrgAddress = OrgAddress;
-        this.OrgEmail = OrgEmail;
-        this.OrgCountry = OrgCountry;
-        this.OrgCity = OrgCity;
-        this.OrgZipCode = OrgZipCode;
-        this.OrgPhone = OrgPhone;
-        workQueue = new WorkQueue();
-         employeeDirectory = new EmployeeDirectory();
-        userAccountDirectory = new UserAccountDirectory();
-        customerdirectory = new CustomerDirectory();
-        OrgID = gen();
-        
-    }
-      public static int gen() {
-        Random r = new Random( System.currentTimeMillis() );
-        return ((1 + r.nextInt(2)) * 10000 + r.nextInt(10000));
-    }
-    
 }
 
