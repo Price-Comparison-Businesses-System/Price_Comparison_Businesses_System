@@ -28,7 +28,7 @@ public class EnterpriseDirectory {
     }
     
     //Create enterprise
-    public Enterprise createAndAddEnterprise(String OrgName, String OrgAddress, String OrgCity, String OrgCountry, int OrgZipCode, String OrgEmail, String OrgPhone, Enterprise.EnterpriseType type){
+    public Enterprise createAndAddEnterprise(String OrgName, String OrgAddress, String OrgCity, String OrgCountry, String OrgZipCode, String OrgEmail, String OrgPhone, Enterprise.EnterpriseType type){
         Enterprise enterprise=null;
         if(type==Enterprise.EnterpriseType.Automobile){
             enterprise = new AutomobileEnterprise(OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);

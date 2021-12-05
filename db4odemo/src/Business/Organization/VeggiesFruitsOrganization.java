@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class VeggiesFruitsOrganization extends Organization {
     
-    public VeggiesFruitsOrganization( String OrgName, String OrgAddress, String OrgCity, String OrgCountry, int OrgZipCode, String OrgEmail, String OrgPhone) {
+    public VeggiesFruitsOrganization( String OrgName, String OrgAddress, String OrgCity, String OrgCountry, String OrgZipCode, String OrgEmail, String OrgPhone) {
         super(Organization.Type.VeggiesFruits.getValue(), OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
     }
 

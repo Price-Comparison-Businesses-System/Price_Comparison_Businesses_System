@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class FrozenPackagedOrganization extends Organization{
     
-    public FrozenPackagedOrganization(String OrgName, String OrgAddress, String OrgCity, String OrgCountry, int OrgZipCode, String OrgEmail, String OrgPhone) {
+    public FrozenPackagedOrganization(String OrgName, String OrgAddress, String OrgCity, String OrgCountry, String OrgZipCode, String OrgEmail, String OrgPhone) {
         super(Organization.Type.FrozenPackaged.getValue(), OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
     }
 

@@ -22,7 +22,7 @@ public class OrganizationDirectory {
         return organizationList;
     }
     
-    public Organization createOrganization(Type type, String OrgName, String OrgAddress, String OrgCity, String OrgCountry, int OrgZipCode, String OrgEmail, String OrgPhone){
+    public Organization createOrganization(Type type, String OrgName, String OrgAddress, String OrgCity, String OrgCountry, String OrgZipCode, String OrgEmail, String OrgPhone){
         Organization organization = null;
         if (type.getValue().equals(Type.BuyCar.getValue())){
             organization = new BuyCarOrganization(OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);

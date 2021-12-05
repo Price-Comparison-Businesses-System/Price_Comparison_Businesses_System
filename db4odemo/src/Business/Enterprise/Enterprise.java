@@ -47,7 +47,7 @@ public abstract class Enterprise extends Organization{
 
    
 
-    public Enterprise(String OrgName,EnterpriseType type, String OrgAddress, String OrgCity, String OrgCountry, int OrgZipCode, String OrgEmail, String OrgPhone){
+    public Enterprise(String OrgName,EnterpriseType type, String OrgAddress, String OrgCity, String OrgCountry, String OrgZipCode, String OrgEmail, String OrgPhone){
         super(type.toString(), OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
         this.enterpriseType=type;
         organizationDirectory=new OrganizationDirectory();
