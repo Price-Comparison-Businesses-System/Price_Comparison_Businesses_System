@@ -6,15 +6,16 @@
 package Business.Role;
 
 import Business.EcoSystem;
-import Business.Organization;
+import Business.Enterprise.Enterprise;
+import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
-
+import userinterface.ElectronicKitRole.ElectronicKitRoleWorkAreaJPanel;
 /**
  *
  * @author sakshi
  */
-public class ElectronicKitRole {
+public class ElectronicKitRole extends Role {
      @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
         return new ElectronicKitRoleWorkAreaJPanel(userProcessContainer, account, organization, enterprise, business);
