@@ -10,15 +10,16 @@ import Business.Enterprise.Enterprise;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
-import userinterface.Restaurant.RestaurantWorkAreaJPanel;
+import userinterface.VeggiesFruits.VeggiesFruitsWorkAreaJPanel;
 
 /**
  *
  * @author NetrA
  */
-public class Restaurant extends Role{
-     @Override
+public class VeggiesFruitsRole extends Role{
+    
+    @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new RestaurantWorkAreaJPanel(userProcessContainer, account, organization, enterprise, business);
+        return new VeggiesFruitsWorkAreaJPanel(userProcessContainer, account, organization, enterprise, business);
     }
 }
