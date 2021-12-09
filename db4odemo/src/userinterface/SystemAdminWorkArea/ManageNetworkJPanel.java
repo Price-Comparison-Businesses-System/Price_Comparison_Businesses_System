@@ -6,7 +6,12 @@
 package userinterface.SystemAdminWorkArea;
 
 import Business.EcoSystem;
+import Business.Network.Network;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -29,6 +34,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
 
         this.userProcessContainer = userProcessContainer;
         this.system = system;
+          populateNetworkTable();
     }
 
     /**
@@ -42,52 +48,116 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblNetwork = new javax.swing.JTable();
+        btnAddNetwork = new javax.swing.JButton();
+        btnDeleteNetwrok = new javax.swing.JButton();
+        txtNetwork = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        btnBack = new javax.swing.JButton();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("OUR Network");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, -1, -1));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblNetwork.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null},
+                {null},
+                {null},
+                {null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "State ->Network"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblNetwork);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(151, 151, 151)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(86, 86, 86)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(181, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(jLabel1)
-                .addGap(44, 44, 44)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(163, Short.MAX_VALUE))
-        );
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 95, 375, 155));
+
+        btnAddNetwork.setText("Add Network");
+        btnAddNetwork.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddNetworkActionPerformed(evt);
+            }
+        });
+        add(btnAddNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 323, -1, -1));
+
+        btnDeleteNetwrok.setText("Delete Network");
+        btnDeleteNetwrok.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteNetwrokActionPerformed(evt);
+            }
+        });
+        add(btnDeleteNetwrok, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 323, -1, -1));
+        add(txtNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(422, 279, 108, -1));
+
+        jLabel2.setText("State Netwrok Name");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 284, -1, -1));
+
+        btnBack.setText("<< Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnAddNetworkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddNetworkActionPerformed
+        // TODO add your handling code here:
+        String name = txtNetwork.getText();
+
+        Network network = system.createAndAddNetwork();
+        network.setName(name);
+	    JOptionPane.showMessageDialog(btnAddNetwork, "Network Added Successfully");
+	    
+
+        populateNetworkTable();
+	
+	txtNetwork.setText("");
+    }//GEN-LAST:event_btnAddNetworkActionPerformed
+
+    private void btnDeleteNetwrokActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteNetwrokActionPerformed
+        // TODO add your handling code here:
+        int selectedrow = tblNetwork.getSelectedRow();
+        String name = tblNetwork.getValueAt(selectedrow, 0).toString();
+        Network n = system.getNetwork(name);
+        system.removeNetwork(n);
+        populateNetworkTable();
+    }//GEN-LAST:event_btnDeleteNetwrokActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_btnBackActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAddNetwork;
+    private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnDeleteNetwrok;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tblNetwork;
+    private javax.swing.JTextField txtNetwork;
     // End of variables declaration//GEN-END:variables
+
+    private void populateNetworkTable() {
+    
+    DefaultTableModel model = (DefaultTableModel) tblNetwork.getModel();
+
+        model.setRowCount(0);
+        for (Network network : system.getNetworkList()) {
+            Object[] row = new Object[1];
+            row[0] = network.getName();
+            model.addRow(row);
+        }
+    }
 }
