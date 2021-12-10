@@ -42,12 +42,12 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="0" pref="10" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="18" max="32767" attributes="0"/>
                           <Component id="jScrollPane2" min="-2" pref="771" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Component id="btnBack" min="-2" pref="53" max="-2" attributes="0"/>
-                          <EmptySpace pref="144" max="32767" attributes="0"/>
+                          <EmptySpace pref="140" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="111" pref="111" max="-2" attributes="0"/>
@@ -77,7 +77,7 @@
                           <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="329" max="32767" attributes="0"/>
+                  <EmptySpace pref="325" max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="387" max="-2" attributes="0"/>
@@ -206,7 +206,7 @@
               <Color blue="f0" green="f0" red="f0" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/ui/Icons/93634-2.png"/>
+              <Image iconType="3" name="/userinterface/Icons/93634-2.png"/>
             </Property>
           </Properties>
           <Events>
@@ -270,7 +270,7 @@
               <Color blue="f0" green="f0" red="f0" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/ui/Icons/delete-1432400-1211078-2.png"/>
+              <Image iconType="3" name="/userinterface/Icons/delete-1432400-1211078-2.png"/>
             </Property>
           </Properties>
           <Events>
@@ -293,7 +293,7 @@
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/ui/Icons/itemcatalouge.png"/>
+              <Image iconType="3" name="/userinterface/Icons/itemcatalouge.png"/>
             </Property>
           </Properties>
         </Component>

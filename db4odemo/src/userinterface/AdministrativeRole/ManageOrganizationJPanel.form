@@ -268,7 +268,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/ui/Icons/93634-2.png"/>
+          <Image iconType="3" name="/userinterface/Icons/93634-2.png"/>
         </Property>
       </Properties>
       <Events>
@@ -369,7 +369,7 @@
     <Component class="javax.swing.JButton" name="btnDelete">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/ui/Icons/delete-1432400-1211078-2.png"/>
+          <Image iconType="3" name="/userinterface/Icons/delete-1432400-1211078-2.png"/>
         </Property>
       </Properties>
       <Events>
@@ -379,7 +379,7 @@
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/ui/Icons/department128x.png"/>
+          <Image iconType="3" name="/userinterface/Icons/department128x.png"/>
         </Property>
       </Properties>
     </Component>
