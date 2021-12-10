@@ -8,6 +8,8 @@ import Business.Customer.Customer;
 import Business.Customer.CustomerDirectory;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.ItemCatalogue.Items;
+import Business.ItemCatalogue.ItemsDirectory;
 import Business.Organization.Organization;
 
 import Business.UserAccount.UserAccount;
@@ -29,10 +31,12 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
     private UserAccount account;
     private CustomerDirectory customerDirectory;
     private Customer customer;
+     private Items items;
+        private ItemsDirectory itemsDirectory;
     /**
      * Creates new form DoctorWorkAreaJPanel
      */
-    public CustomerWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization Organization, Enterprise enterprise, EcoSystem business) {
+    public CustomerWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization Organization, Enterprise enterprise, EcoSystem business ) {
        initComponents();
         this.userProcessContainer = userProcessContainer;
         this.ecosystem = business;
@@ -167,7 +171,8 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnClothingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClothingActionPerformed
         // TODO add your handling code here:
-        ClothingJPanel clothingJPanel = new ClothingJPanel(userProcessContainer, ecosystem, customer);
+        
+        ClothingJPanel clothingJPanel = new ClothingJPanel(userProcessContainer, ecosystem, customer );
             userProcessContainer.add("clothingJPanel", clothingJPanel);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.next(userProcessContainer);

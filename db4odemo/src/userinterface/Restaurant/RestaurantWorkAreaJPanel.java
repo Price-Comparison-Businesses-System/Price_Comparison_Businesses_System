@@ -7,6 +7,8 @@ package userinterface.Restaurant;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.ItemCatalogue.Items;
+import Business.ItemCatalogue.ItemsDirectory;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
@@ -25,12 +27,17 @@ public class RestaurantWorkAreaJPanel extends javax.swing.JPanel {
     private Organization organization;
     private EcoSystem business;
     private UserAccount account;
-    public RestaurantWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
+    private  Items items;
+    private  ItemsDirectory itemsDirectory;
+    
+    public RestaurantWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business ) {
         initComponents();
         this.business = business;
         this.enterprise = enterprise;
         this.organization = organization;
         this.account = account;
+        this.items = items;
+        this.itemsDirectory = itemsDirectory;
     }
     /**
      * This method is called from within the constructor to initialize the form.

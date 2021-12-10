@@ -6,6 +6,8 @@ package userinterface.DeliveryManRole;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.ItemCatalogue.Items;
+import Business.ItemCatalogue.ItemsDirectory;
 import Business.Organization.Organization;
 
 import Business.UserAccount.UserAccount;
@@ -25,16 +27,19 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
     private Organization organization;
     private EcoSystem business;
     private UserAccount account;
-    
+    private Items items;
+    private ItemsDirectory itemsDirectory;
     /**
      * Creates new form LabAssistantWorkAreaJPanel
      */
-     public DeliveryManWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
+     public DeliveryManWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business ) {
         initComponents();
         this.business = business;
         this.enterprise = enterprise;
         this.organization = organization;
         this.account = account;
+        
+         ;
     }
     
     public void populateTable(){

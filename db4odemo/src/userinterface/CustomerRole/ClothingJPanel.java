@@ -7,10 +7,15 @@ package userinterface.CustomerRole;
 
 import Business.Customer.Customer;
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JPanel;
-
+import Business.ItemCatalogue.Items;
+import Business.ItemCatalogue.ItemsDirectory;
+import Business.Network.Network;
+import Business.Organization.Organization;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author sakshi
@@ -23,15 +28,20 @@ public class ClothingJPanel extends javax.swing.JPanel {
      private JPanel userProcessContainer;
         private EcoSystem ecosystem;
         private Customer customer;
+        private Items items;
+        private ItemsDirectory itemsDirectory;
         
-	public ClothingJPanel(JPanel userProcessContainer, EcoSystem ecosystem, Customer customer) {
+	public ClothingJPanel(JPanel userProcessContainer, EcoSystem ecosystem, Customer customer ) {
             initComponents();
             this.userProcessContainer = userProcessContainer;
             this.ecosystem = ecosystem;
             this.customer = customer;
-            //populateTable();
+            
+           //  ;
+            populateTable();
             
 	}
+        
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -43,7 +53,7 @@ public class ClothingJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        transportJTable = new javax.swing.JTable();
+        clothingJTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         transportsearch = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -53,24 +63,24 @@ public class ClothingJPanel extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        transportJTable.setModel(new javax.swing.table.DefaultTableModel(
+        clothingJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Cloth Type", "Service", "Description", "Price", "Quantity", "Selller Name", "State"
+                " Item name", "Description", "Price", "services F/R/T", "State", "seller/tailor name", "Quantity"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(transportJTable);
+        jScrollPane1.setViewportView(clothingJTable);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 209, 796, 248));
 
@@ -129,12 +139,47 @@ public class ClothingJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
+    private javax.swing.JTable clothingJTable;
     private javax.swing.JComboBox<String> clothingjComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable transportJTable;
     private javax.swing.JTextField transportsearch;
     // End of variables declaration//GEN-END:variables
+
+    private void populateTable() {
+          for(Network n: ecosystem.getNetworkList()){
+           for(Enterprise e : n.getEnterpriseDirectory().getEnterpriseList()){
+             if(e.getEnterpriseType().toString().equals("Clothing")){
+               
+               
+                      itemsDirectory=e.getItemsDirectory();
+                  
+              }
+             
+           }
+          
+          }
+      DefaultTableModel model = (DefaultTableModel) clothingJTable.getModel();
+        model.setRowCount(0);
+        
+        System.out.println(itemsDirectory.getItemsList());
+        for(Items i : itemsDirectory.getItemsList()){
+            
+            Object[] row = new Object[7];
+            row[0] = i.getName();
+            row[1] = i.getDesc();
+            row[2] = i.getPrice();
+            row[3] = i.getServices();
+            row[4] = i.getState();
+            row[5] = i.getSellertailorname();
+            row[6] = i.getQuantity();
+            
+            
+            
+            model.addRow(row);
+            
+        }
+    }
 }
