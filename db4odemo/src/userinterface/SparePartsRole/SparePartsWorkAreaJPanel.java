@@ -3,6 +3,8 @@ package userinterface.SparePartsRole;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.ItemCatalogue.Items;
+import Business.ItemCatalogue.ItemsDirectory;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
@@ -27,12 +29,16 @@ public class SparePartsWorkAreaJPanel extends javax.swing.JPanel {
     private Organization organization;
     private EcoSystem business;
     private UserAccount account;
-    public SparePartsWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
+    private  ItemsDirectory itemsDirectory;
+    private  Items items;
+    public SparePartsWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business ) {
         initComponents();
         this.business = business;
         this.enterprise = enterprise;
         this.organization = organization;
         this.account = account;
+        this.items = items;
+        this.itemsDirectory = itemsDirectory;
     }
     /**
      * This method is called from within the constructor to initialize the form.

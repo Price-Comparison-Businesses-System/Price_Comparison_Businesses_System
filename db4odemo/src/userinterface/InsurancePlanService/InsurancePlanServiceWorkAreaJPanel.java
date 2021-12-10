@@ -7,6 +7,8 @@ package userinterface.InsurancePlanService;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.ItemCatalogue.Items;
+import Business.ItemCatalogue.ItemsDirectory;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
@@ -24,13 +26,17 @@ public class InsurancePlanServiceWorkAreaJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private Organization organization;
     private EcoSystem business;
+    private Items items;
+    private ItemsDirectory itemsDirectory;
     private UserAccount account;
-    public InsurancePlanServiceWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
+    public InsurancePlanServiceWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business ) {
         initComponents();
         this.business = business;
         this.enterprise = enterprise;
         this.organization = organization;
         this.account = account;
+        
+         ;
     }
     /**
      * This method is called from within the constructor to initialize the form.

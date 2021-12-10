@@ -15,16 +15,16 @@ import javax.swing.JPanel;
  *
  * @author sakshi
  */
-public class TransportJPanel extends javax.swing.JPanel {
+public class FoodProductsJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form TransportJPanel
+     * Creates new form ClothingJPanel
      */
-    private JPanel userProcessContainer;
+     private JPanel userProcessContainer;
         private EcoSystem ecosystem;
         private Customer customer;
         
-	public TransportJPanel(JPanel userProcessContainer, EcoSystem ecosystem, Customer customer) {
+	public FoodProductsJPanel(JPanel userProcessContainer, EcoSystem ecosystem, Customer customer) {
             initComponents();
             this.userProcessContainer = userProcessContainer;
             this.ecosystem = ecosystem;
@@ -32,7 +32,6 @@ public class TransportJPanel extends javax.swing.JPanel {
             //populateTable();
             
 	}
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -44,23 +43,23 @@ public class TransportJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        eateriesJTable = new javax.swing.JTable();
+        transportJTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         transportsearch = new javax.swing.JTextField();
-        transportjComboBox1 = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
+        foodProductsjComboBox1 = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        eateriesJTable.setModel(new javax.swing.table.DefaultTableModel(
+        transportJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Car NAme", "Services B/R/S", "Description", "Price", "Quantity", "Selller Name", "State"
+                "Cloth Type", "Service", "Description", "Price", "Quantity", "Selller Name", "State"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -71,35 +70,34 @@ public class TransportJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(eateriesJTable);
+        jScrollPane1.setViewportView(transportJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 204, 729, 222));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 209, 796, 248));
 
         jLabel1.setText("Services :");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 53, 19));
-
-        jLabel2.setText("Search :");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 110, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 70, 19));
 
         transportsearch.setText("ss");
-        add(transportsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 110, 160, -1));
+        add(transportsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 130, 160, -1));
 
-        transportjComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buy Car", "Rent Car", "Lift Car" }));
-        transportjComboBox1.setToolTipText("");
-        transportjComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        jLabel2.setText("Search :");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 130, -1, -1));
+
+        foodProductsjComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Restaurants", "Veggies/Fruits", "Frozen/Packaged" }));
+        foodProductsjComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                transportjComboBox1ActionPerformed(evt);
+                foodProductsjComboBox1ActionPerformed(evt);
             }
         });
-        transportjComboBox1.addKeyListener(new java.awt.event.KeyAdapter() {
+        foodProductsjComboBox1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                transportjComboBox1KeyPressed(evt);
+                foodProductsjComboBox1KeyPressed(evt);
             }
         });
-        add(transportjComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, -1, -1));
+        add(foodProductsjComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 170, -1));
 
-        jLabel3.setText("Transport");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, -1, -1));
+        jLabel3.setText("Food Products");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, -1, -1));
 
         btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -110,33 +108,33 @@ public class TransportJPanel extends javax.swing.JPanel {
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void transportjComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transportjComboBox1ActionPerformed
+    private void foodProductsjComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_foodProductsjComboBox1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_transportjComboBox1ActionPerformed
+    }//GEN-LAST:event_foodProductsjComboBox1ActionPerformed
 
-    private void transportjComboBox1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_transportjComboBox1KeyPressed
+    private void foodProductsjComboBox1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_foodProductsjComboBox1KeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_transportjComboBox1KeyPressed
+    }//GEN-LAST:event_foodProductsjComboBox1KeyPressed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         userProcessContainer.remove(this);
-            Component[] componentArray = userProcessContainer.getComponents();
-            Component component = componentArray[componentArray.length - 1];
-//            CustomerWorkAreaJPanel custAreajp = (CustomerWorkAreaJPanel) component;
-            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-            layout.previous(userProcessContainer);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        //            CustomerWorkAreaJPanel custAreajp = (CustomerWorkAreaJPanel) component;
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
-    private javax.swing.JTable eateriesJTable;
+    private javax.swing.JComboBox<String> foodProductsjComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JComboBox<String> transportjComboBox1;
+    private javax.swing.JTable transportJTable;
     private javax.swing.JTextField transportsearch;
     // End of variables declaration//GEN-END:variables
 }

@@ -7,6 +7,8 @@ package userinterface.DoctorsTherapists;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.ItemCatalogue.Items;
+import Business.ItemCatalogue.ItemsDirectory;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
@@ -25,12 +27,16 @@ public class DoctorsTherapistsWorkAreaJPanel extends javax.swing.JPanel {
     private Organization organization;
     private EcoSystem business;
     private UserAccount account;
-    public DoctorsTherapistsWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
+    private Items items;
+    private ItemsDirectory itemsDirectory;
+    public DoctorsTherapistsWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business ) {
         initComponents();
         this.business = business;
         this.enterprise = enterprise;
         this.organization = organization;
         this.account = account;
+        
+         ;
     }
     /**
      * This method is called from within the constructor to initialize the form.

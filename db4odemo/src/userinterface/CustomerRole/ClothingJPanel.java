@@ -7,8 +7,15 @@ package userinterface.CustomerRole;
 
 import Business.Customer.Customer;
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import java.awt.CardLayout;
+import java.awt.Component;
 import javax.swing.JPanel;
-
+import Business.ItemCatalogue.Items;
+import Business.ItemCatalogue.ItemsDirectory;
+import Business.Network.Network;
+import Business.Organization.Organization;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author sakshi
@@ -21,15 +28,20 @@ public class ClothingJPanel extends javax.swing.JPanel {
      private JPanel userProcessContainer;
         private EcoSystem ecosystem;
         private Customer customer;
+        private Items items;
+        private ItemsDirectory itemsDirectory;
         
-	public ClothingJPanel(JPanel userProcessContainer, EcoSystem ecosystem, Customer customer) {
+	public ClothingJPanel(JPanel userProcessContainer, EcoSystem ecosystem, Customer customer ) {
             initComponents();
             this.userProcessContainer = userProcessContainer;
             this.ecosystem = ecosystem;
             this.customer = customer;
-            //populateTable();
+            
+           //  ;
+            populateTable();
             
 	}
+        
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -41,98 +53,133 @@ public class ClothingJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        transportJTable = new javax.swing.JTable();
+        clothingJTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         transportsearch = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        transportjComboBox1 = new javax.swing.JComboBox<>();
+        clothingjComboBox1 = new javax.swing.JComboBox<>();
+        jLabel3 = new javax.swing.JLabel();
+        btnBack = new javax.swing.JButton();
 
-        transportJTable.setModel(new javax.swing.table.DefaultTableModel(
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        clothingJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Cloth Type", "Service", "Description", "Price", "Quantity", "Selller Name", "State"
+                " Item name", "Description", "Price", "services F/R/T", "State", "seller/tailor name", "Quantity"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(transportJTable);
+        jScrollPane1.setViewportView(clothingJTable);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 209, 796, 248));
 
         jLabel1.setText("Services :");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 70, 19));
 
         transportsearch.setText("ss");
+        add(transportsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 130, 160, -1));
 
         jLabel2.setText("Search :");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 130, -1, -1));
 
-        transportjComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        transportjComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        clothingjComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buy Fabric", "Readymade cloths", "Tailor services" }));
+        clothingjComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                transportjComboBox1ActionPerformed(evt);
+                clothingjComboBox1ActionPerformed(evt);
             }
         });
-        transportjComboBox1.addKeyListener(new java.awt.event.KeyAdapter() {
+        clothingjComboBox1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                transportjComboBox1KeyPressed(evt);
+                clothingjComboBox1KeyPressed(evt);
             }
         });
+        add(clothingjComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 160, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(72, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(transportjComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(324, 324, 324)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(transportsearch, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(187, 187, 187))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 796, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(transportsearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2)
-                    .addComponent(transportjComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 147, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(146, 146, 146))
-        );
+        jLabel3.setText("Clothing");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, -1, -1));
+
+        btnBack.setText("<< Back");
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void transportjComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transportjComboBox1ActionPerformed
+    private void clothingjComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clothingjComboBox1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_transportjComboBox1ActionPerformed
+    }//GEN-LAST:event_clothingjComboBox1ActionPerformed
 
-    private void transportjComboBox1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_transportjComboBox1KeyPressed
+    private void clothingjComboBox1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_clothingjComboBox1KeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_transportjComboBox1KeyPressed
+    }//GEN-LAST:event_clothingjComboBox1KeyPressed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        //            CustomerWorkAreaJPanel custAreajp = (CustomerWorkAreaJPanel) component;
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_btnBackActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBack;
+    private javax.swing.JTable clothingJTable;
+    private javax.swing.JComboBox<String> clothingjComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable transportJTable;
-    private javax.swing.JComboBox<String> transportjComboBox1;
     private javax.swing.JTextField transportsearch;
     // End of variables declaration//GEN-END:variables
+
+    private void populateTable() {
+          for(Network n: ecosystem.getNetworkList()){
+           for(Enterprise e : n.getEnterpriseDirectory().getEnterpriseList()){
+             if(e.getEnterpriseType().toString().equals("Clothing")){
+               
+               
+                      itemsDirectory=e.getItemsDirectory();
+                  
+              }
+             
+           }
+          
+          }
+      DefaultTableModel model = (DefaultTableModel) clothingJTable.getModel();
+        model.setRowCount(0);
+        
+        System.out.println(itemsDirectory.getItemsList());
+        for(Items i : itemsDirectory.getItemsList()){
+            
+            Object[] row = new Object[7];
+            row[0] = i.getName();
+            row[1] = i.getDesc();
+            row[2] = i.getPrice();
+            row[3] = i.getServices();
+            row[4] = i.getState();
+            row[5] = i.getSellertailorname();
+            row[6] = i.getQuantity();
+            
+            
+            
+            model.addRow(row);
+            
+        }
+    }
 }
