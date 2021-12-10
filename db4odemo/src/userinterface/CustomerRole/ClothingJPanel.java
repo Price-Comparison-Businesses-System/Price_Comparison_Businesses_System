@@ -5,6 +5,10 @@
  */
 package userinterface.CustomerRole;
 
+import Business.Customer.Customer;
+import Business.EcoSystem;
+import javax.swing.JPanel;
+
 /**
  *
  * @author sakshi
@@ -14,9 +18,18 @@ public class ClothingJPanel extends javax.swing.JPanel {
     /**
      * Creates new form ClothingJPanel
      */
-    public ClothingJPanel() {
-        initComponents();
-    }
+     private JPanel userProcessContainer;
+        private EcoSystem ecosystem;
+        private Customer customer;
+        
+	public ClothingJPanel(JPanel userProcessContainer, EcoSystem ecosystem, Customer customer) {
+            initComponents();
+            this.userProcessContainer = userProcessContainer;
+            this.ecosystem = ecosystem;
+            this.customer = customer;
+            //populateTable();
+            
+	}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,19 +40,99 @@ public class ClothingJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        transportJTable = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        transportsearch = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        transportjComboBox1 = new javax.swing.JComboBox<>();
+
+        transportJTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Cloth Type", "Service", "Description", "Price", "Quantity", "Selller Name", "State"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(transportJTable);
+
+        jLabel1.setText("Services :");
+
+        transportsearch.setText("ss");
+
+        jLabel2.setText("Search :");
+
+        transportjComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        transportjComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                transportjComboBox1ActionPerformed(evt);
+            }
+        });
+        transportjComboBox1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                transportjComboBox1KeyPressed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(72, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(transportjComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(324, 324, 324)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(transportsearch, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(187, 187, 187))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 796, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(transportsearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2)
+                    .addComponent(transportjComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 147, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(146, 146, 146))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void transportjComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transportjComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_transportjComboBox1ActionPerformed
+
+    private void transportjComboBox1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_transportjComboBox1KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_transportjComboBox1KeyPressed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable transportJTable;
+    private javax.swing.JComboBox<String> transportjComboBox1;
+    private javax.swing.JTextField transportsearch;
     // End of variables declaration//GEN-END:variables
 }
