@@ -5,8 +5,22 @@
  */
 package userinterface.SystemAdminWorkArea;
 
+import Business.Customer.Customer;
+import Business.Customer.CustomerDirectory;
 import Business.EcoSystem;
+import java.awt.CardLayout;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+import Business.Customer.Customer;
+import Business.Customer.CustomerDirectory;
+import Business.EcoSystem;
+
+import Business.Enterprise.Enterprise;
+import java.awt.CardLayout;
+import java.awt.Component;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -14,12 +28,17 @@ import javax.swing.JPanel;
  */
 public class ManageCustomerJPanel extends javax.swing.JPanel {
 
-    JPanel userProcessContainer;
-    EcoSystem ecosystem;
+    private JPanel userProcessContainer;
+    private EcoSystem ecosystem;
+    private CustomerDirectory customerDirectory;
     public ManageCustomerJPanel(JPanel userProcessContainer,EcoSystem ecosystem) {
         initComponents();
         this.userProcessContainer=userProcessContainer;
         this.ecosystem=ecosystem;
+        this.customerDirectory = ecosystem.getCustomerdirectory();
+        System.out.println("line 39");
+        populateTable();
+        System.out.println("line 41");
     }
 
     /**
@@ -31,19 +50,127 @@ public class ManageCustomerJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblCustomer = new javax.swing.JTable();
+        btnModify = new javax.swing.JButton();
+        btnCreate = new javax.swing.JButton();
+        deletebutton = new javax.swing.JButton();
+
+        tblCustomer.setForeground(new java.awt.Color(0, 102, 204));
+        tblCustomer.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Username", "Name ", "Phone Number", "Email Address", "Street Address", "Country", "City", "Zipcode", "Age"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, true, false, false, false, true, true, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tblCustomer);
+
+        btnModify.setBackground(new java.awt.Color(0, 102, 204));
+        btnModify.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnModify.setForeground(new java.awt.Color(255, 255, 255));
+        btnModify.setText("Modify Customer");
+        btnModify.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModifyActionPerformed(evt);
+            }
+        });
+
+        btnCreate.setBackground(new java.awt.Color(0, 102, 204));
+        btnCreate.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        btnCreate.setForeground(new java.awt.Color(255, 255, 255));
+        btnCreate.setText("Create Customer");
+        btnCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateActionPerformed(evt);
+            }
+        });
+
+        deletebutton.setText("Delete Customer");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 777, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(158, 158, 158)
+                        .addComponent(btnModify, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(193, 193, 193)
+                        .addComponent(deletebutton)))
+                .addContainerGap(214, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(74, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCreate)
+                    .addComponent(btnModify)
+                    .addComponent(deletebutton))
+                .addGap(242, 242, 242))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifyActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_btnModifyActionPerformed
+
+    private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
+        // TODO add your handling code here:
+        CreateCustomerJPanel createCustomer = new CreateCustomerJPanel(userProcessContainer, ecosystem);
+        userProcessContainer.add("CreateCustomersJPanel",createCustomer);
+        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnCreateActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCreate;
+    private javax.swing.JButton btnModify;
+    private javax.swing.JButton deletebutton;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tblCustomer;
     // End of variables declaration//GEN-END:variables
+
+private void populateTable() {
+    System.out.println("line 156");
+        DefaultTableModel dtm = (DefaultTableModel) tblCustomer.getModel();
+        dtm.setRowCount(0);
+        System.out.println("line 159 --- ManageCustomerJPanel");
+        for(Customer customer : ecosystem.getCustomerdirectory().getCustomerDir()){
+            System.out.println("line 160");
+            Object [] row = new Object[9];
+            System.out.println("line 158"+customer.getName());
+            row[0] = customer;
+            row[1] = customer.getName();
+            row[2] = customer.getPhone();
+            row[3] = customer.getEmail();
+            row[4] = customer.getStreetAddress();
+            row[5] = customer.getCountry();
+            row[6] = customer.getCity();
+            row[7] = customer.getZipcode();
+            row[8] = customer.getAge();
+            dtm.addRow(row);
+        }
+    }
 }
