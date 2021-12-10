@@ -55,6 +55,7 @@ public class ManageCustomerJPanel extends javax.swing.JPanel {
         btnModify = new javax.swing.JButton();
         btnCreate = new javax.swing.JButton();
         deletebutton = new javax.swing.JButton();
+        refreshbutton = new javax.swing.JButton();
 
         tblCustomer.setForeground(new java.awt.Color(0, 102, 204));
         tblCustomer.setModel(new javax.swing.table.DefaultTableModel(
@@ -100,6 +101,13 @@ public class ManageCustomerJPanel extends javax.swing.JPanel {
 
         deletebutton.setText("Delete Customer");
 
+        refreshbutton.setText("Refresh");
+        refreshbutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                refreshbuttonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -107,6 +115,7 @@ public class ManageCustomerJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(refreshbutton)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 777, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -119,7 +128,9 @@ public class ManageCustomerJPanel extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(74, Short.MAX_VALUE)
+                .addGap(25, 25, 25)
+                .addComponent(refreshbutton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -153,12 +164,18 @@ public class ManageCustomerJPanel extends javax.swing.JPanel {
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnCreateActionPerformed
 
+    private void refreshbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshbuttonActionPerformed
+        // TODO add your handling code here:
+        populateTable();
+    }//GEN-LAST:event_refreshbuttonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreate;
     private javax.swing.JButton btnModify;
     private javax.swing.JButton deletebutton;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton refreshbutton;
     private javax.swing.JTable tblCustomer;
     // End of variables declaration//GEN-END:variables
 
