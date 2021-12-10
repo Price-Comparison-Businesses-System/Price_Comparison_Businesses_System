@@ -4,14 +4,20 @@
  */
 package Business.Enterprise;
 
+import Business.Role.Role;
+import java.util.ArrayList;
+
 /**
  *
  * @author tarushukla
  */
 public class AutomobileEnterprise extends Enterprise {
 
-    public AutomobileEnterprise(String OrgName, String OrgAddress, String OrgCity, String OrgCountry, int OrgZipCode, String OrgEmail, String OrgPhone) {
+    public AutomobileEnterprise(String OrgName, String OrgAddress, String OrgCity, String OrgCountry, Integer OrgZipCode, String OrgEmail, String OrgPhone) {
          super(OrgName,EnterpriseType.Automobile, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
     }
-    
+     @Override
+    public ArrayList<Role> getSupportedRole() {
+        return null;
+    }
 }

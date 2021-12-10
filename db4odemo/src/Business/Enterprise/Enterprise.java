@@ -22,7 +22,7 @@ public abstract class Enterprise extends Organization{
     }
     
     public enum EnterpriseType{
-        Automobile("Automobile"), Clothing("Clothing"), HealthCare("HealthCare"), Electronics("Electronics"), FoodProducts("FoodProducts");
+        Automobile("Automobile"), Clothing("Clothing"), HealthCare("HealthCare"), Electronics("Electronics"), FoodProducts("FoodProducts"),Transport("Transport");
         private String value;
         
         private EnterpriseType(String value){
@@ -47,7 +47,7 @@ public abstract class Enterprise extends Organization{
 
    
 
-    public Enterprise(String OrgName,EnterpriseType type, String OrgAddress, String OrgCity, String OrgCountry, int OrgZipCode, String OrgEmail, String OrgPhone){
+    public Enterprise(String OrgName,EnterpriseType type, String OrgAddress, String OrgCity, String OrgCountry, Integer OrgZipCode, String OrgEmail, String OrgPhone){
         super(type.toString(), OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
         this.enterpriseType=type;
         organizationDirectory=new OrganizationDirectory();

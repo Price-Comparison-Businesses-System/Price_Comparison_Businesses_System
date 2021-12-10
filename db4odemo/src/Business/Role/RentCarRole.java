@@ -6,18 +6,20 @@
 package Business.Role;
 
 import Business.EcoSystem;
-import Business.Organization;
+import Business.Enterprise.Enterprise;
+import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
+import userinterface.RentCarRole.RentCarWorkAreaJPanel;
 
 /**
  *
  * @author sakshi
  */
-public class RentCarRole {
+public class RentCarRole extends Role {
    @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new RentCarRoleWorkAreaJPanel(userProcessContainer, account, organization, enterprise, business);
+        return new RentCarWorkAreaJPanel(userProcessContainer, account, organization, enterprise, business);
     }
      
 }

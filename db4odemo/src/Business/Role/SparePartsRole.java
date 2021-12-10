@@ -6,18 +6,19 @@
 package Business.Role;
 
 import Business.EcoSystem;
-import Business.Organization;
+import Business.Enterprise.Enterprise;
+import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
-
+import userinterface.SparePartsRole.SparePartsWorkAreaJPanel;
 /**
  *
  * @author sakshi
  */
-public class SparePartsRole {
+public class SparePartsRole extends Role {
      @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new SparePartsRoleWorkAreaJPanel(userProcessContainer, account, organization, enterprise, business);
+        return new SparePartsWorkAreaJPanel(userProcessContainer, account, organization, enterprise, business);
     }
     
 }

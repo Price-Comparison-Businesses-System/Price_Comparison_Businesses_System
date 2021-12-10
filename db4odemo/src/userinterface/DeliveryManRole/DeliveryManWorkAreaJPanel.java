@@ -5,6 +5,8 @@
 package userinterface.DeliveryManRole;
 
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Organization.Organization;
 
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.WorkRequest;
@@ -18,23 +20,21 @@ import javax.swing.table.DefaultTableModel;
  */
 public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
 
+      private Enterprise enterprise;
     private JPanel userProcessContainer;
+    private Organization organization;
     private EcoSystem business;
-    private UserAccount userAccount;
-    
+    private UserAccount account;
     
     /**
      * Creates new form LabAssistantWorkAreaJPanel
      */
-    public DeliveryManWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, EcoSystem business) {
+     public DeliveryManWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
         initComponents();
-        
-        this.userProcessContainer = userProcessContainer;
-        this.userAccount = account;
         this.business = business;
-      
-        
-        populateTable();
+        this.enterprise = enterprise;
+        this.organization = organization;
+        this.account = account;
     }
     
     public void populateTable(){
@@ -128,7 +128,7 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
         }
         
         WorkRequest request = (WorkRequest)workRequestJTable.getValueAt(selectedRow, 0);
-        request.setReceiver(userAccount);
+        request.setReceiver(account);
         request.setStatus("Pending");
         populateTable();
         

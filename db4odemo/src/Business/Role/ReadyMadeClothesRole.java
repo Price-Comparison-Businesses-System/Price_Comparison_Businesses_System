@@ -6,18 +6,20 @@
 package Business.Role;
 
 import Business.EcoSystem;
-import Business.Organization;
+import Business.Enterprise.Enterprise;
+import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
+import userinterface.ReadyMadeClothesRole.ReadyMadeClothesWorkAreaJPanel;
 
 /**
  *
  * @author sakshi
  */
-public class ReadyMadeClothesRole {
+public class ReadyMadeClothesRole extends Role {
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new DeliveryWorkAreaJPanel(userProcessContainer, account, organization, enterprise, business);
+        return new ReadyMadeClothesWorkAreaJPanel(userProcessContainer, account, organization, enterprise, business);
     }
     
 }

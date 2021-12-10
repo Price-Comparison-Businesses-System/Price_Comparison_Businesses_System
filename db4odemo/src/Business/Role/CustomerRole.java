@@ -5,10 +5,11 @@
 package Business.Role;
 
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
 
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
-import userinterface.CustomerRole.CustomerAreaJPanel;
+import userinterface.CustomerRole.CustomerWorkAreaJPanel;
 import javax.swing.JPanel;
 
 /**
@@ -16,10 +17,10 @@ import javax.swing.JPanel;
  * @author raunak
  */
 public class CustomerRole extends Role{
-
     
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, EcoSystem business) {
-        return new CustomerAreaJPanel(userProcessContainer, account);
+    @Override
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
+        return new CustomerWorkAreaJPanel(userProcessContainer, account, organization, enterprise, business);
     }
     
     
