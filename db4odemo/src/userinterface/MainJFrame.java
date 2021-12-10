@@ -148,8 +148,6 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/Icons/image2.jpeg"))); // NOI18N
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 230, 850, 450));
-
-        jLabel4.setText("<--login");
         jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 190, -1, -1));
 
         container.setBackground(new java.awt.Color(255, 255, 255));
