@@ -278,7 +278,7 @@ public class ViewOrdersJPanel extends javax.swing.JPanel {
     private void populateOrderTable() {
         DefaultTableModel model = (DefaultTableModel) orderJTable.getModel();
         model.setRowCount(0);
-        for(ItemCatalogue.Items i : order.getOrderlist()){
+        for(Items i : order.getOrderlist()){
             Object[] row = new Object[4]; 
             row[0] = i.getName();
             row[1] = i.getDesc();

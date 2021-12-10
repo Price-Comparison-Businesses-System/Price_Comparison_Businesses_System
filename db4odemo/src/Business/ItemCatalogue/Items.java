@@ -7,7 +7,7 @@ package Business.ItemCatalogue;
 
 /**
  *
- * @author ameya
+ * @author tarushukla
  */
 public class Items {
     private String name;

@@ -1,10 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Business.Orders;
 
-import ItemCatalogue.Items;
+import Business.ItemCatalogue.Items;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -44,6 +41,17 @@ public class Orders {
 
 //    public Orders(String orgName, String orgName0, ArrayList<Business.ItemCatalogue.Items> orderItems, int total, String orgAddress, String orgAddress0) {
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+
+//    public Orders(String enterpriseName, String customerName, ArrayList<Items> orderlist, int totalprice, String customerAddress, String enterpriseAddress) {
+//        this.enterpriseName = enterpriseName;
+//        this.customerName = customerName;
+//        this.orderlist = orderlist;
+//        this.totalprice = totalprice;
+//        this.customerAddress = customerAddress;
+//        this.enterpriseAddress = enterpriseAddress;
+//        this.status = "New Order";
+//        this.orderID = gen();//(int) faker.number().randomNumber(5, true);
 //    }
 
     public String getDeliveryPhone() {
