@@ -5,7 +5,7 @@
  */
 package Business.Customer;
 
-import Business.Order.Orders;
+import Business.Orders.Orders;
 import java.util.ArrayList;
 
 /**

@@ -133,7 +133,7 @@ public class ManageRequests extends javax.swing.JPanel {
             
             row[0] = sw.getRequestID();
             row[1] = sw.getType();
-            row[2] = sw.getCustomer().getOrgName();
+            row[2] = sw.getCustomer().getName();
             row[3] = sw.getCustomer().getStreetAddress();
             row[4] = sw.getRequestDate();
             row[5] = sw.getStatus();
