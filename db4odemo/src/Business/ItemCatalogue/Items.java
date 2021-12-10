@@ -14,12 +14,43 @@ public class Items {
     private String desc;
     private String price;
     private int quantity;
+    private String state;
+    private String sellertailorname;
+    private String services;
 
-    public Items(String name, String desc, String price, int quantity) {
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getSellertailorname() {
+        return sellertailorname;
+    }
+
+    public void setSellertailorname(String sellertailorname) {
+        this.sellertailorname = sellertailorname;
+    }
+
+    public String getServices() {
+        return services;
+    }
+
+    public void setServices(String services) {
+        this.services = services;
+    }
+    
+
+    public Items(String name, String desc, String price, int quantity, String state, String sellertailorname, String services) {
         this.name = name;
         this.desc = desc;
         this.price = price;
         this.quantity = quantity;
+        this.state = state;
+        this.sellertailorname = sellertailorname;
+        this.services = services;
     }
 
     public String getName() {

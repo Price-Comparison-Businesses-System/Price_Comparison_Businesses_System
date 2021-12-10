@@ -6,6 +6,8 @@
 package userinterface.SystemAdminWorkArea;
 
 import Business.EcoSystem;
+import Business.ItemCatalogue.Items;
+import Business.ItemCatalogue.ItemsDirectory;
 
 import Business.Organization.Organization;
 import java.awt.CardLayout;
@@ -25,11 +27,18 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
      */
     JPanel userProcessContainer;
     EcoSystem ecosystem;
-    public SystemAdminWorkAreaJPanel(JPanel userProcessContainer,EcoSystem ecosystem) {
+    private  Items item;
+    private  ItemsDirectory itemsDirectory;
+    public SystemAdminWorkAreaJPanel(JPanel userProcessContainer,EcoSystem ecosystem ) {
         initComponents();
         this.userProcessContainer=userProcessContainer;
         this.ecosystem=ecosystem;
+<<<<<<< HEAD
 //        populateTree();
+=======
+       
+        populateTree();
+>>>>>>> main
     }
     
 //    public void populateTree(){

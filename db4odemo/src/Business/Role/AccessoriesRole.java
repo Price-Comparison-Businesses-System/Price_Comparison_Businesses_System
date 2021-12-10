@@ -7,6 +7,8 @@ package Business.Role;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.ItemCatalogue.Items;
+import Business.ItemCatalogue.ItemsDirectory;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
@@ -17,8 +19,15 @@ import userinterface.Accessories.AccessoriesWorkAreaJPanel;
  * @author NetrA
  */
 public class AccessoriesRole extends Role {
+//    @Override
+//    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business ) {
+//        return new AccessoriesWorkAreaJPanel(userProcessContainer, account, organization, enterprise, business);
+//    }
+
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new AccessoriesWorkAreaJPanel(userProcessContainer, account, organization, enterprise, business);
+       return new AccessoriesWorkAreaJPanel(userProcessContainer, account, organization, enterprise, business);
     }
+
+    
 }

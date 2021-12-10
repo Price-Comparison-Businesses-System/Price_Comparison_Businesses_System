@@ -6,6 +6,8 @@ package Business.Role;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.ItemCatalogue.Items;
+import Business.ItemCatalogue.ItemsDirectory;
 
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
@@ -17,6 +19,8 @@ import javax.swing.JPanel;
  * @author raunak
  */
 public abstract class Role {
+
+    
  
     public enum RoleType{
         Admin("Admin"),

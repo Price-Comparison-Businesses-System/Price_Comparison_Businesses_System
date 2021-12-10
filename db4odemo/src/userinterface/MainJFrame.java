@@ -7,6 +7,8 @@ package userinterface;
 import Business.EcoSystem;
 import Business.DB4OUtil.DB4OUtil;
 import Business.Enterprise.Enterprise;
+import Business.ItemCatalogue.Items;
+import Business.ItemCatalogue.ItemsDirectory;
 import Business.Network.Network;
 import Business.Organization.Organization;
 
@@ -192,6 +194,9 @@ public class MainJFrame extends javax.swing.JFrame {
                 UserAccount userAccount=system.getUserAccountDirectory().authenticateUser(userName, password);
 
                 Enterprise inEnterprise=null;
+                  Enterprise temp=null;
+                Items items=null;
+                ItemsDirectory itemsDirectory=null;
                 Organization inOrganization=null;
 
                 if(userAccount==null){
@@ -221,6 +226,7 @@ public class MainJFrame extends javax.swing.JFrame {
                                         }
                                 }
                                 if(inEnterprise!=null){
+                                     System.out.println("lst if"+inEnterprise);
                                         break;
                                 }
                         }
@@ -231,12 +237,14 @@ public class MainJFrame extends javax.swing.JFrame {
                         return;
                 }
                 else{
-
+                    
+                    
+                           
                         jPanel3.setVisible(false);
                         jPanel1.setVisible(true);
                         container.setVisible(true);
                         CardLayout layout=(CardLayout)container.getLayout();
-                        container.add("workArea",userAccount.getRole().createWorkArea(container, userAccount, inOrganization, inEnterprise, system));
+                        container.add("workArea",userAccount.getRole().createWorkArea(container, userAccount, inOrganization, inEnterprise, system ));
                         layout.next(container);
                 }
 
