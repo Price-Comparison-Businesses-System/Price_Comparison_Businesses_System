@@ -132,6 +132,16 @@ public class ManageCustomerJPanel extends javax.swing.JPanel {
 
     private void btnModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifyActionPerformed
         // TODO add your handling code here:
+         int selectedRow = tblCustomer.getSelectedRow();
+        if(selectedRow < 0) {
+            JOptionPane.showMessageDialog(null,"Please Select a row from table first", "Warining", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        Customer customer = (Customer)tblCustomer.getValueAt(selectedRow,0);
+        ModifyCustomerJPanel modifyCustomer = new ModifyCustomerJPanel(userProcessContainer, ecosystem, customerDirectory, customer);
+        userProcessContainer.add("ModifyCustomersJPanel",modifyCustomer);
+        CardLayout layout=(CardLayout)userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
         
     }//GEN-LAST:event_btnModifyActionPerformed
 
