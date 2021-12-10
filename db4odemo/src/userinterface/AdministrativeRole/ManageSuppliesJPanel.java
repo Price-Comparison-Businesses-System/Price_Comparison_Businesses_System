@@ -368,23 +368,28 @@ public class ManageSuppliesJPanel extends javax.swing.JPanel {
         private void populateOrgCombo(){
         organizationJComboBox.removeAllItems();
         for(Organization o : orgdir.getOrganizationList()){
-            if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("Eateries")){
-                if(o.getType().equalsIgnoreCase("Wholesale")){
+            if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("Transport")){
+                if(o.getType().equalsIgnoreCase("Buy Car")){
                     organizationJComboBox.addItem(o.getOrgName());
                 }
             }
-            else if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("Essentials")){
-                if(o.getType().equalsIgnoreCase("Suppliers")){
+            else if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("Clothing")){
+                if(o.getType().equalsIgnoreCase("Ready Made Clothes")){
                     organizationJComboBox.addItem(o.getOrgName());
                 }
             }
-            else if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("Retail")){
-                if(o.getType().equalsIgnoreCase("Vendors")){
+            else if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("Electronics")){
+                if(o.getType().equalsIgnoreCase("Accessories")){
                     organizationJComboBox.addItem(o.getOrgName());
                 }
             }
-            else if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("Service")){
-                if(o.getType().equalsIgnoreCase("Factories")){
+            else if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("FoodProducts")){
+                if(o.getType().equalsIgnoreCase("Restaurant")){
+                    organizationJComboBox.addItem(o.getOrgName());
+                }
+            }
+             else if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("HealthCare")){
+                if(o.getType().equalsIgnoreCase("Medicine")){
                     organizationJComboBox.addItem(o.getOrgName());
                 }
             }
