@@ -7,8 +7,8 @@ package userinterface.AdministrativeRole;
 
 import Business.Enterprise.Enterprise;
 import Business.ItemCatalogue.Items;
+import Business.ItemCatalogue.ItemsDirectory;
 import Business.Organization.OrganizationDirectory;
-import ItemCatalogue.ItemsDirectory;
 import java.awt.CardLayout;
 import java.awt.Component;
 import static java.lang.Integer.parseInt;
@@ -252,7 +252,7 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
             String itemDesc = tfItemDescription.getText();
             String itemPrice = tfPrice.getText();
             int itemQuantity = parseInt(tfQuantity.getText());
-            ItemCatalogue.Items item = itemsdir.addItem(itemName, itemDesc, itemPrice, itemQuantity);
+            Items item = itemsdir.addItem(itemName, itemDesc, itemPrice, itemQuantity);
 	    JOptionPane.showMessageDialog(jPanel1, "Item added to the Menu");
             populateTable();
 	    tfPrice.setText("");
@@ -269,7 +269,7 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
             return;
             }
             
-            ItemCatalogue.Items item = itemsdir.getItem(menuJTable.getValueAt(selectedRow, 0).toString());
+            Items item = itemsdir.getItem(menuJTable.getValueAt(selectedRow, 0).toString());
             itemsdir.deleteItem(item);
 	    JOptionPane.showMessageDialog(jPanel1, "Item deleted from the Menu");
             populateTable();
@@ -314,7 +314,7 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
     private void populateTable() {
         DefaultTableModel model = (DefaultTableModel) menuJTable.getModel();
         model.setRowCount(0);
-        for(ItemCatalogue.Items i : itemsdir.getItemsList()){
+        for(Items i : itemsdir.getItemsList()){
             Object[] row = new Object[4];
             row[0] = i.getName();
             row[1] = i.getDesc();
