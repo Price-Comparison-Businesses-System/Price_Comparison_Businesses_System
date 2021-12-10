@@ -7,6 +7,7 @@ package userinterface.CustomerRole;
 
 import Business.Customer.Customer;
 import Business.EcoSystem;
+import Business.Customer.CustomerDirectory;
 import Business.Enterprise.Enterprise;
 import Business.ItemCatalogue.Items;
 import Business.ItemCatalogue.ItemsDirectory;
@@ -36,7 +37,7 @@ public class ElectronicsJPanel extends javax.swing.JPanel {
             this.userProcessContainer = userProcessContainer;
             this.ecosystem = ecosystem;
             this.customer = customer;
-            //populateTable();
+            populateTable();
             
 	}
 

@@ -36,7 +36,7 @@ public class TransportJPanel extends javax.swing.JPanel {
     private UserAccount account;
     private CustomerDirectory customerDirectory;
     private Items items;
-        private ItemsDirectory itemsDirectory;
+    private ItemsDirectory itemsDirectory;
     /**
      * Creates new form DoctorWorkAreaJPanel
      */

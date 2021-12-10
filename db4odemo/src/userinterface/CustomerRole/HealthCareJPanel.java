@@ -6,10 +6,18 @@
 package userinterface.CustomerRole;
 
 import Business.Customer.Customer;
+import Business.Customer.CustomerDirectory;
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.ItemCatalogue.Items;
+import Business.ItemCatalogue.ItemsDirectory;
+import Business.Network.Network;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -21,17 +29,24 @@ public class HealthCareJPanel extends javax.swing.JPanel {
      * Creates new form ClothingJPanel
      */
      private JPanel userProcessContainer;
-        private EcoSystem ecosystem;
-        private Customer customer;
-        
-	public HealthCareJPanel(JPanel userProcessContainer, EcoSystem ecosystem, Customer customer) {
-            initComponents();
-            this.userProcessContainer = userProcessContainer;
-            this.ecosystem = ecosystem;
+    private EcoSystem ecosystem;
+    private Customer customer;
+    private Organization organization;
+    private Enterprise enterprise;
+    private UserAccount account;
+    private CustomerDirectory customerDirectory;
+    private Items items;
+    private ItemsDirectory itemsDirectory;
+    /**
+     * Creates new form DoctorWorkAreaJPanel
+     */
+    public HealthCareJPanel(JPanel userProcessContainer, EcoSystem ecosystem, Customer customer) {
+       initComponents();
+        this.userProcessContainer = userProcessContainer;
+          this.ecosystem = ecosystem;
             this.customer = customer;
-            //populateTable();
-            
-	}
+        populateTable();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -43,7 +58,7 @@ public class HealthCareJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        transportJTable = new javax.swing.JTable();
+        healthcareJTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         transportsearch = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -53,7 +68,7 @@ public class HealthCareJPanel extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        transportJTable.setModel(new javax.swing.table.DefaultTableModel(
+        healthcareJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null}
@@ -70,7 +85,7 @@ public class HealthCareJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(transportJTable);
+        jScrollPane1.setViewportView(healthcareJTable);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 209, 796, 248));
 
@@ -129,12 +144,46 @@ public class HealthCareJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
+    private javax.swing.JTable healthcareJTable;
     private javax.swing.JComboBox<String> hospitalsjComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable transportJTable;
     private javax.swing.JTextField transportsearch;
     // End of variables declaration//GEN-END:variables
+private void populateTable() {
+          for(Network n: ecosystem.getNetworkList()){
+           for(Enterprise e : n.getEnterpriseDirectory().getEnterpriseList()){
+             if(e.getEnterpriseType().toString().equals("HealthCare")){
+               
+               
+                      itemsDirectory=e.getItemsDirectory();
+                  
+              }
+             
+           }
+          
+          }
+      DefaultTableModel model = (DefaultTableModel) healthcareJTable.getModel();
+        model.setRowCount(0);
+        
+        System.out.println(itemsDirectory.getItemsList());
+        for(Items i : itemsDirectory.getItemsList()){
+            
+            Object[] row = new Object[7];
+            row[0] = i.getName();
+            row[1] = i.getDesc();
+            row[2] = i.getPrice();
+            row[3] = i.getServices();
+            row[4] = i.getState();
+            row[5] = i.getSellertailorname();
+            row[6] = i.getQuantity();
+            
+            
+            
+            model.addRow(row);
+            
+        }
+    }
 }
