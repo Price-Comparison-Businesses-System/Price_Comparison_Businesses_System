@@ -43,9 +43,6 @@ public class TransportJPanel extends javax.swing.JPanel {
     public TransportJPanel(JPanel userProcessContainer, EcoSystem ecosystem, Customer customer) {
        initComponents();
         this.userProcessContainer = userProcessContainer;
-        this.account = account;
-        this.organization = organization;
-        this.enterprise = enterprise;
           this.ecosystem = ecosystem;
             this.customer = customer;
         populateTable();
