@@ -58,7 +58,6 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         btnManageNetwork = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(0, 0, 0));
         setLayout(new java.awt.BorderLayout());
 
         jSplitPane.setBackground(new java.awt.Color(0, 0, 0));
