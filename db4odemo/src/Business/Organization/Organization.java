@@ -6,7 +6,7 @@ package Business.Organization;
 
 import Business.Customer.CustomerDirectory;
 import Business.Employee.EmployeeDirectory;
-import Business.Order.Orders;
+import Business.Orders.Orders;
 import Business.Role.Role;
 import Business.UserAccount.UserAccountDirectory;
 import Business.WorkQueue.ServiceWorkRequest;

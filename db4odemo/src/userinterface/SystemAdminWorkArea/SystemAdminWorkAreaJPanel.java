@@ -59,6 +59,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         btnManageEnterprise1 = new javax.swing.JButton();
         btnManageNetwork = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -140,6 +141,8 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
+        jLabel2.setText("network->");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -152,7 +155,9 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(lblSelectedNode))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(292, 292, 292)
+                        .addGap(172, 172, 172)
+                        .addComponent(jLabel2)
+                        .addGap(75, 75, 75)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnManageNetwork, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btnManageEnterprise1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -171,7 +176,9 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
                 .addGap(46, 46, 46)
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnManageNetwork)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnManageNetwork)
+                    .addComponent(jLabel2))
                 .addGap(18, 18, 18)
                 .addComponent(btnManageEnterprise1)
                 .addGap(18, 18, 18)
@@ -238,6 +245,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnManageNetwork;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
