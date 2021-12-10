@@ -9,7 +9,7 @@ import Business.Enterprise.Enterprise;
 
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
-import userinterface.RestaurantAdminRole.AdminWorkAreaJPanel;
+import userinterface.AdministrativeRole.AdminWorkAreaJPanel;
 import javax.swing.JPanel;
 
 /**
