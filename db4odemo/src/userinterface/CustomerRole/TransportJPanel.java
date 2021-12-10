@@ -43,6 +43,12 @@ public class TransportJPanel extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         eateriesJTable = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        transportsearch = new javax.swing.JTextField();
+        transportjComboBox1 = new javax.swing.JComboBox<>();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         eateriesJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -63,27 +69,47 @@ public class TransportJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(eateriesJTable);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(58, 58, 58)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 729, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(71, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(100, 100, 100)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(196, Short.MAX_VALUE))
-        );
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 204, 729, 222));
+
+        jLabel1.setText("Services :");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 40, 53, 19));
+
+        jLabel2.setText("Search :");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 40, -1, -1));
+
+        transportsearch.setText("ss");
+        add(transportsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 40, 160, -1));
+
+        transportjComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buy Car", "Rent Car", "Lift Car" }));
+        transportjComboBox1.setToolTipText("");
+        transportjComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                transportjComboBox1ActionPerformed(evt);
+            }
+        });
+        transportjComboBox1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                transportjComboBox1KeyPressed(evt);
+            }
+        });
+        add(transportjComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
+
+    private void transportjComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transportjComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_transportjComboBox1ActionPerformed
+
+    private void transportjComboBox1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_transportjComboBox1KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_transportjComboBox1KeyPressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable eateriesJTable;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JComboBox<String> transportjComboBox1;
+    private javax.swing.JTextField transportsearch;
     // End of variables declaration//GEN-END:variables
 }
