@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Business.Order;
+package Business.Orders;
 
 import ItemCatalogue.Items;
 import java.util.ArrayList;
@@ -41,6 +41,10 @@ public class Orders {
         Random r = new Random( System.currentTimeMillis() );
         return ((1 + r.nextInt(2)) * 10000 + r.nextInt(10000));
     }
+
+//    public Orders(String orgName, String orgName0, ArrayList<Business.ItemCatalogue.Items> orderItems, int total, String orgAddress, String orgAddress0) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
 
     public String getDeliveryPhone() {
         return DeliveryPhone;
