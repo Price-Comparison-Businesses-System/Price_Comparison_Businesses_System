@@ -8,7 +8,7 @@ import Business.Organization.OrganizationDirectory;
 import java.util.ArrayList;
 
 /**
- *
+ * @author sakshi
  * @author tarushukla
  */
 public class EnterpriseDirectory {
@@ -44,6 +44,10 @@ public class EnterpriseDirectory {
         }
         else if(type==Enterprise.EnterpriseType.Electronics){
             enterprise = new ElectronicsEnterprise(OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
+            enterpriseList.add(enterprise);
+        }
+        else if(type==Enterprise.EnterpriseType.Transport){
+            enterprise = new TransportEnterprise(OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
             enterpriseList.add(enterprise);
         }
         else if(type==Enterprise.EnterpriseType.FoodProducts){
