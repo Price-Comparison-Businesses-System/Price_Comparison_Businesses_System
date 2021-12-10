@@ -33,12 +33,12 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         initComponents();
         this.userProcessContainer=userProcessContainer;
         this.ecosystem=ecosystem;
-<<<<<<< HEAD
+//<<<<<<< HEAD
+////        populateTree();
+//=======
+//       
 //        populateTree();
-=======
-       
-        populateTree();
->>>>>>> main
+//>>>>>>> main
     }
     
 //    public void populateTree(){
