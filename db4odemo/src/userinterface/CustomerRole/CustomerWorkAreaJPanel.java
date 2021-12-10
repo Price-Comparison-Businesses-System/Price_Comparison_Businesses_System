@@ -167,6 +167,10 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
 
     private void requestTestJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButton1ActionPerformed
         // TODO add your handling code here:
+        ClothingJPanel eateriesJPanel = new ClothingJPanel(userProcessContainer, ecosystem, customer);
+            userProcessContainer.add("eateriesJPanel", eateriesJPanel);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
     }//GEN-LAST:event_requestTestJButton1ActionPerformed
 
     private void requestTestJButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButton2ActionPerformed
