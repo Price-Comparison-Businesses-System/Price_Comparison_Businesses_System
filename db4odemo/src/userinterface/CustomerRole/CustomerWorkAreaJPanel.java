@@ -56,18 +56,18 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        requestTestJButton = new javax.swing.JButton();
+        btnTransport = new javax.swing.JButton();
         refreshTestJButton = new javax.swing.JButton();
         enterpriseLabel = new javax.swing.JLabel();
-        requestTestJButton1 = new javax.swing.JButton();
-        requestTestJButton2 = new javax.swing.JButton();
-        requestTestJButton3 = new javax.swing.JButton();
-        requestTestJButton4 = new javax.swing.JButton();
+        btnClothing = new javax.swing.JButton();
+        btnHealthCare = new javax.swing.JButton();
+        btnElectronics = new javax.swing.JButton();
+        btnFoodProducts = new javax.swing.JButton();
 
-        requestTestJButton.setText("Transport");
-        requestTestJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnTransport.setText("Transport");
+        btnTransport.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                requestTestJButtonActionPerformed(evt);
+                btnTransportActionPerformed(evt);
             }
         });
 
@@ -81,31 +81,31 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel.setText("Welcome <value>");
 
-        requestTestJButton1.setText("Clothing");
-        requestTestJButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnClothing.setText("Clothing");
+        btnClothing.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                requestTestJButton1ActionPerformed(evt);
+                btnClothingActionPerformed(evt);
             }
         });
 
-        requestTestJButton2.setText("Healthcare");
-        requestTestJButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnHealthCare.setText("Healthcare");
+        btnHealthCare.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                requestTestJButton2ActionPerformed(evt);
+                btnHealthCareActionPerformed(evt);
             }
         });
 
-        requestTestJButton3.setText("Electronics");
-        requestTestJButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnElectronics.setText("Electronics");
+        btnElectronics.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                requestTestJButton3ActionPerformed(evt);
+                btnElectronicsActionPerformed(evt);
             }
         });
 
-        requestTestJButton4.setText("Food Products");
-        requestTestJButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnFoodProducts.setText("Food Products");
+        btnFoodProducts.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                requestTestJButton4ActionPerformed(evt);
+                btnFoodProductsActionPerformed(evt);
             }
         });
 
@@ -122,11 +122,11 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(270, 270, 270)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(requestTestJButton4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(requestTestJButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(requestTestJButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(requestTestJButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(requestTestJButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnFoodProducts, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnTransport, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnClothing, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnHealthCare, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnElectronics, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(323, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -137,27 +137,27 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
                     .addComponent(refreshTestJButton)
                     .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(43, 43, 43)
-                .addComponent(requestTestJButton)
+                .addComponent(btnTransport)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(requestTestJButton1)
+                .addComponent(btnClothing)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(requestTestJButton2)
+                .addComponent(btnHealthCare)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(requestTestJButton3)
+                .addComponent(btnElectronics)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(requestTestJButton4)
+                .addComponent(btnFoodProducts)
                 .addContainerGap(199, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void requestTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButtonActionPerformed
+    private void btnTransportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransportActionPerformed
     TransportJPanel eateriesJPanel = new TransportJPanel(userProcessContainer, ecosystem, customer);
-            userProcessContainer.add("eateriesJPanel", eateriesJPanel);
+            userProcessContainer.add("transportJPanel", eateriesJPanel);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.next(userProcessContainer);
         
         
-    }//GEN-LAST:event_requestTestJButtonActionPerformed
+    }//GEN-LAST:event_btnTransportActionPerformed
 
     private void refreshTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshTestJButtonActionPerformed
 
@@ -165,33 +165,45 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
         
     }//GEN-LAST:event_refreshTestJButtonActionPerformed
 
-    private void requestTestJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButton1ActionPerformed
+    private void btnClothingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClothingActionPerformed
         // TODO add your handling code here:
-        ClothingJPanel eateriesJPanel = new ClothingJPanel(userProcessContainer, ecosystem, customer);
-            userProcessContainer.add("eateriesJPanel", eateriesJPanel);
+        ClothingJPanel clothingJPanel = new ClothingJPanel(userProcessContainer, ecosystem, customer);
+            userProcessContainer.add("clothingJPanel", clothingJPanel);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.next(userProcessContainer);
-    }//GEN-LAST:event_requestTestJButton1ActionPerformed
+    }//GEN-LAST:event_btnClothingActionPerformed
 
-    private void requestTestJButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButton2ActionPerformed
+    private void btnHealthCareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHealthCareActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_requestTestJButton2ActionPerformed
+       HealthCareJPanel healthcareJPanel = new HealthCareJPanel(userProcessContainer, ecosystem, customer);
+            userProcessContainer.add("healthcareJPanel", healthcareJPanel);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnHealthCareActionPerformed
 
-    private void requestTestJButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButton3ActionPerformed
+    private void btnElectronicsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnElectronicsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_requestTestJButton3ActionPerformed
+        ElectronicsJPanel electronicsJPanel = new ElectronicsJPanel(userProcessContainer, ecosystem, customer);
+            userProcessContainer.add("electronicsJPanel", electronicsJPanel);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnElectronicsActionPerformed
 
-    private void requestTestJButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButton4ActionPerformed
+    private void btnFoodProductsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFoodProductsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_requestTestJButton4ActionPerformed
+        FoodProductsJPanel foodproductsJPanel = new FoodProductsJPanel(userProcessContainer, ecosystem, customer);
+            userProcessContainer.add("foodproductsJPanel", foodproductsJPanel);
+            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+            layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnFoodProductsActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnClothing;
+    private javax.swing.JButton btnElectronics;
+    private javax.swing.JButton btnFoodProducts;
+    private javax.swing.JButton btnHealthCare;
+    private javax.swing.JButton btnTransport;
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JButton refreshTestJButton;
-    private javax.swing.JButton requestTestJButton;
-    private javax.swing.JButton requestTestJButton1;
-    private javax.swing.JButton requestTestJButton2;
-    private javax.swing.JButton requestTestJButton3;
-    private javax.swing.JButton requestTestJButton4;
     // End of variables declaration//GEN-END:variables
 }

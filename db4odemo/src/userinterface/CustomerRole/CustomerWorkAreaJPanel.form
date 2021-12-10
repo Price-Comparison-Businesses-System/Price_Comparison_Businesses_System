@@ -26,11 +26,11 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="270" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="requestTestJButton4" alignment="1" max="32767" attributes="0"/>
-                  <Component id="requestTestJButton" alignment="1" max="32767" attributes="0"/>
-                  <Component id="requestTestJButton1" alignment="1" max="32767" attributes="0"/>
-                  <Component id="requestTestJButton2" alignment="1" max="32767" attributes="0"/>
-                  <Component id="requestTestJButton3" alignment="1" max="32767" attributes="0"/>
+                  <Component id="btnFoodProducts" alignment="1" max="32767" attributes="0"/>
+                  <Component id="btnTransport" alignment="1" max="32767" attributes="0"/>
+                  <Component id="btnClothing" alignment="1" max="32767" attributes="0"/>
+                  <Component id="btnHealthCare" alignment="1" max="32767" attributes="0"/>
+                  <Component id="btnElectronics" alignment="1" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="323" max="32767" attributes="0"/>
           </Group>
@@ -45,27 +45,27 @@
                   <Component id="enterpriseLabel" min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-              <Component id="requestTestJButton" min="-2" max="-2" attributes="0"/>
+              <Component id="btnTransport" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="requestTestJButton1" min="-2" max="-2" attributes="0"/>
+              <Component id="btnClothing" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="requestTestJButton2" min="-2" max="-2" attributes="0"/>
+              <Component id="btnHealthCare" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="requestTestJButton3" min="-2" max="-2" attributes="0"/>
+              <Component id="btnElectronics" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="requestTestJButton4" min="-2" max="-2" attributes="0"/>
+              <Component id="btnFoodProducts" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="199" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JButton" name="requestTestJButton">
+    <Component class="javax.swing.JButton" name="btnTransport">
       <Properties>
         <Property name="text" type="java.lang.String" value="Transport"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="requestTestJButtonActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTransportActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="refreshTestJButton">
@@ -84,36 +84,36 @@
         <Property name="text" type="java.lang.String" value="Welcome &lt;value&gt;"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="requestTestJButton1">
+    <Component class="javax.swing.JButton" name="btnClothing">
       <Properties>
         <Property name="text" type="java.lang.String" value="Clothing"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="requestTestJButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnClothingActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="requestTestJButton2">
+    <Component class="javax.swing.JButton" name="btnHealthCare">
       <Properties>
         <Property name="text" type="java.lang.String" value="Healthcare"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="requestTestJButton2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnHealthCareActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="requestTestJButton3">
+    <Component class="javax.swing.JButton" name="btnElectronics">
       <Properties>
         <Property name="text" type="java.lang.String" value="Electronics"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="requestTestJButton3ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnElectronicsActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="requestTestJButton4">
+    <Component class="javax.swing.JButton" name="btnFoodProducts">
       <Properties>
         <Property name="text" type="java.lang.String" value="Food Products"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="requestTestJButton4ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFoodProductsActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

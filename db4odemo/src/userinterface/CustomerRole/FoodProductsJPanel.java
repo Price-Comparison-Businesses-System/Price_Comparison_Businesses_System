@@ -15,7 +15,7 @@ import javax.swing.JPanel;
  *
  * @author sakshi
  */
-public class ClothingJPanel extends javax.swing.JPanel {
+public class FoodProductsJPanel extends javax.swing.JPanel {
 
     /**
      * Creates new form ClothingJPanel
@@ -24,7 +24,7 @@ public class ClothingJPanel extends javax.swing.JPanel {
         private EcoSystem ecosystem;
         private Customer customer;
         
-	public ClothingJPanel(JPanel userProcessContainer, EcoSystem ecosystem, Customer customer) {
+	public FoodProductsJPanel(JPanel userProcessContainer, EcoSystem ecosystem, Customer customer) {
             initComponents();
             this.userProcessContainer = userProcessContainer;
             this.ecosystem = ecosystem;
@@ -47,7 +47,7 @@ public class ClothingJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         transportsearch = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        clothingjComboBox1 = new javax.swing.JComboBox<>();
+        foodProductsjComboBox1 = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
 
@@ -83,20 +83,20 @@ public class ClothingJPanel extends javax.swing.JPanel {
         jLabel2.setText("Search :");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 130, -1, -1));
 
-        clothingjComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buy Fabric", "Readymade cloths", "Tailor services" }));
-        clothingjComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        foodProductsjComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Restaurants", "Veggies/Fruits", "Frozen/Packaged" }));
+        foodProductsjComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                clothingjComboBox1ActionPerformed(evt);
+                foodProductsjComboBox1ActionPerformed(evt);
             }
         });
-        clothingjComboBox1.addKeyListener(new java.awt.event.KeyAdapter() {
+        foodProductsjComboBox1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                clothingjComboBox1KeyPressed(evt);
+                foodProductsjComboBox1KeyPressed(evt);
             }
         });
-        add(clothingjComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 160, -1));
+        add(foodProductsjComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 170, -1));
 
-        jLabel3.setText("Clothing");
+        jLabel3.setText("Food Products");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, -1, -1));
 
         btnBack.setText("<< Back");
@@ -108,13 +108,13 @@ public class ClothingJPanel extends javax.swing.JPanel {
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void clothingjComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clothingjComboBox1ActionPerformed
+    private void foodProductsjComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_foodProductsjComboBox1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_clothingjComboBox1ActionPerformed
+    }//GEN-LAST:event_foodProductsjComboBox1ActionPerformed
 
-    private void clothingjComboBox1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_clothingjComboBox1KeyPressed
+    private void foodProductsjComboBox1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_foodProductsjComboBox1KeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_clothingjComboBox1KeyPressed
+    }//GEN-LAST:event_foodProductsjComboBox1KeyPressed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
@@ -129,7 +129,7 @@ public class ClothingJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
-    private javax.swing.JComboBox<String> clothingjComboBox1;
+    private javax.swing.JComboBox<String> foodProductsjComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
