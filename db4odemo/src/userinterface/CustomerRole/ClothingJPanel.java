@@ -16,6 +16,7 @@ import Business.ItemCatalogue.ItemsDirectory;
 import Business.Network.Network;
 import Business.Organization.Organization;
 import javax.swing.table.DefaultTableModel;
+import static jdk.javadoc.internal.doclets.toolkit.util.DocFinder.search;
 /**
  *
  * @author sakshi
@@ -30,6 +31,7 @@ public class ClothingJPanel extends javax.swing.JPanel {
         private Customer customer;
         private Items items;
         private ItemsDirectory itemsDirectory;
+        
         
 	public ClothingJPanel(JPanel userProcessContainer, EcoSystem ecosystem, Customer customer ) {
             initComponents();
@@ -88,7 +90,16 @@ public class ClothingJPanel extends javax.swing.JPanel {
         jLabel1.setText("Services :");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 70, 19));
 
-        transportsearch.setText("ss");
+        transportsearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                transportsearchActionPerformed(evt);
+            }
+        });
+        transportsearch.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                transportsearchKeyReleased(evt);
+            }
+        });
         add(transportsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 130, 160, -1));
 
         jLabel2.setText("Search :");
@@ -136,6 +147,43 @@ public class ClothingJPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
+
+    private void transportsearchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_transportsearchKeyReleased
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) clothingJTable.getModel();
+        model.setRowCount(0);
+        for(int i=0;i<itemsDirectory.getItemsList().size();i++)
+        {
+            System.out.println("line 153");
+           
+            if(itemsDirectory.getItemsList().get(i).getName().equals(transportsearch.getText())){
+                System.out.println("taru ki line ");
+                System.out.println("line156 "+ itemsDirectory.getItemsList().get(i).getName());
+                Object[] object={itemsDirectory.getItemsList().get(i).getName(),itemsDirectory.getItemsList().get(i).getDesc(),
+                    itemsDirectory.getItemsList().get(i).getPrice(),itemsDirectory.getItemsList().get(i).getServices(),
+                    itemsDirectory.getItemsList().get(i).getState()
+                ,itemsDirectory.getItemsList().get(i).getSellertailorname(),itemsDirectory.getItemsList().get(i).getQuantity()};
+                model.addRow(object);
+            
+        }
+     }
+        
+//         model=(DefaultTableModel)search.getModel();
+//        model.setRowCount(0);
+//        for(int i=0;i<history.getHistory().size();i++){
+//            
+//            if(history.getHistory().get(i).getCar_Name().equalsIgnoreCase(txtcarname1.getText())){
+//                Object[] object={history.getHistory().get(i).getManufacturing_Company()};
+//                model.addRow(object);
+//            
+//        }
+//     }
+        
+    }//GEN-LAST:event_transportsearchKeyReleased
+
+    private void transportsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transportsearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_transportsearchActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
