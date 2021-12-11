@@ -20,7 +20,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author raunak
+ * @author netra
  */
 public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
 
@@ -171,8 +171,9 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnClothingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClothingActionPerformed
         // TODO add your handling code here:
+         Customer c=    ecosystem.getCustomerdirectory().findCustomer(account.getUsername());
         
-        ClothingJPanel clothingJPanel = new ClothingJPanel(userProcessContainer, ecosystem, customer );
+        ClothingJPanel clothingJPanel = new ClothingJPanel(userProcessContainer, ecosystem, c, enterprise );
             userProcessContainer.add("clothingJPanel", clothingJPanel);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.next(userProcessContainer);

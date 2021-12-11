@@ -62,6 +62,9 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         deliveryJTable = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -163,6 +166,15 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
 
         jLabel3.setText("<< - apna");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, -1, -1));
+
+        jLabel4.setText("assgn to delivery man");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 460, -1, -1));
+
+        jLabel5.setText("<< -view order");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, -1, -1));
+
+        jLabel6.setText("Refresh >>");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 250, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
         private void btnViewOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewOrderActionPerformed
@@ -255,6 +267,9 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable orderJTable;
@@ -263,7 +278,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
     private void populateOrderTable() {
         DefaultTableModel model = (DefaultTableModel) orderJTable.getModel();
         model.setRowCount(0);
-        for(Business.Orders.Orders o : enterprise.getOrders()){
+        for(Orders o : enterprise.getOrders()){
             Object[] row = new Object[6]; 
             row[0] = o.getOrderID();
             row[1] = o.getCustomerName();
@@ -276,20 +291,20 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
     }
 
     private void populateDeliveryMenTable() {
-        DefaultTableModel model = (DefaultTableModel) deliveryJTable.getModel();
-        model.setRowCount(0);
-        for(Organization o : orgdir.getOrganizationList()){
-            if(o.getType().equals("Delivery")){
-                for(UserAccount ua : o.getUserAccountDirectory().getUserAccountList()){
-                    Object[] row = new Object[4]; 
-                    row[0] = o.getOrgName();
-                    row[1] = o.getOrgEmail();
-                    row[2] = o.getOrgPhone();
-                    row[3] = ua.getUsername();
-                    model.addRow(row);   
-                }
-            }
-
-        }
+//        DefaultTableModel model = (DefaultTableModel) deliveryJTable.getModel();
+//        model.setRowCount(0);
+//        for(Organization o : orgdir.getOrganizationList()){
+//            if(o.getType().equals("Delivery")){
+//                for(UserAccount ua : o.getUserAccountDirectory().getUserAccountList()){
+//                    Object[] row = new Object[4]; 
+//                    row[0] = o.getOrgName();
+//                    row[1] = o.getOrgEmail();
+//                    row[2] = o.getOrgPhone();
+//                    row[3] = ua.getUsername();
+//                    model.addRow(row);   
+//                }
+//            }
+//
+//        }
     }
 }

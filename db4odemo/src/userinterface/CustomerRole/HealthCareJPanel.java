@@ -16,6 +16,7 @@ import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
+import static java.lang.Integer.parseInt;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -74,6 +75,8 @@ public class HealthCareJPanel extends javax.swing.JPanel {
         healthcareJTableCart = new javax.swing.JTable();
         btnDeleteCart = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        tfTotalPrice = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -172,7 +175,11 @@ public class HealthCareJPanel extends javax.swing.JPanel {
         add(btnDeleteCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 600, -1, -1));
 
         jButton1.setText("Order");
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 600, -1, -1));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 600, -1, -1));
+        add(tfTotalPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 610, 72, -1));
+
+        jLabel6.setText("Total Amount");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 610, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void hospitalsjComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hospitalsjComboBox1ActionPerformed
@@ -238,8 +245,10 @@ public class HealthCareJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextField tfTotalPrice;
     private javax.swing.JTextField transportsearch;
     // End of variables declaration//GEN-END:variables
 private void populateTable() {
@@ -278,6 +287,11 @@ private void populateTable() {
     }
 
     private void populatecart() {
+        int total = 0;
+            for(Items i : orderItems){
+                total = total + parseInt(i.getItemprice());
+            }
+            tfTotalPrice.setText(String.valueOf(total));
         DefaultTableModel model = (DefaultTableModel) healthcareJTableCart.getModel();
         model.setRowCount(0);
         for(Items i : orderItems){

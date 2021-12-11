@@ -12,15 +12,17 @@ import Business.Enterprise.Enterprise;
 import Business.ItemCatalogue.Items;
 import Business.ItemCatalogue.ItemsDirectory;
 import Business.Network.Network;
+import Business.Orders.Orders;
 import java.awt.CardLayout;
 import java.awt.Component;
+import static java.lang.Integer.parseInt;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
 /**
- *
+ *@author netra
  * @author sakshi
  */
 public class FoodProductsJPanel extends javax.swing.JPanel {
@@ -34,6 +36,10 @@ public class FoodProductsJPanel extends javax.swing.JPanel {
         private Items items;
         private ItemsDirectory itemsDirectory;
         private ArrayList<Items> orderItems = new ArrayList<Items>();
+        
+        private ArrayList<Orders> orderplaced = new ArrayList<Orders>();
+        private Enterprise enterprise;
+         private Orders order;
         
 	public FoodProductsJPanel(JPanel userProcessContainer, EcoSystem ecosystem, Customer customer) {
             initComponents();
@@ -67,6 +73,8 @@ public class FoodProductsJPanel extends javax.swing.JPanel {
         foodProductsJTableCart = new javax.swing.JTable();
         btnDeleteCart = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        tfTotalPrice = new javax.swing.JTextField();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -165,7 +173,16 @@ public class FoodProductsJPanel extends javax.swing.JPanel {
         add(btnDeleteCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 600, -1, -1));
 
         jButton1.setText("Order");
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 600, -1, -1));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 600, -1, -1));
+
+        jLabel6.setText("Total Amount");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 610, -1, -1));
+        add(tfTotalPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 610, 72, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void foodProductsjComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_foodProductsjComboBox1ActionPerformed
@@ -218,6 +235,45 @@ public class FoodProductsJPanel extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(foodProductsJTableCart, "Item Deleted");
     }//GEN-LAST:event_btnDeleteCartActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+        // TODO add your handling code here:
+         int total = 0;
+         System.out.println("WWW"+enterprise.getEnterpriseType());
+        
+           
+            for(Items i : orderItems){
+                total = total + parseInt(i.getItemprice());
+            }
+//        for(Network n: ecosystem.getNetworkList()){
+//                for(Enterprise e : n.getEnterpriseDirectory().getEnterpriseList()){
+//                    if(e.getEnterpriseType().toString().equalsIgnoreCase("Clothing")){
+//                       
+//                      
+//                    }
+//                    
+//                }}
+     
+           
+//            System.out.println("order placed" );
+           order = new Orders(enterprise.getEnterpriseType().toString(), customer.getcustomerName(), orderItems, total, customer.getcustomerStreetAddress(), enterprise.getOrgAddress());
+          
+            orderplaced.add(order);
+            
+            if(customer.getOrderslist() != null){
+                customer.getOrderslist().add(order);
+                ArrayList<Orders> arr=enterprise.getOrders();
+                arr.add(order);
+                enterprise.setOrders(arr);//set the list
+		JOptionPane.showMessageDialog(foodProductsJTableCart, "Order Confirmed");
+            }
+            else{
+                customer.newOrderslist();
+                customer.getOrderslist().add(order);
+		JOptionPane.showMessageDialog(foodProductsJTableCart, "Order Confirmed");
+            }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddtoCart;
@@ -231,8 +287,10 @@ public class FoodProductsJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextField tfTotalPrice;
     private javax.swing.JTextField transportsearch;
     // End of variables declaration//GEN-END:variables
 
@@ -273,6 +331,12 @@ public class FoodProductsJPanel extends javax.swing.JPanel {
     }
 
     private void populatecart() {
+        
+        int total = 0;
+            for(Items i : orderItems){
+                total = total + parseInt(i.getItemprice());
+            }
+            tfTotalPrice.setText(String.valueOf(total));
         DefaultTableModel model = (DefaultTableModel) foodProductsJTableCart.getModel();
         model.setRowCount(0);
         for(Items i : orderItems){

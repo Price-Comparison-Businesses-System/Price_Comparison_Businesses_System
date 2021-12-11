@@ -14,7 +14,7 @@ import javax.swing.JPanel;
 import Business.ItemCatalogue.Items;
 import Business.ItemCatalogue.ItemsDirectory;
 import Business.Network.Network;
-import Business.Organization.Organization;
+import Business.Orders.Orders;
 import static java.lang.Integer.parseInt;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -22,6 +22,7 @@ import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author sakshi
+ * @author netra
  */
 public class ClothingJPanel extends javax.swing.JPanel {
 
@@ -29,22 +30,27 @@ public class ClothingJPanel extends javax.swing.JPanel {
      * Creates new form ClothingJPanel
      */
      private JPanel userProcessContainer;
+      private Enterprise enterprise;
         private EcoSystem ecosystem;
         private Customer customer;
         private Items items;
         private ItemsDirectory itemsDirectory;
         private ArrayList<Items> orderItems = new ArrayList<Items>();
+        private Orders order;
+        private ArrayList<Orders> orderplaced = new ArrayList<Orders>();
         
-	public ClothingJPanel(JPanel userProcessContainer, EcoSystem ecosystem, Customer customer ) {
+	public ClothingJPanel(JPanel userProcessContainer, EcoSystem ecosystem, Customer customer, Enterprise enterprise ) {
             initComponents();
             this.userProcessContainer = userProcessContainer;
             this.ecosystem = ecosystem;
             this.customer = customer;
+           // this.enterprise = enterprise;
+            
             
            //  ;
             
             populateTable();
-            
+             populatecart();
 	}
         
 
@@ -67,7 +73,7 @@ public class ClothingJPanel extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         clothingJTable1 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        btnOrder = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         btnAddtoCart = new javax.swing.JButton();
         btnDeleteCart = new javax.swing.JButton();
@@ -152,8 +158,13 @@ public class ClothingJPanel extends javax.swing.JPanel {
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 796, 140));
 
-        jButton1.setText("Order");
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 570, -1, -1));
+        btnOrder.setText("Order");
+        btnOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOrderActionPerformed(evt);
+            }
+        });
+        add(btnOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 570, -1, -1));
 
         jLabel5.setText("Your cart");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 420, -1, -1));
@@ -236,14 +247,52 @@ public class ClothingJPanel extends javax.swing.JPanel {
             populatecart();        // TODO add your handling code here:
     }//GEN-LAST:event_btnDeleteCartActionPerformed
 
+    private void btnOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderActionPerformed
+        // TODO add your handling code here:
+         int total = 0;
+         System.out.println("WWW"+enterprise.getEnterpriseType());
+        
+           
+            for(Items i : orderItems){
+                total = total + parseInt(i.getItemprice());
+            }
+//        for(Network n: ecosystem.getNetworkList()){
+//                for(Enterprise e : n.getEnterpriseDirectory().getEnterpriseList()){
+//                    if(e.getEnterpriseType().toString().equalsIgnoreCase("Clothing")){
+//                       
+//                      
+//                    }
+//                    
+//                }}
+     
+           
+//            System.out.println("order placed" );
+           order = new Orders(enterprise.getEnterpriseType().toString(), customer.getcustomerName(), orderItems, total, customer.getcustomerStreetAddress(), enterprise.getOrgAddress());
+          
+            orderplaced.add(order);
+            
+            if(customer.getOrderslist() != null){
+                customer.getOrderslist().add(order);
+                ArrayList<Orders> arr=enterprise.getOrders();
+                arr.add(order);
+                enterprise.setOrders(arr);//set the list
+		JOptionPane.showMessageDialog(tblclothingCart, "Order Confirmed");
+            }
+            else{
+                customer.newOrderslist();
+                customer.getOrderslist().add(order);
+		JOptionPane.showMessageDialog(tblclothingCart, "Order Confirmed");
+            }
+    }//GEN-LAST:event_btnOrderActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddtoCart;
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnDeleteCart;
+    private javax.swing.JButton btnOrder;
     private javax.swing.JTable clothingJTable1;
     private javax.swing.JComboBox<String> clothingjComboBox1;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -264,6 +313,7 @@ public class ClothingJPanel extends javax.swing.JPanel {
                
                
                       itemsDirectory=e.getItemsDirectory(); 
+                      enterprise=e;
               }
              
            }
