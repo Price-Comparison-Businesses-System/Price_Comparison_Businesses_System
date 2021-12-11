@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -7,9 +8,14 @@ package userinterface.CustomerRole;
 
 import Business.Customer.Customer;
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.ItemCatalogue.Items;
+import Business.ItemCatalogue.ItemsDirectory;
+import Business.Network.Network;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -23,13 +29,15 @@ public class FoodProductsJPanel extends javax.swing.JPanel {
      private JPanel userProcessContainer;
         private EcoSystem ecosystem;
         private Customer customer;
+        private Items items;
+        private ItemsDirectory itemsDirectory;
         
 	public FoodProductsJPanel(JPanel userProcessContainer, EcoSystem ecosystem, Customer customer) {
             initComponents();
             this.userProcessContainer = userProcessContainer;
             this.ecosystem = ecosystem;
             this.customer = customer;
-            //populateTable();
+            populateTable();
             
 	}
 
@@ -43,7 +51,7 @@ public class FoodProductsJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        transportJTable = new javax.swing.JTable();
+        foodProductsTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         transportsearch = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -53,13 +61,13 @@ public class FoodProductsJPanel extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        transportJTable.setModel(new javax.swing.table.DefaultTableModel(
+        foodProductsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Cloth Type", "Service", "Description", "Price", "Quantity", "Selller Name", "State"
+                "Item Type", "Description", "Price", "Service", "Quantity", "Vendor Name", "State"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -70,7 +78,7 @@ public class FoodProductsJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(transportJTable);
+        jScrollPane1.setViewportView(foodProductsTable);
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 209, 796, 248));
 
@@ -129,12 +137,48 @@ public class FoodProductsJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
+    private javax.swing.JTable foodProductsTable;
     private javax.swing.JComboBox<String> foodProductsjComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable transportJTable;
     private javax.swing.JTextField transportsearch;
     // End of variables declaration//GEN-END:variables
+
+    private void populateTable() {
+    for(Network n: ecosystem.getNetworkList()){
+           for(Enterprise e : n.getEnterpriseDirectory().getEnterpriseList()){
+             if(e.getEnterpriseType().toString().equals("FoodProducts")){
+               
+               
+                      itemsDirectory=e.getItemsDirectory();
+                  
+              }
+             
+           }
+          
+          }
+      DefaultTableModel model = (DefaultTableModel) foodProductsTable.getModel();
+        model.setRowCount(0);
+        
+        System.out.println(itemsDirectory.getItemsList());
+        for(Items i : itemsDirectory.getItemsList()){
+//            if((i.getServices()).toLowerCase() == "restaurant" || (i.getServices()).toLowerCase() == "veggies/fruits" || (i.getServices()).toLowerCase() == "frozen/packaged" )
+//            {
+            Object[] row = new Object[7];
+            row[0] = i.getName();
+            row[1] = i.getDesc();
+            row[2] = i.getPrice();
+            row[3] = i.getServices();
+            row[4] = i.getState();
+            row[5] = i.getSellertailorname();
+            row[6] = i.getQuantity();
+            
+            
+            
+            model.addRow(row);
+           // }
+    }
+    }
 }
