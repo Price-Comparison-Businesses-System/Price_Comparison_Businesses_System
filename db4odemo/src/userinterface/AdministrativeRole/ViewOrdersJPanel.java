@@ -280,10 +280,10 @@ public class ViewOrdersJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         for(Items i : order.getOrderlist()){
             Object[] row = new Object[4]; 
-            row[0] = i.getName();
-            row[1] = i.getDesc();
-            row[2] = i.getPrice();
-            row[3] = i.getQuantity();
+            row[0] = i.getItemname();
+            row[1] = i.getItemdesc();
+            row[2] = i.getItemprice();
+            row[3] = i.getItemquantity();
             
             model.addRow(row);
         }

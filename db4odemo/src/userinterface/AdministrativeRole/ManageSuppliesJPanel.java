@@ -285,10 +285,10 @@ public class ManageSuppliesJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null,"Select a row","Warning",JOptionPane.WARNING_MESSAGE);
         }
         Items item = itemsdir.getItem(menuJTable.getValueAt(selectedMenuRow, 0).toString());
-        if(parseInt(tfQuantity.getText()) > item.getQuantity()){
+        if(parseInt(tfQuantity.getText()) > item.getItemquantity()){
             JOptionPane.showMessageDialog(null,"Order Quantity exceed number of available items","Warning",JOptionPane.WARNING_MESSAGE);
         }else{
-            item.setQuantity(parseInt(tfQuantity.getText()));
+            item.setItemquantity(parseInt(tfQuantity.getText()));
             orderItems.add(item);
             JOptionPane.showMessageDialog(cartJTable, "Item added to the cart");
             populateItemsTable();
@@ -318,7 +318,7 @@ public class ManageSuppliesJPanel extends javax.swing.JPanel {
     private void btnConfirmOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmOrderActionPerformed
         int total = 0;
         for(Items i : orderItems){
-            total = total + parseInt(i.getPrice())*i.getQuantity();
+            total = total + parseInt(i.getItemprice())*i.getItemquantity();
         }
         tfTotalPrice.setText(String.valueOf(total));
         order = new Orders(organization.getOrgName(), enterprise.getOrgName(), orderItems, total, enterprise.getOrgAddress(), organization.getOrgAddress());
@@ -345,9 +345,9 @@ public class ManageSuppliesJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         for(Items i : itemsdir.getItemsList()){
             Object[] row = new Object[3];
-            row[0] = i.getName();
-            row[1] = i.getDesc();
-            row[2] = i.getPrice();
+            row[0] = i.getItemname();
+            row[1] = i.getItemdesc();
+            row[2] = i.getItemprice();
             model.addRow(row);
         }
     }
@@ -357,10 +357,10 @@ public class ManageSuppliesJPanel extends javax.swing.JPanel {
         model.setRowCount(0);
         for(Items i : orderItems){
             Object[] row = new Object[4];
-            row[0] = i.getName();
-            row[1] = i.getQuantity();
-            row[2] = i.getDesc();
-            row[3] = i.getPrice();
+            row[0] = i.getItemname();
+            row[1] = i.getItemquantity();
+            row[2] = i.getItemdesc();
+            row[3] = i.getItemprice();
             
             model.addRow(row);
         }
