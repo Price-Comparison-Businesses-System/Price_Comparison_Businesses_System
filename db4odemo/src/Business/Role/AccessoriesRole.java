@@ -19,10 +19,7 @@ import userinterface.Accessories.AccessoriesWorkAreaJPanel;
  * @author NetrA
  */
 public class AccessoriesRole extends Role {
-//    @Override
-//    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business ) {
-//        return new AccessoriesWorkAreaJPanel(userProcessContainer, account, organization, enterprise, business);
-//    }
+
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {

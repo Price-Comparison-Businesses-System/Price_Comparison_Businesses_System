@@ -177,8 +177,6 @@ public class ClothingJPanel extends javax.swing.JPanel {
             row[5] = i.getSellertailorname();
             row[6] = i.getQuantity();
             
-            
-            
             model.addRow(row);
             
         }

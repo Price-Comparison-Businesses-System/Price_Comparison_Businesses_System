@@ -365,7 +365,7 @@ public class CreateCustomerJPanel extends javax.swing.JPanel {
         }
 
         for(Customer customer : ecosystem.getCustomerdirectory().getCustomerDir()) {
-            if(customer.getEmail().equals(emailaddress)) {
+            if(customer.getcustomerEmail().equals(emailaddress)) {
                 JOptionPane.showMessageDialog(null, "Email Address already exists");
             }
         }

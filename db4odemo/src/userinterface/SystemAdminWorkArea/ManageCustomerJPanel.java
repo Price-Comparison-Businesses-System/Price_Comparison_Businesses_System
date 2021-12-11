@@ -224,16 +224,16 @@ private void populateTable() {
         for(Customer customer : ecosystem.getCustomerdirectory().getCustomerDir()){
             System.out.println("line 160");
             Object [] row = new Object[9];
-            System.out.println("line 158"+customer.getName());
+            System.out.println("line 158"+customer.getcustomerName());
             row[0] = customer;
-            row[1] = customer.getName();
-            row[2] = customer.getPhone();
-            row[3] = customer.getEmail();
-            row[4] = customer.getStreetAddress();
-            row[5] = customer.getCountry();
-            row[6] = customer.getCity();
-            row[7] = customer.getZipcode();
-            row[8] = customer.getAge();
+            row[1] = customer.getcustomerName();
+            row[2] = customer.getcustomerPhone();
+            row[3] = customer.getcustomerEmail();
+            row[4] = customer.getcustomerStreetAddress();
+            row[5] = customer.getcustomerCountry();
+            row[6] = customer.getcustomerCity();
+            row[7] = customer.getcustomerZipcode();
+            row[8] = customer.getcustomerAge();
             dtm.addRow(row);
         }
     }

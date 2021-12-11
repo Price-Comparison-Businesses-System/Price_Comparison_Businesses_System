@@ -335,14 +335,14 @@ public class ModifyCustomerJPanel extends javax.swing.JPanel {
         String city = tfCity.getText();
         int zipcode = parseInt(tfZipcode.getText());
 
-        customer.setAge(age);
-        customer.setName(name);
-        customer.setEmail(emailaddress);
-        customer.setStreetAddress(streetaddress);
-        customer.setCity(city);
-        customer.setCountry(country);
-        customer.setZipcode(zipcode);
-        customer.setPhone(phone);
+        customer.setcustomerAge(age);
+        customer.setcustomerName(name);
+        customer.setcustomerEmail(emailaddress);
+        customer.setcustomerStreetAddress(streetaddress);
+        customer.setcustomerCity(city);
+        customer.setcustomerCountry(country);
+        customer.setcustomerZipcode(zipcode);
+        customer.setcustomerPhone(phone);
 
         JOptionPane.showMessageDialog(null, "Customer Profile Updated");
         tfFullName.setText("");
