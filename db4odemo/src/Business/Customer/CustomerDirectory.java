@@ -26,8 +26,8 @@ public class CustomerDirectory {
         this.customerDir = customerDir;
     }
     
-    public Customer newCustomer(String name, String phone, int age, String streetaddress, String email, String username, String password, String country, String city, int zipcode){
-        Customer customer = new Customer(name, phone, age, streetaddress, email, username, password, country, city, zipcode);
+    public Customer newCustomer(String customername, String customerphone, int customerage, String customerstreetaddress, String customeremail, String customerusername, String customerpassword, String customercountry, String customercity, int customerzipcode){
+        Customer customer = new Customer(customername, customerphone, customerage, customerstreetaddress, customeremail, customerusername, customerpassword, customercountry, customercity, customerzipcode);
         customerDir.add(customer);
         return customer;
     }
@@ -38,7 +38,7 @@ public class CustomerDirectory {
     
     public Customer findCustomer(String username){
         for(Customer c: customerDir){
-            if(c.getUsername().equals(username)){
+            if(c.getcustomerUsername().equals(username)){
                 return c;
             }
                 
