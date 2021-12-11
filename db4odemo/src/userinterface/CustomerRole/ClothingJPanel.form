@@ -39,7 +39,7 @@
                 <Column editable="false" title="Price" type="java.lang.Object"/>
                 <Column editable="false" title="services F/R/T" type="java.lang.Object"/>
                 <Column editable="false" title="State" type="java.lang.Object"/>
-                <Column editable="true" title="seller/tailor name" type="java.lang.Object"/>
+                <Column editable="true" title="Vendor name" type="java.lang.Object"/>
                 <Column editable="true" title="Quantity" type="java.lang.Object"/>
               </Table>
             </Property>

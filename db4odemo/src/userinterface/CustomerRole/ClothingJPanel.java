@@ -69,7 +69,7 @@ public class ClothingJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                " Item name", "Description", "Price", "services F/R/T", "State", "seller/tailor name", "Quantity"
+                " Item name", "Description", "Price", "services F/R/T", "State", "Vendor name", "Quantity"
             }
         ) {
             boolean[] canEdit = new boolean [] {
