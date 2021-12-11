@@ -115,8 +115,8 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 102, 204));
-        jLabel4.setText("clothing item catalogue");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 6, 220, -1));
+        jLabel4.setText("All enterprise item catalogue");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 6, 330, -1));
 
         menuJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -147,14 +147,14 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
         jPanel1.add(txtState, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 70, 107, -1));
 
         jLabel7.setForeground(new java.awt.Color(0, 102, 204));
-        jLabel7.setText("Seller/Tailor Name");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, -1, -1));
+        jLabel7.setText("Seller/Vendor name:");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 120, -1, -1));
         jPanel1.add(txtSellerTailorName, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 110, 107, -1));
 
         jLabel8.setText("Services");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 170, -1, -1));
 
-        clothingjComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buy Fabric", "Readymade cloths", "Tailor services" }));
+        clothingjComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buy Car", "Rent Car", "Uber/lyft service", "Buy Fabric", "Readymade cloths", "Tailor services", "Restaurants", "Frozen/Packaged", "Veggies/Fruits", "Medicines", "Hospitals", "Insuranse Plan Providers", "Doctors/Therapists", "Electronics Kit", "SPare parts", "Aceessories" }));
         clothingjComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clothingjComboBox1ActionPerformed(evt);

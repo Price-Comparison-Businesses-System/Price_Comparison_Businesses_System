@@ -110,11 +110,11 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="66" red="0" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="clothing item catalogue"/>
+            <Property name="text" type="java.lang.String" value="All enterprise item catalogue"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="310" y="6" width="220" height="-1"/>
+              <AbsoluteConstraints x="310" y="6" width="330" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -224,11 +224,11 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="66" red="0" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Seller/Tailor Name"/>
+            <Property name="text" type="java.lang.String" value="Seller/Vendor name:"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="430" y="120" width="-1" height="-1"/>
+              <AbsoluteConstraints x="400" y="120" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -252,10 +252,23 @@
         <Component class="javax.swing.JComboBox" name="clothingjComboBox1">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="3">
-                <StringItem index="0" value="Buy Fabric"/>
-                <StringItem index="1" value="Readymade cloths"/>
-                <StringItem index="2" value="Tailor services"/>
+              <StringArray count="16">
+                <StringItem index="0" value="Buy Car"/>
+                <StringItem index="1" value="Rent Car"/>
+                <StringItem index="2" value="Uber/lyft service"/>
+                <StringItem index="3" value="Buy Fabric"/>
+                <StringItem index="4" value="Readymade cloths"/>
+                <StringItem index="5" value="Tailor services"/>
+                <StringItem index="6" value="Restaurants"/>
+                <StringItem index="7" value="Frozen/Packaged"/>
+                <StringItem index="8" value="Veggies/Fruits"/>
+                <StringItem index="9" value="Medicines"/>
+                <StringItem index="10" value="Hospitals"/>
+                <StringItem index="11" value="Insuranse Plan Providers"/>
+                <StringItem index="12" value="Doctors/Therapists"/>
+                <StringItem index="13" value="Electronics Kit"/>
+                <StringItem index="14" value="SPare parts"/>
+                <StringItem index="15" value="Aceessories"/>
               </StringArray>
             </Property>
           </Properties>

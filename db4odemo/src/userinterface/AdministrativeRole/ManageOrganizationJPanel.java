@@ -42,7 +42,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
 //                organizationJComboBox.addItem(type);
 //        }
             
-        if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("Food Products")){
+        if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("FoodProducts")){
             organizationJComboBox.addItem(Type.FrozenPackaged);
             organizationJComboBox.addItem(Type.VeggiesFruits);
             organizationJComboBox.addItem(Type.Restaurant);
