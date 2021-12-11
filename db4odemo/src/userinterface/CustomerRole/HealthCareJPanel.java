@@ -65,6 +65,9 @@ public class HealthCareJPanel extends javax.swing.JPanel {
         hospitalsjComboBox1 = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
+        searchcombo = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        searchhealthcareJTable1 = new javax.swing.JTable();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -87,16 +90,14 @@ public class HealthCareJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(healthcareJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 209, 796, 248));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 830, 90));
 
         jLabel1.setText("Services :");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 70, 19));
-
-        transportsearch.setText("ss");
-        add(transportsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 130, 160, -1));
+        add(transportsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 130, 160, -1));
 
         jLabel2.setText("Search :");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 130, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, -1, -1));
 
         hospitalsjComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Medicines", "Doctors/Therapists", "Insurance Plan Providers", "Hospitals" }));
         hospitalsjComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -121,6 +122,35 @@ public class HealthCareJPanel extends javax.swing.JPanel {
             }
         });
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
+
+        searchcombo.setText("Search");
+        searchcombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchcomboActionPerformed(evt);
+            }
+        });
+        add(searchcombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 130, -1, -1));
+
+        searchhealthcareJTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Cloth Type", "Service", "Description", "Price", "Quantity", "Selller Name", "State"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(searchhealthcareJTable1);
+
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 440, 830, 90));
     }// </editor-fold>//GEN-END:initComponents
 
     private void hospitalsjComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hospitalsjComboBox1ActionPerformed
@@ -141,6 +171,29 @@ public class HealthCareJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
+    private void searchcomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchcomboActionPerformed
+        // TODO add your handling code here:
+        hospitalsjComboBox1.getSelectedItem();
+        System.out.println(hospitalsjComboBox1.getSelectedItem());
+        DefaultTableModel model = (DefaultTableModel) searchhealthcareJTable1.getModel();
+        model.setRowCount(0);
+        for(int i=0;i<itemsDirectory.getItemsList().size();i++)
+        {
+            System.out.println("line 153");
+
+            if(itemsDirectory.getItemsList().get(i).getItemname().equals(transportsearch.getText()) && itemsDirectory.getItemsList().get(i).getItemservices().equals(hospitalsjComboBox1.getSelectedItem()) ){
+                System.out.println("taru ki line ");
+                System.out.println("line156 "+ itemsDirectory.getItemsList().get(i).getItemname());
+                Object[] object={itemsDirectory.getItemsList().get(i).getItemname(),itemsDirectory.getItemsList().get(i).getItemdesc(),
+                    itemsDirectory.getItemsList().get(i).getItemprice(),itemsDirectory.getItemsList().get(i).getItemservices(),
+                    itemsDirectory.getItemsList().get(i).getItemstate()
+                    ,itemsDirectory.getItemsList().get(i).getItemsellertailorname(),itemsDirectory.getItemsList().get(i).getItemquantity()};
+                model.addRow(object);
+
+            }
+        }
+    }//GEN-LAST:event_searchcomboActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
@@ -150,6 +203,9 @@ public class HealthCareJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JButton searchcombo;
+    private javax.swing.JTable searchhealthcareJTable1;
     private javax.swing.JTextField transportsearch;
     // End of variables declaration//GEN-END:variables
 private void populateTable() {
