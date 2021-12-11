@@ -58,6 +58,9 @@ public class FoodProductsJPanel extends javax.swing.JPanel {
         foodProductsjComboBox1 = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
+        searchcombo = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        searchfoodProductsTable1 = new javax.swing.JTable();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -80,16 +83,16 @@ public class FoodProductsJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(foodProductsTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 209, 796, 248));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 770, 160));
 
         jLabel1.setText("Services :");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 70, 19));
 
         transportsearch.setText("ss");
-        add(transportsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 130, 160, -1));
+        add(transportsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 130, 160, -1));
 
         jLabel2.setText("Search :");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 130, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 130, -1, -1));
 
         foodProductsjComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Restaurants", "Veggies/Fruits", "Frozen/Packaged" }));
         foodProductsjComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -114,6 +117,35 @@ public class FoodProductsJPanel extends javax.swing.JPanel {
             }
         });
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
+
+        searchcombo.setText("Search");
+        searchcombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchcomboActionPerformed(evt);
+            }
+        });
+        add(searchcombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 130, -1, -1));
+
+        searchfoodProductsTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Item Type", "Description", "Price", "Service", "Quantity", "Vendor Name", "State"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(searchfoodProductsTable1);
+
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, 770, 160));
     }// </editor-fold>//GEN-END:initComponents
 
     private void foodProductsjComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_foodProductsjComboBox1ActionPerformed
@@ -134,6 +166,29 @@ public class FoodProductsJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
+    private void searchcomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchcomboActionPerformed
+        // TODO add your handling code here:
+        foodProductsjComboBox1.getSelectedItem();
+        System.out.println(foodProductsjComboBox1.getSelectedItem());
+        DefaultTableModel model = (DefaultTableModel) searchfoodProductsTable1.getModel();
+        model.setRowCount(0);
+        for(int i=0;i<itemsDirectory.getItemsList().size();i++)
+        {
+            System.out.println("line 153");
+
+            if(itemsDirectory.getItemsList().get(i).getItemname().equals(transportsearch.getText()) && itemsDirectory.getItemsList().get(i).getItemservices().equals(foodProductsjComboBox1.getSelectedItem()) ){
+                System.out.println("taru ki line ");
+                System.out.println("line156 "+ itemsDirectory.getItemsList().get(i).getItemname());
+                Object[] object={itemsDirectory.getItemsList().get(i).getItemname(),itemsDirectory.getItemsList().get(i).getItemdesc(),
+                    itemsDirectory.getItemsList().get(i).getItemprice(),itemsDirectory.getItemsList().get(i).getItemservices(),
+                    itemsDirectory.getItemsList().get(i).getItemstate()
+                    ,itemsDirectory.getItemsList().get(i).getItemsellertailorname(),itemsDirectory.getItemsList().get(i).getItemquantity()};
+                model.addRow(object);
+
+            }
+        }
+    }//GEN-LAST:event_searchcomboActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
@@ -143,6 +198,9 @@ public class FoodProductsJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JButton searchcombo;
+    private javax.swing.JTable searchfoodProductsTable1;
     private javax.swing.JTextField transportsearch;
     // End of variables declaration//GEN-END:variables
 
