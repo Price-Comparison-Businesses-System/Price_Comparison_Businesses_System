@@ -56,17 +56,20 @@ public class ClothingJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        clothingJTable = new javax.swing.JTable();
+        searchJTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         transportsearch = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         clothingjComboBox1 = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        clothingJTable = new javax.swing.JTable();
+        searchcombo = new javax.swing.JButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        clothingJTable.setModel(new javax.swing.table.DefaultTableModel(
+        searchJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null}
@@ -83,9 +86,9 @@ public class ClothingJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(clothingJTable);
+        jScrollPane1.setViewportView(searchJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 209, 796, 248));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 430, 810, 150));
 
         jLabel1.setText("Services :");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 70, 19));
@@ -100,10 +103,10 @@ public class ClothingJPanel extends javax.swing.JPanel {
                 transportsearchKeyReleased(evt);
             }
         });
-        add(transportsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 130, 160, -1));
+        add(transportsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 130, 160, -1));
 
         jLabel2.setText("Search :");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 130, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 130, -1, -1));
 
         clothingjComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buy Fabric", "Readymade cloths", "Tailor services" }));
         clothingjComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -128,6 +131,35 @@ public class ClothingJPanel extends javax.swing.JPanel {
             }
         });
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
+
+        clothingJTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                " Item name", "Description", "Price", "services F/R/T", "State", "Vendor name", "Quantity"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(clothingJTable);
+
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 830, 130));
+
+        searchcombo.setText("Search");
+        searchcombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchcomboActionPerformed(evt);
+            }
+        });
+        add(searchcombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 130, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void clothingjComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clothingjComboBox1ActionPerformed
@@ -135,7 +167,9 @@ public class ClothingJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_clothingjComboBox1ActionPerformed
 
     private void clothingjComboBox1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_clothingjComboBox1KeyPressed
-        // TODO add your handling code here:
+        // TODO add your handling code here:Object selectedItem = comboBox.getSelectedItem();
+    
+        
     }//GEN-LAST:event_clothingjComboBox1KeyPressed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -150,40 +184,53 @@ public class ClothingJPanel extends javax.swing.JPanel {
 
     private void transportsearchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_transportsearchKeyReleased
         // TODO add your handling code here:
-        DefaultTableModel model = (DefaultTableModel) clothingJTable.getModel();
-        model.setRowCount(0);
-        for(int i=0;i<itemsDirectory.getItemsList().size();i++)
-        {
-            System.out.println("line 153");
-           
-            if(itemsDirectory.getItemsList().get(i).getName().equals(transportsearch.getText())){
-                System.out.println("taru ki line ");
-                System.out.println("line156 "+ itemsDirectory.getItemsList().get(i).getName());
-                Object[] object={itemsDirectory.getItemsList().get(i).getName(),itemsDirectory.getItemsList().get(i).getDesc(),
-                    itemsDirectory.getItemsList().get(i).getPrice(),itemsDirectory.getItemsList().get(i).getServices(),
-                    itemsDirectory.getItemsList().get(i).getState()
-                ,itemsDirectory.getItemsList().get(i).getSellertailorname(),itemsDirectory.getItemsList().get(i).getQuantity()};
-                model.addRow(object);
-            
-        }
-     }
-        
-//         model=(DefaultTableModel)search.getModel();
+//        DefaultTableModel model = (DefaultTableModel) searchJTable.getModel();
 //        model.setRowCount(0);
-//        for(int i=0;i<history.getHistory().size();i++){
-//            
-//            if(history.getHistory().get(i).getCar_Name().equalsIgnoreCase(txtcarname1.getText())){
-//                Object[] object={history.getHistory().get(i).getManufacturing_Company()};
+//        for(int i=0;i<itemsDirectory.getItemsList().size();i++)
+//        {
+//            System.out.println("line 153");
+//           
+//            if(itemsDirectory.getItemsList().get(i).getItemname().equals(transportsearch.getText()) || itemsDirectory.getItemsList().get(i).getItemservices().equals(clothingjComboBox1.getSelectedItem()) ){
+//                System.out.println("taru ki line ");
+//                System.out.println("line156 "+ itemsDirectory.getItemsList().get(i).getItemname());
+//                Object[] object={itemsDirectory.getItemsList().get(i).getItemname(),itemsDirectory.getItemsList().get(i).getItemdesc(),
+//                    itemsDirectory.getItemsList().get(i).getItemprice(),itemsDirectory.getItemsList().get(i).getItemservices(),
+//                    itemsDirectory.getItemsList().get(i).getItemstate()
+//                ,itemsDirectory.getItemsList().get(i).getItemsellertailorname(),itemsDirectory.getItemsList().get(i).getItemquantity()};
 //                model.addRow(object);
 //            
 //        }
 //     }
+
         
     }//GEN-LAST:event_transportsearchKeyReleased
 
     private void transportsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transportsearchActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_transportsearchActionPerformed
+
+    private void searchcomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchcomboActionPerformed
+        // TODO add your handling code here:
+        clothingjComboBox1.getSelectedItem();
+    System.out.println(clothingjComboBox1.getSelectedItem());
+    DefaultTableModel model = (DefaultTableModel) searchJTable.getModel();
+        model.setRowCount(0);
+        for(int i=0;i<itemsDirectory.getItemsList().size();i++)
+        {
+            System.out.println("line 153");
+           
+            if(itemsDirectory.getItemsList().get(i).getItemname().equals(transportsearch.getText()) && itemsDirectory.getItemsList().get(i).getItemservices().equals(clothingjComboBox1.getSelectedItem()) ){
+                System.out.println("taru ki line ");
+                System.out.println("line156 "+ itemsDirectory.getItemsList().get(i).getItemname());
+                Object[] object={itemsDirectory.getItemsList().get(i).getItemname(),itemsDirectory.getItemsList().get(i).getItemdesc(),
+                    itemsDirectory.getItemsList().get(i).getItemprice(),itemsDirectory.getItemsList().get(i).getItemservices(),
+                    itemsDirectory.getItemsList().get(i).getItemstate()
+                ,itemsDirectory.getItemsList().get(i).getItemsellertailorname(),itemsDirectory.getItemsList().get(i).getItemquantity()};
+                model.addRow(object);
+            
+        }
+     }
+    }//GEN-LAST:event_searchcomboActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -194,6 +241,9 @@ public class ClothingJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable searchJTable;
+    private javax.swing.JButton searchcombo;
     private javax.swing.JTextField transportsearch;
     // End of variables declaration//GEN-END:variables
 
