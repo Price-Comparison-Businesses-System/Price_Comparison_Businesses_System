@@ -167,13 +167,13 @@ public class FoodProductsJPanel extends javax.swing.JPanel {
 //            if((i.getServices()).toLowerCase() == "restaurant" || (i.getServices()).toLowerCase() == "veggies/fruits" || (i.getServices()).toLowerCase() == "frozen/packaged" )
 //            {
             Object[] row = new Object[7];
-            row[0] = i.getName();
-            row[1] = i.getDesc();
-            row[2] = i.getPrice();
-            row[3] = i.getServices();
-            row[4] = i.getState();
-            row[5] = i.getSellertailorname();
-            row[6] = i.getQuantity();
+             row[0] = i.getItemname();
+            row[1] = i.getItemdesc();
+            row[2] = i.getItemprice();
+            row[3] = i.getItemservices();
+            row[4] = i.getItemstate();
+            row[5] = i.getItemsellertailorname();
+            row[6] = i.getItemquantity();
             
             
             

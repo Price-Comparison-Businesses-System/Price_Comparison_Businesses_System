@@ -38,7 +38,7 @@ public class ItemsDirectory {
     
     public Items getItem(String name){
         for(Items i : itemsList){
-            if(i.getName().equalsIgnoreCase(name)){
+            if(i.getItemname().equalsIgnoreCase(name)){
                 return i;
             }
         }

@@ -10,84 +10,89 @@ package Business.ItemCatalogue;
  * @author tarushukla
  */
 public class Items {
-    private String name;
-    private String desc;
-    private String price;
-    private int quantity;
-    private String state;
-    private String sellertailorname;
-    private String services;
+    private String itemname;
+    private String itemdesc;
+    private String itemprice;
+    private int itemquantity;
+    private String itemstate;
+    private String itemsellertailorname;
+    private String itemservices;
 
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    public String getSellertailorname() {
-        return sellertailorname;
-    }
-
-    public void setSellertailorname(String sellertailorname) {
-        this.sellertailorname = sellertailorname;
-    }
-
-    public String getServices() {
-        return services;
-    }
-
-    public void setServices(String services) {
-        this.services = services;
-    }
+    
     
 
-    public Items(String name, String desc, String price, int quantity, String state, String sellertailorname, String services) {
-        this.name = name;
-        this.desc = desc;
-        this.price = price;
-        this.quantity = quantity;
-        this.state = state;
-        this.sellertailorname = sellertailorname;
-        this.services = services;
+    public Items(String itemname, String itemdesc, String itemprice, int itemquantity, String itemstate, String itemsellertailorname, String itemservices) {
+        this.itemname = itemname;
+        this.itemdesc = itemdesc;
+        this.itemprice = itemprice;
+        this.itemquantity = itemquantity;
+        this.itemstate = itemstate;
+        this.itemsellertailorname = itemsellertailorname;
+        this.itemservices = itemservices;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDesc() {
-        return desc;
-    }
-
-    public void setDesc(String desc) {
-        this.desc = desc;
-    }
-
-    public String getPrice() {
-        return price;
-    }
-
-    public void setPrice(String price) {
-        this.price = price;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
+    
+      
     
     @Override
     public String toString() {
-        return name;
+        return itemname;
+    }
+
+    public String getItemname() {
+        return itemname;
+    }
+
+    public void setItemname(String itemname) {
+        this.itemname = itemname;
+    }
+
+    public String getItemdesc() {
+        return itemdesc;
+    }
+
+    public void setItemdesc(String itemdesc) {
+        this.itemdesc = itemdesc;
+    }
+
+    public String getItemprice() {
+        return itemprice;
+    }
+
+    public void setItemprice(String itemprice) {
+        this.itemprice = itemprice;
+    }
+
+    public int getItemquantity() {
+        return itemquantity;
+    }
+
+    public void setItemquantity(int itemquantity) {
+        this.itemquantity = itemquantity;
+    }
+
+    public String getItemstate() {
+        return itemstate;
+    }
+
+    public void setItemstate(String itemstate) {
+        this.itemstate = itemstate;
+    }
+
+    public String getItemsellertailorname() {
+        return itemsellertailorname;
+    }
+
+    public void setItemsellertailorname(String itemsellertailorname) {
+        this.itemsellertailorname = itemsellertailorname;
+    }
+
+    public String getItemservices() {
+        return itemservices;
+    }
+
+    public void setItemservices(String itemservices) {
+        this.itemservices = itemservices;
     }
     
     
