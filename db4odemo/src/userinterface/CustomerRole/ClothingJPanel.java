@@ -38,6 +38,7 @@ public class ClothingJPanel extends javax.swing.JPanel {
             this.customer = customer;
             
            //  ;
+            
             populateTable();
             
 	}

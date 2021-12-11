@@ -6,10 +6,18 @@
 package userinterface.CustomerRole;
 
 import Business.Customer.Customer;
+import Business.Customer.CustomerDirectory;
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.ItemCatalogue.Items;
+import Business.ItemCatalogue.ItemsDirectory;
+import Business.Network.Network;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
 import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -21,18 +29,24 @@ public class TransportJPanel extends javax.swing.JPanel {
      * Creates new form TransportJPanel
      */
     private JPanel userProcessContainer;
-        private EcoSystem ecosystem;
-        private Customer customer;
-        
-	public TransportJPanel(JPanel userProcessContainer, EcoSystem ecosystem, Customer customer) {
-            initComponents();
-            this.userProcessContainer = userProcessContainer;
-            this.ecosystem = ecosystem;
+    private EcoSystem ecosystem;
+    private Customer customer;
+    private Organization organization;
+    private Enterprise enterprise;
+    private UserAccount account;
+    private CustomerDirectory customerDirectory;
+    private Items items;
+    private ItemsDirectory itemsDirectory;
+    /**
+     * Creates new form DoctorWorkAreaJPanel
+     */
+    public TransportJPanel(JPanel userProcessContainer, EcoSystem ecosystem, Customer customer) {
+       initComponents();
+        this.userProcessContainer = userProcessContainer;
+          this.ecosystem = ecosystem;
             this.customer = customer;
-            //populateTable();
-            
-	}
-
+        populateTable();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -43,60 +57,16 @@ public class TransportJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        eateriesJTable = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        transportsearch = new javax.swing.JTextField();
-        transportjComboBox1 = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        transportJTable = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        transportsearch = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        clothingjComboBox1 = new javax.swing.JComboBox<>();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        eateriesJTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Car NAme", "Services B/R/S", "Description", "Price", "Quantity", "Selller Name", "State"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(eateriesJTable);
-
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 204, 729, 222));
-
-        jLabel1.setText("Services :");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 53, 19));
-
-        jLabel2.setText("Search :");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 110, -1, -1));
-
-        transportsearch.setText("ss");
-        add(transportsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 110, 160, -1));
-
-        transportjComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buy Car", "Rent Car", "Lift Car" }));
-        transportjComboBox1.setToolTipText("");
-        transportjComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                transportjComboBox1ActionPerformed(evt);
-            }
-        });
-        transportjComboBox1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                transportjComboBox1KeyPressed(evt);
-            }
-        });
-        add(transportjComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, -1, -1));
 
         jLabel3.setText("Transport");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, -1, -1));
@@ -108,15 +78,50 @@ public class TransportJPanel extends javax.swing.JPanel {
             }
         });
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
+
+        transportJTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                " Item name", "Description", "Price", "services F/R/T", "State", "seller/tailor name", "Quantity"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(transportJTable);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 209, 796, 210));
+
+        jLabel1.setText("Services :");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 70, 19));
+
+        transportsearch.setText("ss");
+        add(transportsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 130, 160, -1));
+
+        jLabel2.setText("Search :");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 130, -1, -1));
+
+        clothingjComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buy Fabric", "Readymade cloths", "Tailor services" }));
+        clothingjComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clothingjComboBox1ActionPerformed(evt);
+            }
+        });
+        clothingjComboBox1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                clothingjComboBox1KeyPressed(evt);
+            }
+        });
+        add(clothingjComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 160, -1));
     }// </editor-fold>//GEN-END:initComponents
-
-    private void transportjComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transportjComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_transportjComboBox1ActionPerformed
-
-    private void transportjComboBox1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_transportjComboBox1KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_transportjComboBox1KeyPressed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
@@ -128,15 +133,57 @@ public class TransportJPanel extends javax.swing.JPanel {
             layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
+    private void clothingjComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clothingjComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clothingjComboBox1ActionPerformed
+
+    private void clothingjComboBox1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_clothingjComboBox1KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clothingjComboBox1KeyPressed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
-    private javax.swing.JTable eateriesJTable;
+    private javax.swing.JComboBox<String> clothingjComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JComboBox<String> transportjComboBox1;
+    private javax.swing.JTable transportJTable;
     private javax.swing.JTextField transportsearch;
     // End of variables declaration//GEN-END:variables
+private void populateTable() {
+          for(Network n: ecosystem.getNetworkList()){
+           for(Enterprise e : n.getEnterpriseDirectory().getEnterpriseList()){
+             if(e.getEnterpriseType().toString().equals("Transport")){
+               
+               
+                      itemsDirectory=e.getItemsDirectory();
+                  
+              }
+             
+           }
+          
+          }
+      DefaultTableModel model = (DefaultTableModel) transportJTable.getModel();
+        model.setRowCount(0);
+        
+        System.out.println(itemsDirectory.getItemsList());
+        for(Items i : itemsDirectory.getItemsList()){
+            
+            Object[] row = new Object[7];
+            row[0] = i.getName();
+            row[1] = i.getDesc();
+            row[2] = i.getPrice();
+            row[3] = i.getServices();
+            row[4] = i.getState();
+            row[5] = i.getSellertailorname();
+            row[6] = i.getQuantity();
+            
+            
+            
+            model.addRow(row);
+            
+        }
+    }
 }

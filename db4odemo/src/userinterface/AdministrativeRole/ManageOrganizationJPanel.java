@@ -64,7 +64,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
             organizationJComboBox.addItem(Type.BuyFabric);
             organizationJComboBox.addItem(Type.ReadyMadeClothes);
             organizationJComboBox.addItem(Type.TailorService); 
-        }else if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("Health Care")){
+        }else if(enterprise.getEnterpriseType().getValue().equalsIgnoreCase("HealthCare")){
             organizationJComboBox.addItem(Type.DoctorsTherapists);
             organizationJComboBox.addItem(Type.Hospitals);
             organizationJComboBox.addItem(Type.InsurancePlanService); 

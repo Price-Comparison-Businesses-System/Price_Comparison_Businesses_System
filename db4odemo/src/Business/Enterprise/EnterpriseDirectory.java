@@ -8,7 +8,7 @@ import Business.Organization.OrganizationDirectory;
 import java.util.ArrayList;
 
 /**
- *
+ * @author sakshi
  * @author tarushukla
  */
 public class EnterpriseDirectory {
@@ -30,11 +30,7 @@ public class EnterpriseDirectory {
     //Create enterprise
     public Enterprise createAndAddEnterprise(String OrgName, String OrgAddress, String OrgCity, String OrgCountry, Integer OrgZipCode, String OrgEmail, String OrgPhone, Enterprise.EnterpriseType type){
         Enterprise enterprise=null;
-        if(type==Enterprise.EnterpriseType.Automobile){
-            enterprise = new AutomobileEnterprise(OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
-            enterpriseList.add(enterprise);
-        }
-        else if(type==Enterprise.EnterpriseType.Clothing){
+        if(type==Enterprise.EnterpriseType.Clothing){
             enterprise = new ClothingEnterprise(OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
             enterpriseList.add(enterprise);
         }
@@ -46,7 +42,14 @@ public class EnterpriseDirectory {
             enterprise = new ElectronicsEnterprise(OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
             enterpriseList.add(enterprise);
         }
+        else if(type==Enterprise.EnterpriseType.Transport){
+            enterprise = new TransportEnterprise(OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
+            enterpriseList.add(enterprise);
+        }
         else if(type==Enterprise.EnterpriseType.FoodProducts){
+            enterprise = new FoodProductsEnterprise(OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
+            enterpriseList.add(enterprise);
+        }else if(type==Enterprise.EnterpriseType.Transport){
             enterprise = new FoodProductsEnterprise(OrgName, OrgAddress, OrgCity, OrgCountry, OrgZipCode, OrgEmail, OrgPhone);
             enterpriseList.add(enterprise);
         }
