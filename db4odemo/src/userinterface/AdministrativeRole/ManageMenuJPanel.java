@@ -24,7 +24,7 @@ import userinterface.CustomerRole.CustomerWorkAreaJPanel;
 
 /**
  *
- * @author netra
+ * @author bidar
  */
 public class ManageMenuJPanel extends javax.swing.JPanel {
 
