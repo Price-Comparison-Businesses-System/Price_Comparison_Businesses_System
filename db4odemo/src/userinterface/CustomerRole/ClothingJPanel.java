@@ -15,6 +15,7 @@ import Business.ItemCatalogue.Items;
 import Business.ItemCatalogue.ItemsDirectory;
 import Business.Network.Network;
 import Business.Organization.Organization;
+import static java.lang.Integer.parseInt;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -70,6 +71,9 @@ public class ClothingJPanel extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         btnAddtoCart = new javax.swing.JButton();
         btnDeleteCart = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        tfTotalPrice = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -149,7 +153,7 @@ public class ClothingJPanel extends javax.swing.JPanel {
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 796, 140));
 
         jButton1.setText("Order");
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 570, -1, -1));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 570, -1, -1));
 
         jLabel5.setText("Your cart");
         add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 420, -1, -1));
@@ -168,7 +172,14 @@ public class ClothingJPanel extends javax.swing.JPanel {
                 btnDeleteCartActionPerformed(evt);
             }
         });
-        add(btnDeleteCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 570, -1, -1));
+        add(btnDeleteCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 570, -1, -1));
+
+        jLabel4.setText("Your Cart");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 400, -1, -1));
+        add(tfTotalPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 580, 72, -1));
+
+        jLabel6.setText("Total Amount");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 580, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void clothingjComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clothingjComboBox1ActionPerformed
@@ -236,10 +247,13 @@ public class ClothingJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tblclothingCart;
+    private javax.swing.JTextField tfTotalPrice;
     private javax.swing.JTextField transportsearch;
     // End of variables declaration//GEN-END:variables
 
@@ -249,8 +263,7 @@ public class ClothingJPanel extends javax.swing.JPanel {
              if(e.getEnterpriseType().toString().equals("Clothing")){
                
                
-                      itemsDirectory=e.getItemsDirectory();
-                  
+                      itemsDirectory=e.getItemsDirectory(); 
               }
              
            }
@@ -278,6 +291,11 @@ public class ClothingJPanel extends javax.swing.JPanel {
 
     private void populatecart() {
     
+        int total = 0;
+            for(Items i : orderItems){
+                total = total + parseInt(i.getItemprice());
+            }
+            tfTotalPrice.setText(String.valueOf(total));
         DefaultTableModel model = (DefaultTableModel) tblclothingCart.getModel();
         model.setRowCount(0);
         for(Items i : orderItems){
@@ -292,24 +310,6 @@ public class ClothingJPanel extends javax.swing.JPanel {
             
             model.addRow(row);
         }
-//        DefaultTableModel model = (DefaultTableModel) tblclothingCart.getModel();
-//        model.setRowCount(0);
-        
-       
-     //  Items.addItem(cartitems);
-       
-//                for(Items i : itemsDirectory.getItemsList()){
-//            Object[] row = new Object[7];
-//            row[0] = i.getItemname();
-//            row[1] = i.getItemdesc();
-//            row[2] = i.getItemprice();
-//            row[3] = i.getItemservices();
-//            row[4] = i.getItemstate();
-//            row[5] = i.getItemsellertailorname();
-//            row[6] = i.getItemquantity();
-//                     //sum=sum+Integer.parseInt(dish.getPrice());
-//                     model.addRow(row);
-//                }  
-    
+
     }
 }

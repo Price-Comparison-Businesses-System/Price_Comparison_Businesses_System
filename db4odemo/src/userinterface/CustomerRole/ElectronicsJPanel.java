@@ -14,6 +14,9 @@ import Business.ItemCatalogue.ItemsDirectory;
 import Business.Network.Network;
 import java.awt.CardLayout;
 import java.awt.Component;
+import static java.lang.Integer.parseInt;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -31,6 +34,7 @@ public class ElectronicsJPanel extends javax.swing.JPanel {
         private Customer customer;
         private Items items;
         private ItemsDirectory itemsDirectory;
+         private ArrayList<Items> orderItems = new ArrayList<Items>();
         
 	public ElectronicsJPanel(JPanel userProcessContainer, EcoSystem ecosystem, Customer customer) {
             initComponents();
@@ -58,6 +62,14 @@ public class ElectronicsJPanel extends javax.swing.JPanel {
         electonicsjComboBox1 = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        electronicsJTableCart = new javax.swing.JTable();
+        btnDeleteCart = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        btnAddtoCart = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        tfTotalPrice = new javax.swing.JTextField();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -80,7 +92,7 @@ public class ElectronicsJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(electronicsJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 796, 248));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 796, 110));
 
         jLabel1.setText("Services :");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 70, 19));
@@ -114,6 +126,53 @@ public class ElectronicsJPanel extends javax.swing.JPanel {
             }
         });
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
+
+        electronicsJTableCart.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                " Item name", "Description", "Price", "services K/S/A", "State", "Vendor name", "Quantity"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(electronicsJTableCart);
+
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 420, 796, 140));
+
+        btnDeleteCart.setText("Delete from cart");
+        btnDeleteCart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteCartActionPerformed(evt);
+            }
+        });
+        add(btnDeleteCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 570, -1, -1));
+
+        jButton1.setText("Order");
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 570, -1, -1));
+
+        jLabel4.setText("Your Cart");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 390, -1, -1));
+
+        btnAddtoCart.setText("Add to cart ^");
+        btnAddtoCart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddtoCartActionPerformed(evt);
+            }
+        });
+        add(btnAddtoCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 300, -1, -1));
+
+        jLabel6.setText("Total Amount");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 580, -1, -1));
+        add(tfTotalPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 580, 72, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void electonicsjComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_electonicsjComboBox1ActionPerformed
@@ -134,15 +193,56 @@ public class ElectronicsJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
+    private void btnDeleteCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteCartActionPerformed
+        int selectedCartRow = electronicsJTableCart.getSelectedRow();
+            if(selectedCartRow<0){
+                JOptionPane.showMessageDialog(null,"Select a row","Warning",JOptionPane.WARNING_MESSAGE);
+            }
+            Items item = itemsDirectory.getItem(electronicsJTable.getValueAt(selectedCartRow, 0).toString());
+            orderItems.remove(item);
+	    JOptionPane.showMessageDialog(electronicsJTableCart, "Item Deleted");
+    }//GEN-LAST:event_btnDeleteCartActionPerformed
+
+    private void btnAddtoCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddtoCartActionPerformed
+        // TODO add your handling code here:
+        int selectedRowIndex = electronicsJTable.getSelectedRow();
+
+        if (selectedRowIndex<0){
+            JOptionPane.showMessageDialog(this, "Please select a row!");
+            return;
+        }
+
+        Items item =itemsDirectory.getItem(electronicsJTable.getValueAt(selectedRowIndex, 0).toString());
+        orderItems.add(item);
+        JOptionPane.showMessageDialog(electronicsJTableCart, "Item Added to cart");
+        populatecart();
+
+        //        else {
+            //            // Dishes item=(Dishes)menuTable.getValueAt(selectedRow, 0);
+            //
+            //            Items cartitems =(Items)clothingJTable1.getValueAt(2, 0);
+            //            populatecart(cartitems);
+            //        }
+
+    }//GEN-LAST:event_btnAddtoCartActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAddtoCart;
     private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnDeleteCart;
     private javax.swing.JComboBox<String> electonicsjComboBox1;
     private javax.swing.JTable electronicsJTable;
+    private javax.swing.JTable electronicsJTableCart;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextField tfTotalPrice;
     private javax.swing.JTextField transportsearch;
     // End of variables declaration//GEN-END:variables
  private void populateTable() {
@@ -179,4 +279,26 @@ public class ElectronicsJPanel extends javax.swing.JPanel {
             
         }
     }
+
+    private void populatecart() {
+        DefaultTableModel model = (DefaultTableModel) electronicsJTableCart.getModel();
+        model.setRowCount(0);
+        
+        int total = 0;
+            for(Items i : orderItems){
+                total = total + parseInt(i.getItemprice());
+            }
+            tfTotalPrice.setText(String.valueOf(total));
+        for(Items i : orderItems){
+            Object[] row = new Object[7];
+            row[0] = i.getItemname();
+            row[1] = i.getItemdesc();
+            row[2] = i.getItemprice();
+            row[3] = i.getItemservices();
+            row[4] = i.getItemstate();
+            row[5] = i.getItemsellertailorname();
+            row[6] = i.getItemquantity();
+            
+            model.addRow(row);
+        } }
 }
