@@ -21,6 +21,7 @@ import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author sakshi
+ * @author tarushukla
  */
 public class BuyFabricRoleWorkAreaJPanel extends javax.swing.JPanel {
 
