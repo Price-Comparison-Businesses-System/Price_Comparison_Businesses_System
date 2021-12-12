@@ -384,6 +384,7 @@ private void populateTable() {
             for(Items i : orderItems){
                 total = total + parseInt(i.getItemprice());
             }
+            tfTotalPrice.setText(String.valueOf(total));
         DefaultTableModel model = (DefaultTableModel) transportJTableCart.getModel();
         model.setRowCount(0);
         for(Items i : orderItems){
