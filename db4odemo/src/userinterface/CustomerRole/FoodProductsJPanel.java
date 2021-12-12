@@ -149,7 +149,7 @@ public class FoodProductsJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                " Item name", "Description", "Price", "services F/V/R", "State", "Vendor name", "Quantity"
+                " Item name", "Description", "Price", "Services ", "State", "Vendor name", "Quantity"
             }
         ) {
             boolean[] canEdit = new boolean [] {
