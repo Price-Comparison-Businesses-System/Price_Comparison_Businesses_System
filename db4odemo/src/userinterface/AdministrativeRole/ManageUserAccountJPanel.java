@@ -294,4 +294,12 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     private javax.swing.JComboBox roleJComboBox;
     private javax.swing.JTable userJTable;
     // End of variables declaration//GEN-END:variables
+
+       public void populateEmployeeComboBox(Organization organization){
+//        employeeJComboBox.removeAllItems();
+//        
+//        for (Employee employee : organization.getEmployeeDirectory().getEmployeeList()){
+//            employeeJComboBox.addItem(employee);
+//        }
+    }
 }
