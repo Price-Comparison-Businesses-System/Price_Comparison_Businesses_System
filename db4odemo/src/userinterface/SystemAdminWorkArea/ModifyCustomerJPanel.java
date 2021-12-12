@@ -306,6 +306,13 @@ public class ModifyCustomerJPanel extends javax.swing.JPanel {
                JOptionPane.showMessageDialog(this, "Customer name is empty","ERROR",JOptionPane.ERROR_MESSAGE);
                return;
         }
+        boolean flag1;
+        flag1 = name.matches("(?i)(^[a-z])((?![ .,'-]$)[a-z .,'-]){0,24}$");
+
+        if(!flag1) {
+            JOptionPane.showMessageDialog(this, "Enter valid Customer name");
+            return;
+        }
         if(!tfAge.getText().isEmpty()){
                age = parseInt(tfAge.getText());
           }

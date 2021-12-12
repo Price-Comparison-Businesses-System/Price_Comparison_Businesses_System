@@ -350,7 +350,14 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Zip code must be 5 or 6 digits", "Warining", JOptionPane.WARNING_MESSAGE);
             return;
         }
+        String name =nameJTextField.getText();
+        boolean flag;
+        flag = name.matches("(?i)(^[a-z])((?![ .,'-]$)[a-z .,'-]){0,24}$");
 
+        if(!flag) {
+            JOptionPane.showMessageDialog(this, "Enter valid Customer name");
+            return;
+        }
         String email = tfEmail.getText();
         boolean flag1;
         flag1 = email.matches("^[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$");

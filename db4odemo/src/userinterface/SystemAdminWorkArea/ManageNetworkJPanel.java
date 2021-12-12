@@ -115,7 +115,13 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
                JOptionPane.showMessageDialog(this, "Network name is empty","ERROR",JOptionPane.ERROR_MESSAGE);
                return;
         }
+        boolean flag;
+        flag = name.matches("(?i)(^[a-z])((?![ .,'-]$)[a-z .,'-]){0,24}$");
 
+        if(!flag) {
+            JOptionPane.showMessageDialog(this, "Enter valid Network name");
+            return;
+        }
         Network network = system.createAndAddNetwork();
         network.setName(name);
 	    JOptionPane.showMessageDialog(btnAddNetwork, "Network Added Successfully");
