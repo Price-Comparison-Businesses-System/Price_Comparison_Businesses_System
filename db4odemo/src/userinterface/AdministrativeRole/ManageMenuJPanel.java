@@ -244,7 +244,7 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
             
 //            Items item = itemsdir.addItem(itemName, itemDesc, itemPrice, itemQuantity, state, sellertailorname, services);
 	    
-            Items item = itemsdir.addItem(itemName, itemDesc, itemPrice, itemQuantity);
+           // Items item = itemsdir.addItem(itemName, itemDesc, itemPrice, itemQuantity);
             JOptionPane.showMessageDialog(jPanel1, "Item added to the Menu");
             populateTable();
 	    tfPrice.setText("");

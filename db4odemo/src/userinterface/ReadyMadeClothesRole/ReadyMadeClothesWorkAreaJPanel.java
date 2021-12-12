@@ -270,7 +270,7 @@ public class ReadyMadeClothesWorkAreaJPanel extends javax.swing.JPanel {
         String itemDesc = tfItemDescription.getText();
         String itemPrice = tfPrice.getText();
         int itemQuantity = parseInt(tfQuantity.getText());
-        Items item = itemsdir.addItem(itemName, itemDesc, itemPrice, itemQuantity);
+        //Items item = itemsdir.addItem(itemName, itemDesc, itemPrice, itemQuantity);
         JOptionPane.showMessageDialog(jScrollPane5, "Item added to the list");
 
         populateTable();

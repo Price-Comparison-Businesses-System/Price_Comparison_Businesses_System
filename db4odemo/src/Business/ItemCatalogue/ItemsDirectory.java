@@ -26,16 +26,16 @@ public class ItemsDirectory {
         this.itemsList = itemsList;
     }
     
-//    public Items addItem(String name, String desc, String price, int quantity, String state, String sellertailorname, String services){
-//        Items item = new Items(name, desc, price, quantity, state, sellertailorname, services);
-//        itemsList.add(item);
-//        return item;
-//    }
-    public Items addItem(String name, String desc, String price, int quantity){
-        Items item = new Items(name, desc, price, quantity);
+    public Items addItem(String name, String desc, String price, int quantity, String state, String sellertailorname, String services){
+        Items item = new Items(name, desc, price, quantity, state, sellertailorname, services);
         itemsList.add(item);
         return item;
     }
+//    public Items addItem(String name, String desc, String price, int quantity){
+//        Items item = new Items(name, desc, price, quantity);
+//        itemsList.add(item);
+//        return item;
+//    }
     public void deleteItem(Items item){
         itemsList.remove(item);
     }
