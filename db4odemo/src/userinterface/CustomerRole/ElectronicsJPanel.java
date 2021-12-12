@@ -66,14 +66,9 @@ public class ElectronicsJPanel extends javax.swing.JPanel {
         electonicsjComboBox1 = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
+        searchcombo = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        electronicsJTableCart = new javax.swing.JTable();
-        btnDeleteCart = new javax.swing.JButton();
-        btnorder = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        btnAddtoCart = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        tfTotalPrice = new javax.swing.JTextField();
+        searchelectronicsJTable1 = new javax.swing.JTable();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -96,16 +91,20 @@ public class ElectronicsJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(electronicsJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 796, 110));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 790, 160));
 
         jLabel1.setText("Services :");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 70, 19));
 
-        transportsearch.setText("ss");
-        add(transportsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 130, 160, -1));
+        transportsearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                transportsearchActionPerformed(evt);
+            }
+        });
+        add(transportsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 130, 160, -1));
 
         jLabel2.setText("Search :");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 130, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 130, -1, -1));
 
         electonicsjComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Electronics kit", "Spare parts", "Accessories" }));
         electonicsjComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -132,6 +131,15 @@ public class ElectronicsJPanel extends javax.swing.JPanel {
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
 
         electronicsJTableCart.setModel(new javax.swing.table.DefaultTableModel(
+        searchcombo.setText("Search");
+        searchcombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchcomboActionPerformed(evt);
+            }
+        });
+        add(searchcombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 130, -1, -1));
+
+        searchelectronicsJTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null}
@@ -261,6 +269,32 @@ public class ElectronicsJPanel extends javax.swing.JPanel {
 		JOptionPane.showMessageDialog(electronicsJTableCart, "Order Confirmed");
             }
     }//GEN-LAST:event_btnorderActionPerformed
+    private void searchcomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchcomboActionPerformed
+        // TODO add your handling code here:
+        electonicsjComboBox1.getSelectedItem();
+        System.out.println(electonicsjComboBox1.getSelectedItem());
+        DefaultTableModel model = (DefaultTableModel) searchelectronicsJTable1.getModel();
+        model.setRowCount(0);
+        for(int i=0;i<itemsDirectory.getItemsList().size();i++)
+        {
+            System.out.println("line 153");
+
+            if(itemsDirectory.getItemsList().get(i).getItemname().equals(transportsearch.getText()) && itemsDirectory.getItemsList().get(i).getItemservices().equals(electonicsjComboBox1.getSelectedItem()) ){
+                System.out.println("taru ki line ");
+                System.out.println("line156 "+ itemsDirectory.getItemsList().get(i).getItemname());
+                Object[] object={itemsDirectory.getItemsList().get(i).getItemname(),itemsDirectory.getItemsList().get(i).getItemdesc(),
+                    itemsDirectory.getItemsList().get(i).getItemprice(),itemsDirectory.getItemsList().get(i).getItemservices(),
+                    itemsDirectory.getItemsList().get(i).getItemstate()
+                    ,itemsDirectory.getItemsList().get(i).getItemsellertailorname(),itemsDirectory.getItemsList().get(i).getItemquantity()};
+                model.addRow(object);
+
+            }
+        }
+    }//GEN-LAST:event_searchcomboActionPerformed
+
+    private void transportsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transportsearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_transportsearchActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -279,6 +313,8 @@ public class ElectronicsJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField tfTotalPrice;
+    private javax.swing.JButton searchcombo;
+    private javax.swing.JTable searchelectronicsJTable1;
     private javax.swing.JTextField transportsearch;
     // End of variables declaration//GEN-END:variables
  private void populateTable() {
