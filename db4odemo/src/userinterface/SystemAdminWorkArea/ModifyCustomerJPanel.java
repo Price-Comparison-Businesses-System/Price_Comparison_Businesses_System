@@ -332,10 +332,10 @@ public class ModifyCustomerJPanel extends javax.swing.JPanel {
                return;
         }
         String email = tfEmail.getText();
-        boolean flag1;
-        flag1 = email.matches("^[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$");
+        boolean flagemail;
+        flagemail = email.matches("^[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$");
 
-        if(!flag1) {
+        if(!flagemail) {
             JOptionPane.showMessageDialog(this, "Email Address must be in format of username@email.com");
             return;
         }
@@ -358,19 +358,42 @@ public class ModifyCustomerJPanel extends javax.swing.JPanel {
                JOptionPane.showMessageDialog(this, "Customer street address is empty","ERROR",JOptionPane.ERROR_MESSAGE);
                return;
         }
+        boolean flagaddress;
+        flagaddress = streetaddress.matches("^[a-zA-Z0-9-/, .]{1,80}$");
+
+        if(!flagaddress) {
+            JOptionPane.showMessageDialog(this, "Enter valid street address name");
+            return;
+        }
         if(!tfCountry.getText().isEmpty()){
                country = tfCountry.getText();
           }
           else{
                JOptionPane.showMessageDialog(this, "Customer country is empty","ERROR",JOptionPane.ERROR_MESSAGE);
                return;
-        }if(!tfCity.getText().isEmpty()){
+        }
+                 boolean flagcountry;
+        flagcountry = country.matches("^[a-zA-Z]+(?:(?:\\s+|-)[a-zA-Z]+)*$");
+
+        if(!flagcountry) {
+            JOptionPane.showMessageDialog(this, "Enter valid country name");
+            return;
+        }
+        if(!tfCity.getText().isEmpty()){
                city = tfCity.getText();
           }
           else{
                JOptionPane.showMessageDialog(this, "Customer city is empty","ERROR",JOptionPane.ERROR_MESSAGE);
                return;
-        }if(!tfZipcode.getText().isEmpty()){
+        }
+        boolean flagcity;
+        flagcity = city.matches("^[a-zA-Z]+(?:(?:\\s+|-)[a-zA-Z]+)*$");
+
+        if(!flagcity) {
+            JOptionPane.showMessageDialog(this, "Enter valid city name");
+            return;
+        }
+        if(!tfZipcode.getText().isEmpty()){
                zipcode = parseInt(tfZipcode.getText());
           }
           else{

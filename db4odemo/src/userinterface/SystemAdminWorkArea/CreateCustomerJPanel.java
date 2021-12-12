@@ -319,7 +319,7 @@ public class CreateCustomerJPanel extends javax.swing.JPanel {
 
         String name;
         String phone;
-        int age;
+        int age =0;
         String streetaddress;
         String emailaddress;
         String country;
@@ -327,7 +327,9 @@ public class CreateCustomerJPanel extends javax.swing.JPanel {
         int zipcode;
         String username;
         String password;
-        
+    /**
+     * validation for customer name
+     */
         if(!tfFullName.getText().isEmpty()){
                name = tfFullName.getText();
           }
@@ -342,6 +344,10 @@ public class CreateCustomerJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Enter valid Customer name");
             return;
         }
+     /**
+     * validation for customer age
+     */
+        try{
         if(!tfAge.getText().isEmpty()){
                age = parseInt(tfAge.getText());
           }
@@ -349,10 +355,18 @@ public class CreateCustomerJPanel extends javax.swing.JPanel {
                JOptionPane.showMessageDialog(this, "Customer age is empty","ERROR",JOptionPane.ERROR_MESSAGE);
                return;
         }
-        if(parseInt(tfAge.getText())<0){
+         if(parseInt(tfAge.getText())<0){
            JOptionPane.showMessageDialog(this, "customer age cannot be less than 0");
             return;
           }
+       } catch(NumberFormatException ex){ 
+            System.out.println(ex);
+          JOptionPane.showMessageDialog(this, "Customer age must be a number","ERROR",JOptionPane.ERROR_MESSAGE);
+
+            }
+    /**
+     * validation for customer email
+     */
         if(!tfEmail.getText().isEmpty()){
                emailaddress = tfEmail.getText();
           }
@@ -360,6 +374,17 @@ public class CreateCustomerJPanel extends javax.swing.JPanel {
                JOptionPane.showMessageDialog(this, "Customer email address is empty","ERROR",JOptionPane.ERROR_MESSAGE);
                return;
         }
+        String email = tfEmail.getText();
+        boolean flagemail;
+        flagemail = email.matches("^[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$");
+
+        if(!flagemail) {
+            JOptionPane.showMessageDialog(this, "Email Address must be in format of username@email.com");
+            return;
+        }
+    /**
+     * validation for customer phone number
+     */
         if(!tfPhoneNumber.getText().isEmpty()){
                phone = tfPhoneNumber.getText();
           }
@@ -372,7 +397,9 @@ public class CreateCustomerJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Phone Number must be 10 digits", "Warining", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        
+   /**
+     * validation for customer phone address
+     */
         if(!tfStreetAddress.getText().isEmpty()){
                streetaddress = tfStreetAddress.getText();
           }
@@ -387,6 +414,9 @@ public class CreateCustomerJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Enter valid street address name");
             return;
         }
+      /**
+     * validation for customer country
+     */
          if(!tfCountry.getText().isEmpty()){
                country = tfCountry.getText();
           }
@@ -401,6 +431,9 @@ public class CreateCustomerJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Enter valid country name");
             return;
         }
+        /**
+     * validation for customer city
+     */
         if(!tfCity.getText().isEmpty()){
                city = tfCity.getText();
           }
@@ -415,6 +448,9 @@ public class CreateCustomerJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Enter valid city name");
             return;
         }
+    /**
+     * validation for customer zip code
+     */
         if(!tfZipcode.getText().isEmpty()){
                zipcode = parseInt(tfZipcode.getText());
           }
@@ -447,14 +483,7 @@ public class CreateCustomerJPanel extends javax.swing.JPanel {
 //            return;
 //        }
         
-        String email = tfEmail.getText();
-        boolean flagemail;
-        flagemail = email.matches("^[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$");
-
-        if(!flagemail) {
-            JOptionPane.showMessageDialog(this, "Email Address must be in format of username@email.com");
-            return;
-        }
+        
 
         for(Customer customer : ecosystem.getCustomerdirectory().getCustomerDir()) {
             if(customer.getcustomerEmail().equals(emailaddress)) {
