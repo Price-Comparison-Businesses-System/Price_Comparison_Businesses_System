@@ -43,6 +43,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
         btnInventory = new javax.swing.JButton();
         btnMenu = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -109,6 +110,9 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/Icons/manageEmployee700px.png"))); // NOI18N
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 770, 480));
+
+        jLabel3.setText("apna->>");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnOrgAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrgAdminActionPerformed
@@ -183,6 +187,7 @@ public class AdminWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnOrgAdmin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
     

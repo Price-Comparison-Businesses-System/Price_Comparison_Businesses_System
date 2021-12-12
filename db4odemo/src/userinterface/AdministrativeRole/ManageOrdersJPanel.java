@@ -61,15 +61,20 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         deliveryJTable = new javax.swing.JTable();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         orderJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "OrderID", "Customer", "Store Name", "Delivery Location", "Total Amount", "Status"
+                "OrderID", "Customer", "Store/ seller Name", "Delivery Location", "Total Amount", "Status"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -82,6 +87,8 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(orderJTable);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 730, 165));
+
         btnViewOrder.setBackground(new java.awt.Color(0, 102, 204));
         btnViewOrder.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnViewOrder.setForeground(new java.awt.Color(255, 255, 255));
@@ -91,6 +98,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                 btnViewOrderActionPerformed(evt);
             }
         });
+        add(btnViewOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 241, -1, -1));
 
         btnAssignDeliveryMan.setBackground(new java.awt.Color(0, 102, 204));
         btnAssignDeliveryMan.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -101,6 +109,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                 btnAssignDeliveryManActionPerformed(evt);
             }
         });
+        add(btnAssignDeliveryMan, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 456, -1, -1));
 
         btnRefresh.setBackground(new java.awt.Color(0, 102, 204));
         btnRefresh.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -111,6 +120,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                 btnRefreshActionPerformed(evt);
             }
         });
+        add(btnRefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 241, -1, -1));
 
         btnBack.setBackground(new java.awt.Color(255, 255, 255));
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/Icons/93634-2.png"))); // NOI18N
@@ -119,14 +129,17 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                 btnBackActionPerformed(evt);
             }
         });
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 56, 52));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 102, 204));
         jLabel1.setText("Orders for your Enterprise");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(295, 20, 154, 32));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 102, 204));
         jLabel2.setText("Available Deliverymen");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(315, 276, 130, 32));
 
         deliveryJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -149,53 +162,19 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(deliveryJTable);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(239, 239, 239)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(280, 280, 280)
-                        .addComponent(btnAssignDeliveryMan))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnViewOrder)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnRefresh))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(315, 315, 315)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(52, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnViewOrder)
-                    .addComponent(btnRefresh))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnAssignDeliveryMan)
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 314, 730, 130));
+
+        jLabel3.setText("<< - apna");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, -1, -1));
+
+        jLabel4.setText("assgn to delivery man");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 460, -1, -1));
+
+        jLabel5.setText("<< -view order");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, -1, -1));
+
+        jLabel6.setText("Refresh >>");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 250, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
         private void btnViewOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewOrderActionPerformed
@@ -287,6 +266,10 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
     private javax.swing.JTable deliveryJTable;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable orderJTable;
@@ -295,7 +278,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
     private void populateOrderTable() {
         DefaultTableModel model = (DefaultTableModel) orderJTable.getModel();
         model.setRowCount(0);
-        for(Business.Orders.Orders o : enterprise.getOrders()){
+        for(Orders o : enterprise.getOrders()){
             Object[] row = new Object[6]; 
             row[0] = o.getOrderID();
             row[1] = o.getCustomerName();
@@ -308,20 +291,20 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
     }
 
     private void populateDeliveryMenTable() {
-        DefaultTableModel model = (DefaultTableModel) deliveryJTable.getModel();
-        model.setRowCount(0);
-        for(Organization o : orgdir.getOrganizationList()){
-            if(o.getType().equals("Delivery")){
-                for(UserAccount ua : o.getUserAccountDirectory().getUserAccountList()){
-                    Object[] row = new Object[4]; 
-                    row[0] = o.getOrgName();
-                    row[1] = o.getOrgEmail();
-                    row[2] = o.getOrgPhone();
-                    row[3] = ua.getUsername();
-                    model.addRow(row);   
-                }
-            }
-
-        }
+//        DefaultTableModel model = (DefaultTableModel) deliveryJTable.getModel();
+//        model.setRowCount(0);
+//        for(Organization o : orgdir.getOrganizationList()){
+//            if(o.getType().equals("Delivery")){
+//                for(UserAccount ua : o.getUserAccountDirectory().getUserAccountList()){
+//                    Object[] row = new Object[4]; 
+//                    row[0] = o.getOrgName();
+//                    row[1] = o.getOrgEmail();
+//                    row[2] = o.getOrgPhone();
+//                    row[3] = ua.getUsername();
+//                    model.addRow(row);   
+//                }
+//            }
+//
+//        }
     }
 }
