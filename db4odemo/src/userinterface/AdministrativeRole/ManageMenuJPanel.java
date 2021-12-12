@@ -261,6 +261,10 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
                JOptionPane.showMessageDialog(this, "Item Price is empty","ERROR",JOptionPane.ERROR_MESSAGE);
                return;
         }
+         if(parseInt(tfPrice.getText())<0){
+           JOptionPane.showMessageDialog(this, " Item price cannot be less than 0");
+            return;
+          }
           if(!txtQuantity.getText().isEmpty()){
                itemQuantity = parseInt(txtQuantity.getText());
           }
@@ -268,6 +272,10 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
                JOptionPane.showMessageDialog(this, "Item Quantity is empty","ERROR",JOptionPane.ERROR_MESSAGE);
                return;
         }
+          if(parseInt(txtQuantity.getText())<0){
+           JOptionPane.showMessageDialog(this, " Item quantity cannot be less than 0");
+            return;
+          }
           if(!txtSellerTailorName.getText().isEmpty()){
                sellertailorname = txtSellerTailorName.getText();
           }
