@@ -44,6 +44,7 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
         this.account = account;
         this.organization = organization;
         this.enterprise = enterprise;
+//        jLabel1.setText(enterprise.getOrgName());
     }
     
     public void populateRequestTable(){
@@ -67,6 +68,7 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
         btnHealthCare = new javax.swing.JButton();
         btnElectronics = new javax.swing.JButton();
         btnFoodProducts = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -87,7 +89,7 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
         add(refreshTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(533, 28, -1, -1));
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        enterpriseLabel.setText("Welcome <value>");
+        enterpriseLabel.setText("Welcome ");
         add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 27, -1, 30));
 
         btnClothing.setText("Clothing");
@@ -121,6 +123,9 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         add(btnFoodProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 258, -1, -1));
+
+        jLabel1.setText("<value>");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 80, 20));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnTransportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransportActionPerformed
@@ -184,6 +189,7 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnHealthCare;
     private javax.swing.JButton btnTransport;
     private javax.swing.JLabel enterpriseLabel;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton refreshTestJButton;
     // End of variables declaration//GEN-END:variables
 }

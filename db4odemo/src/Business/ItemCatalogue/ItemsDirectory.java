@@ -31,11 +31,7 @@ public class ItemsDirectory {
         itemsList.add(item);
         return item;
     }
-//    public Items addItem(String name, String desc, String price, int quantity){
-//        Items item = new Items(name, desc, price, quantity);
-//        itemsList.add(item);
-//        return item;
-//    }
+
     public void deleteItem(Items item){
         itemsList.remove(item);
     }
