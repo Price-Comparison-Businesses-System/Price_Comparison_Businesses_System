@@ -175,25 +175,25 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         String username = usernameJTextField.getText();
         String password;
         String name;
-        if(!nameJTextField.getText().isEmpty()){
-               name = nameJTextField.getText();
+        if(!usernameJTextField.getText().isEmpty()){
+               username = usernameJTextField.getText();
           }
           else{
-               JOptionPane.showMessageDialog(this, "Name is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               JOptionPane.showMessageDialog(this, "User Name is empty","ERROR",JOptionPane.ERROR_MESSAGE);
                return;
         }
-        if(!String.valueOf(passwordJPasswordField.getPassword()).isEmpty()){
+         if(!String.valueOf(passwordJPasswordField.getPassword()).isEmpty()){
                password = String.valueOf(passwordJPasswordField.getPassword());
           }
           else{
                JOptionPane.showMessageDialog(this, "Password is empty","ERROR",JOptionPane.ERROR_MESSAGE);
                return;
         }
-        if(!usernameJTextField.getText().isEmpty()){
-               username = usernameJTextField.getText();
+        if(!nameJTextField.getText().isEmpty()){
+               name = nameJTextField.getText();
           }
           else{
-               JOptionPane.showMessageDialog(this, "User Name is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               JOptionPane.showMessageDialog(this, "Name is empty","ERROR",JOptionPane.ERROR_MESSAGE);
                return;
         }
         if(!enterpriseJComboBox.getSelectedItem().toString().isEmpty()){
