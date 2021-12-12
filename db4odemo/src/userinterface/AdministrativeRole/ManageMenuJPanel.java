@@ -233,15 +233,70 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
-        String itemName = tfItemName.getText();
-            String itemDesc = tfItemDescription.getText();
-            String itemPrice = tfPrice.getText();
-            int itemQuantity = parseInt(txtQuantity.getText());
-            
-           String sellertailorname = txtSellerTailorName.getText();
-            String services = clothingjComboBox1.getSelectedItem().toString();
-            String state = txtState.getText();
-            
+        String itemName;
+        String itemDesc;
+        String itemPrice;
+        int itemQuantity;
+        String sellertailorname;
+        String services;
+        String state;
+         if(!tfItemName.getText().isEmpty()){
+               itemName = tfItemName.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Item name is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+         if(!tfItemDescription.getText().isEmpty()){
+               itemDesc = tfItemDescription.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Item Description is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+         if(!tfPrice.getText().isEmpty()){
+               itemPrice = tfPrice.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Item Price is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+         if(parseInt(tfPrice.getText())<0){
+           JOptionPane.showMessageDialog(this, " Item price cannot be less than 0");
+            return;
+          }
+          if(!txtQuantity.getText().isEmpty()){
+               itemQuantity = parseInt(txtQuantity.getText());
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Item Quantity is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+          if(parseInt(txtQuantity.getText())<0){
+           JOptionPane.showMessageDialog(this, " Item quantity cannot be less than 0");
+            return;
+          }
+          if(!txtSellerTailorName.getText().isEmpty()){
+               sellertailorname = txtSellerTailorName.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Seller is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+          if(!clothingjComboBox1.getSelectedItem().toString().isEmpty()){
+               services = clothingjComboBox1.getSelectedItem().toString();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "services is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+           if(!txtState.getText().isEmpty()){
+               state = txtState.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "state is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
             Items item = itemsdir.addItem(itemName, itemDesc, itemPrice, itemQuantity, state, sellertailorname, services);   
 
             JOptionPane.showMessageDialog(jPanel1, "Item added to the Menu");

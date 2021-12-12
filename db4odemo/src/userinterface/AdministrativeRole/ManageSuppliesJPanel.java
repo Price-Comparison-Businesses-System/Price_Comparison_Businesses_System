@@ -277,8 +277,8 @@ public class ManageSuppliesJPanel extends javax.swing.JPanel {
 
     private void btnAddtoCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddtoCartActionPerformed
         // TODO add your handling code here:
-        if(tfQuantity.getText() == null ){
-            JOptionPane.showMessageDialog(null,"Enter Quantity","Warning",JOptionPane.WARNING_MESSAGE);
+        if(tfQuantity.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null,"Enter Quantity","ERROR",JOptionPane.ERROR_MESSAGE);
         }
         int selectedMenuRow = menuJTable.getSelectedRow();
         if(selectedMenuRow<0){

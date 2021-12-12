@@ -339,7 +339,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         }
 
         if(nameJTextField.getText().isEmpty() || tfPhoneNumber.getText().isEmpty() || tfStreetAddress.getText().isEmpty() || tfEmail.getText().isEmpty() || tfCountry.getText().isEmpty() || tfCity.getText().isEmpty() || tfZipcode.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null, "Please fill the empty fields", "Warining", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Please fill the empty fields", "ERROR",JOptionPane.ERROR_MESSAGE);
             return;
         }
         if(tfPhoneNumber.getText().length() != 10){
@@ -424,6 +424,10 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
         int selectedrow = enterpriseJTable.getSelectedRow();
+        if(selectedrow < 0) {
+            JOptionPane.showMessageDialog(null,"Please Select a row from table", "Warining", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
         String name = enterpriseJTable.getValueAt(selectedrow, 0).toString();
         for (Network n : system.getNetworkList()){
             Enterprise e = n.getEnterpriseDirectory().getEnterprise(name);

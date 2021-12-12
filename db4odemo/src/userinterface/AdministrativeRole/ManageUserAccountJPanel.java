@@ -17,6 +17,7 @@ import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Administrator
+ * @author  tarushukla
  */
 public class ManageUserAccountJPanel extends javax.swing.JPanel {
 
@@ -240,8 +241,22 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void createUserJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserJButtonActionPerformed
-        String userName = nameJTextField.getText();
-        String password = passwordJTextField.getText();
+        String userName;
+         String password;
+        if(!nameJTextField.getText().isEmpty()){
+               userName = nameJTextField.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "User name is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+        if(!passwordJTextField.getText().isEmpty()){
+               password = passwordJTextField.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "password is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
         Organization organization = (Organization) organizationJComboBox.getSelectedItem();
         boolean flag = organization.getUserAccountDirectory().checkIfUsernameIsUnique(userName);
         if(flag == false){
