@@ -12,6 +12,7 @@ import Business.Enterprise.Enterprise;
 import Business.ItemCatalogue.Items;
 import Business.ItemCatalogue.ItemsDirectory;
 import Business.Network.Network;
+import Business.Orders.Orders;
 import java.awt.CardLayout;
 import java.awt.Component;
 import static java.lang.Integer.parseInt;
@@ -35,6 +36,9 @@ public class ElectronicsJPanel extends javax.swing.JPanel {
         private Items items;
         private ItemsDirectory itemsDirectory;
          private ArrayList<Items> orderItems = new ArrayList<Items>();
+         private ArrayList<Orders> orderplaced = new ArrayList<Orders>();
+        private Enterprise enterprise;
+         private Orders order;
         
 	public ElectronicsJPanel(JPanel userProcessContainer, EcoSystem ecosystem, Customer customer) {
             initComponents();
@@ -65,7 +69,7 @@ public class ElectronicsJPanel extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         electronicsJTableCart = new javax.swing.JTable();
         btnDeleteCart = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnorder = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         btnAddtoCart = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
@@ -156,8 +160,13 @@ public class ElectronicsJPanel extends javax.swing.JPanel {
         });
         add(btnDeleteCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 570, -1, -1));
 
-        jButton1.setText("Order");
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 570, -1, -1));
+        btnorder.setText("Order");
+        btnorder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnorderActionPerformed(evt);
+            }
+        });
+        add(btnorder, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 570, -1, -1));
 
         jLabel4.setText("Your Cart");
         add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 390, -1, -1));
@@ -226,15 +235,42 @@ public class ElectronicsJPanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_btnAddtoCartActionPerformed
 
+    private void btnorderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnorderActionPerformed
+        // TODO add your handling code here:
+         int total = 0;
+         System.out.println("WWW"+enterprise.getEnterpriseType());
+        
+           
+            for(Items i : orderItems){
+                total = total + parseInt(i.getItemprice());
+            }
+           order = new Orders(enterprise.getEnterpriseType().toString(), customer.getcustomerName(), orderItems, total, customer.getcustomerStreetAddress(), enterprise.getOrgAddress());
+          
+            orderplaced.add(order);
+            
+            if(customer.getOrderslist() != null){
+                customer.getOrderslist().add(order);
+                ArrayList<Orders> arr=enterprise.getOrders();
+                arr.add(order);
+                enterprise.setOrders(arr);//set the list
+		JOptionPane.showMessageDialog(electronicsJTableCart, "Order Confirmed");
+            }
+            else{
+                customer.newOrderslist();
+                customer.getOrderslist().add(order);
+		JOptionPane.showMessageDialog(electronicsJTableCart, "Order Confirmed");
+            }
+    }//GEN-LAST:event_btnorderActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddtoCart;
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnDeleteCart;
+    private javax.swing.JButton btnorder;
     private javax.swing.JComboBox<String> electonicsjComboBox1;
     private javax.swing.JTable electronicsJTable;
     private javax.swing.JTable electronicsJTableCart;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -256,17 +256,7 @@ public class ClothingJPanel extends javax.swing.JPanel {
             for(Items i : orderItems){
                 total = total + parseInt(i.getItemprice());
             }
-//        for(Network n: ecosystem.getNetworkList()){
-//                for(Enterprise e : n.getEnterpriseDirectory().getEnterpriseList()){
-//                    if(e.getEnterpriseType().toString().equalsIgnoreCase("Clothing")){
-//                       
-//                      
-//                    }
-//                    
-//                }}
-     
-           
-//            System.out.println("order placed" );
+
            order = new Orders(enterprise.getEnterpriseType().toString(), customer.getcustomerName(), orderItems, total, customer.getcustomerStreetAddress(), enterprise.getOrgAddress());
           
             orderplaced.add(order);
@@ -313,7 +303,7 @@ public class ClothingJPanel extends javax.swing.JPanel {
                
                
                       itemsDirectory=e.getItemsDirectory(); 
-                      enterprise=e;
+                        enterprise=e;
               }
              
            }

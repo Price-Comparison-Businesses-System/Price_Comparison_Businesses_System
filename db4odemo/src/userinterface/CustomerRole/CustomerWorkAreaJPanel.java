@@ -155,7 +155,9 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnTransportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransportActionPerformed
-    TransportJPanel transportJPanel = new TransportJPanel(userProcessContainer, ecosystem, customer);
+   Customer c=    ecosystem.getCustomerdirectory().findCustomer(account.getUsername());
+   
+        TransportJPanel transportJPanel = new TransportJPanel(userProcessContainer, ecosystem, c, enterprise);
             userProcessContainer.add("transportJPanel", transportJPanel);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.next(userProcessContainer);

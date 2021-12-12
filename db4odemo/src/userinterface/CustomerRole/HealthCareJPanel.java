@@ -12,6 +12,7 @@ import Business.Enterprise.Enterprise;
 import Business.ItemCatalogue.Items;
 import Business.ItemCatalogue.ItemsDirectory;
 import Business.Network.Network;
+import Business.Orders.Orders;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
@@ -23,7 +24,7 @@ import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
 /**
- *
+ *@author netra
  * @author sakshi
  */
 public class HealthCareJPanel extends javax.swing.JPanel {
@@ -41,6 +42,10 @@ public class HealthCareJPanel extends javax.swing.JPanel {
     private Items items;
     private ItemsDirectory itemsDirectory;
     private ArrayList<Items> orderItems = new ArrayList<Items>();
+    
+    private ArrayList<Orders> orderplaced = new ArrayList<Orders>();
+        //private Enterprise enterprise;
+         private Orders order;
     /**
      * Creates new form DoctorWorkAreaJPanel
      */
@@ -74,7 +79,7 @@ public class HealthCareJPanel extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         healthcareJTableCart = new javax.swing.JTable();
         btnDeleteCart = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnorder = new javax.swing.JButton();
         tfTotalPrice = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
 
@@ -174,8 +179,13 @@ public class HealthCareJPanel extends javax.swing.JPanel {
         });
         add(btnDeleteCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 600, -1, -1));
 
-        jButton1.setText("Order");
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 600, -1, -1));
+        btnorder.setText("Order");
+        btnorder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnorderActionPerformed(evt);
+            }
+        });
+        add(btnorder, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 600, -1, -1));
         add(tfTotalPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 610, 72, -1));
 
         jLabel6.setText("Total Amount");
@@ -214,12 +224,7 @@ public class HealthCareJPanel extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(healthcareJTableCart, "Item Added to cart");
         populatecart();
 
-        //        else {
-            //            // Dishes item=(Dishes)menuTable.getValueAt(selectedRow, 0);
-            //
-            //            Items cartitems =(Items)clothingJTable1.getValueAt(2, 0);
-            //            populatecart(cartitems);
-            //        }
+        
     }//GEN-LAST:event_btnAddtoCartActionPerformed
 
     private void btnDeleteCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteCartActionPerformed
@@ -232,15 +237,42 @@ public class HealthCareJPanel extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(healthcareJTableCart, "Item Deleted");
     }//GEN-LAST:event_btnDeleteCartActionPerformed
 
+    private void btnorderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnorderActionPerformed
+        // TODO add your handling code here:
+        int total = 0;
+         System.out.println("WWW"+enterprise.getEnterpriseType());
+        
+           
+            for(Items i : orderItems){
+                total = total + parseInt(i.getItemprice());
+            }
+           order = new Orders(enterprise.getEnterpriseType().toString(), customer.getcustomerName(), orderItems, total, customer.getcustomerStreetAddress(), enterprise.getOrgAddress());
+          
+            orderplaced.add(order);
+            
+            if(customer.getOrderslist() != null){
+                customer.getOrderslist().add(order);
+                ArrayList<Orders> arr=enterprise.getOrders();
+                arr.add(order);
+                enterprise.setOrders(arr);//set the list
+		JOptionPane.showMessageDialog(healthcareJTableCart, "Order Confirmed");
+            }
+            else{
+                customer.newOrderslist();
+                customer.getOrderslist().add(order);
+		JOptionPane.showMessageDialog(healthcareJTableCart, "Order Confirmed");
+            }
+    }//GEN-LAST:event_btnorderActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddtoCart;
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnDeleteCart;
+    private javax.swing.JButton btnorder;
     private javax.swing.JTable healthcareJTable;
     private javax.swing.JTable healthcareJTableCart;
     private javax.swing.JComboBox<String> hospitalsjComboBox1;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
