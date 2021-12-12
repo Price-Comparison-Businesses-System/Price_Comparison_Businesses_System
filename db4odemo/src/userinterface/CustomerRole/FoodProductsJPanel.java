@@ -374,9 +374,9 @@ public class FoodProductsJPanel extends javax.swing.JPanel {
              row[0] = i.getItemname();
             row[1] = i.getItemdesc();
             row[2] = i.getItemprice();
-            row[3] = i.getItemservices();
-            row[4] = i.getItemstate();
-            row[5] = i.getItemsellertailorname();
+//            row[3] = i.getItemservices();
+//            row[4] = i.getItemstate();
+//            row[5] = i.getItemsellertailorname();
             row[6] = i.getItemquantity();
             
             

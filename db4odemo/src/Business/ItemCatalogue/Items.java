@@ -14,21 +14,23 @@ public class Items {
     private String itemdesc;
     private String itemprice;
     private int itemquantity;
-    private String itemstate;
-    private String itemsellertailorname;
-    private String itemservices;
+//    private String itemstate;
+//    private String itemsellertailorname;
+//    private String itemservices;
 
     
     
 
-    public Items(String itemname, String itemdesc, String itemprice, int itemquantity, String itemstate, String itemsellertailorname, String itemservices) {
+//    public Items(String itemname, String itemdesc, String itemprice, int itemquantity, String itemstate, String itemsellertailorname, String itemservices) {
+        public Items(String itemname, String itemdesc, String itemprice, int itemquantity) {
+    
         this.itemname = itemname;
         this.itemdesc = itemdesc;
         this.itemprice = itemprice;
         this.itemquantity = itemquantity;
-        this.itemstate = itemstate;
-        this.itemsellertailorname = itemsellertailorname;
-        this.itemservices = itemservices;
+//        this.itemstate = itemstate;
+//        this.itemsellertailorname = itemsellertailorname;
+//        this.itemservices = itemservices;
     }
 
     
@@ -71,29 +73,29 @@ public class Items {
         this.itemquantity = itemquantity;
     }
 
-    public String getItemstate() {
-        return itemstate;
-    }
-
-    public void setItemstate(String itemstate) {
-        this.itemstate = itemstate;
-    }
-
-    public String getItemsellertailorname() {
-        return itemsellertailorname;
-    }
-
-    public void setItemsellertailorname(String itemsellertailorname) {
-        this.itemsellertailorname = itemsellertailorname;
-    }
-
-    public String getItemservices() {
-        return itemservices;
-    }
-
-    public void setItemservices(String itemservices) {
-        this.itemservices = itemservices;
-    }
+//    public String getItemstate() {
+//        return itemstate;
+//    }
+//
+//    public void setItemstate(String itemstate) {
+//        this.itemstate = itemstate;
+//    }
+//
+//    public String getItemsellertailorname() {
+//        return itemsellertailorname;
+//    }
+//
+//    public void setItemsellertailorname(String itemsellertailorname) {
+//        this.itemsellertailorname = itemsellertailorname;
+//    }
+//
+//    public String getItemservices() {
+//        return itemservices;
+//    }
+//
+//    public void setItemservices(String itemservices) {
+//        this.itemservices = itemservices;
+//    }
     
     
 }
