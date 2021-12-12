@@ -53,17 +53,8 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         orderJTable = new javax.swing.JTable();
-        btnViewOrder = new javax.swing.JButton();
-        btnAssignDeliveryMan = new javax.swing.JButton();
-        btnRefresh = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        deliveryJTable = new javax.swing.JTable();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -87,40 +78,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(orderJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 730, 165));
-
-        btnViewOrder.setBackground(new java.awt.Color(0, 102, 204));
-        btnViewOrder.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnViewOrder.setForeground(new java.awt.Color(255, 255, 255));
-        btnViewOrder.setText("View Order");
-        btnViewOrder.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnViewOrderActionPerformed(evt);
-            }
-        });
-        add(btnViewOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 241, -1, -1));
-
-        btnAssignDeliveryMan.setBackground(new java.awt.Color(0, 102, 204));
-        btnAssignDeliveryMan.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnAssignDeliveryMan.setForeground(new java.awt.Color(255, 255, 255));
-        btnAssignDeliveryMan.setText("Assign Delivery Man to Order");
-        btnAssignDeliveryMan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAssignDeliveryManActionPerformed(evt);
-            }
-        });
-        add(btnAssignDeliveryMan, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 456, -1, -1));
-
-        btnRefresh.setBackground(new java.awt.Color(0, 102, 204));
-        btnRefresh.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnRefresh.setForeground(new java.awt.Color(255, 255, 255));
-        btnRefresh.setText("Refresh");
-        btnRefresh.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRefreshActionPerformed(evt);
-            }
-        });
-        add(btnRefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 241, -1, -1));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 730, 165));
 
         btnBack.setBackground(new java.awt.Color(255, 255, 255));
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/Icons/93634-2.png"))); // NOI18N
@@ -129,126 +87,17 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
                 btnBackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 56, 52));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 56, 52));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 102, 204));
         jLabel1.setText("Orders for your Enterprise");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(295, 20, 154, 32));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(295, 20, 240, 32));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 102, 204));
-        jLabel2.setText("Available Deliverymen");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(315, 276, 130, 32));
-
-        deliveryJTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Name", "Email Address", "Phone", "User Name"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true, true, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane2.setViewportView(deliveryJTable);
-
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 314, 730, 130));
-
-        jLabel3.setText("<< - apna");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, -1, -1));
-
-        jLabel4.setText("assgn to delivery man");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 460, -1, -1));
-
-        jLabel5.setText("<< -view order");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, -1, -1));
-
-        jLabel6.setText("Refresh >>");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 250, -1, -1));
+        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/Icons/icons/order1.jpeg"))); // NOI18N
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 0, 740, 490));
     }// </editor-fold>//GEN-END:initComponents
-
-        private void btnViewOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewOrderActionPerformed
-            // TODO add your handling code here:
-            int selectedOrderRow = orderJTable.getSelectedRow();
-            if(selectedOrderRow<0){
-                JOptionPane.showMessageDialog(null,"Select an order","Warning",JOptionPane.WARNING_MESSAGE);
-            }
-            int orderID = (int) orderJTable.getValueAt(selectedOrderRow, 0);
-            Orders order = null;
-            
-            for(Orders o : enterprise.getOrders()){
-                if(o.getOrderID() == orderID){
-                    order = o;
-                }
-            }
-            ViewOrdersJPanel viewordersJPanel = new ViewOrdersJPanel(userProcessContainer, enterprise, order);
-            userProcessContainer.add("viewordersJPanel", viewordersJPanel);
-            CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-            layout.next(userProcessContainer);
-                
-        }//GEN-LAST:event_btnViewOrderActionPerformed
-
-        private void btnAssignDeliveryManActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAssignDeliveryManActionPerformed
-            // TODO add your handling code here:
-            int selectedOrderRow = orderJTable.getSelectedRow();
-            if(selectedOrderRow<0){
-                JOptionPane.showMessageDialog(null,"Select an order","Warning",JOptionPane.WARNING_MESSAGE);
-            }
-            
-            int selectedDeliveryRow = deliveryJTable.getSelectedRow();
-            if(selectedDeliveryRow<0){
-                JOptionPane.showMessageDialog(null,"Select a deliveryman","Warning",JOptionPane.WARNING_MESSAGE);
-            }
-            
-            int orderID = (int) orderJTable.getValueAt(selectedOrderRow, 0);
-            Orders order = null;
-            
-            for(Orders o : enterprise.getOrders()){
-                if(o.getOrderID() == orderID){
-                    order = o;
-                }
-            }
-            
-            String username = (String) deliveryJTable.getValueAt(selectedDeliveryRow, 3);
-            for(Organization org : orgdir.getOrganizationList()){
-                if(org.getType().equals("Delivery")){
-                    for(UserAccount ua : org.getUserAccountDirectory().getUserAccountList()){
-                        if(ua.getUsername().equalsIgnoreCase(username)){
-                            order.setStatus("Assigned");
-                            order.setDeliveryManName(org.getOrgName());
-                            order.setDeliveryPhone(org.getOrgPhone());
-                            if(enterprise.getDeliveryOrderList() != null){
-                                enterprise.getDeliveryOrderList().add(order);
-				JOptionPane.showMessageDialog(jScrollPane1, "Delivery Man Assigned");
-                            }
-                            else{
-                                enterprise.newDeliveryOrdersList();
-                                enterprise.getDeliveryOrderList().add(order);
-				JOptionPane.showMessageDialog(jScrollPane1, "Delivery Man Assigned");
-                            }
-                        }
-                    }
-                }
-            }
-                
-        }//GEN-LAST:event_btnAssignDeliveryManActionPerformed
-
-        private void btnRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefreshActionPerformed
-            // TODO add your handling code here:
-            populateOrderTable();
-            populateDeliveryMenTable();
-                
-        }//GEN-LAST:event_btnRefreshActionPerformed
 
         private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
             userProcessContainer.remove(this);
@@ -259,19 +108,10 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAssignDeliveryMan;
     private javax.swing.JButton btnBack;
-    private javax.swing.JButton btnRefresh;
-    private javax.swing.JButton btnViewOrder;
-    private javax.swing.JTable deliveryJTable;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable orderJTable;
     // End of variables declaration//GEN-END:variables
 
