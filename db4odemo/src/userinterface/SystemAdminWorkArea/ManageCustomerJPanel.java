@@ -16,8 +16,10 @@ import Business.Customer.CustomerDirectory;
 import Business.EcoSystem;
 
 import Business.Enterprise.Enterprise;
+import Business.Network.Network;
 import java.awt.CardLayout;
 import java.awt.Component;
+import static java.time.Clock.system;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -106,6 +108,11 @@ public class ManageCustomerJPanel extends javax.swing.JPanel {
         deletebutton.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         deletebutton.setForeground(new java.awt.Color(255, 255, 255));
         deletebutton.setText("Delete Customer");
+        deletebutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deletebuttonActionPerformed(evt);
+            }
+        });
 
         refreshbutton.setBackground(new java.awt.Color(0, 102, 204));
         refreshbutton.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -204,6 +211,20 @@ public class ManageCustomerJPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
+
+    private void deletebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletebuttonActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = tblCustomer.getSelectedRow();
+        if(selectedRow < 0) {
+            JOptionPane.showMessageDialog(null,"Please Select a row from table first", "Warining", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        Customer customer = (Customer) tblCustomer.getValueAt(selectedRow, 0);
+        customerDirectory.deleteCustomer(customer);
+	JOptionPane.showMessageDialog(btnCreate, "Customer deleted from the database");
+        populateTable();
+    }//GEN-LAST:event_deletebuttonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

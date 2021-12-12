@@ -154,7 +154,7 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
         jLabel8.setText("Services");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 170, -1, -1));
 
-        clothingjComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buy Car", "Rent Car", "Uber/lyft service", "Buy Fabric", "Readymade cloths", "Tailor services", "Restaurants", "Frozen/Packaged", "Veggies/Fruits", "Medicines", "Hospitals", "Insuranse Plan Providers", "Doctors/Therapists", "Electronics Kit", "SPare parts", "Aceessories" }));
+        clothingjComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buy Car", "Rent Car", "Uber/lyft service", "Buy Fabric", "Readymade cloths", "Tailor services", "Restaurants", "Frozen/Packaged", "Veggies/Fruits", "Medicines", "Hospitals", "Insuranse Plan Providers", "Doctors/Therapists", "Electronics Kit", "Spare parts", "Acessories" }));
         clothingjComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clothingjComboBox1ActionPerformed(evt);
