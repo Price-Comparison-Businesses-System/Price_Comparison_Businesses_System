@@ -392,8 +392,10 @@ public class CreateCustomerJPanel extends javax.swing.JPanel {
                JOptionPane.showMessageDialog(this, "Customer phone number is empty","ERROR",JOptionPane.ERROR_MESSAGE);
                return;
         }
-        
-        if(tfPhoneNumber.getText().length() != 10){
+        boolean flagphone;
+        flagphone = phone.matches("^[0-9]{10}$");
+
+        if(!flagphone) {
             JOptionPane.showMessageDialog(this, "Phone Number must be 10 digits", "Warining", JOptionPane.WARNING_MESSAGE);
             return;
         }
