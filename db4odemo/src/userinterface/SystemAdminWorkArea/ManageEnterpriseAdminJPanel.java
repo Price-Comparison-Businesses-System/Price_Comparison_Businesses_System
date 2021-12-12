@@ -21,6 +21,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author sakshi
  * @author Netra
+ * @author tarushukla
  */
 public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 
@@ -179,10 +180,45 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 
     private void btnEnterpriseAdminAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterpriseAdminAddActionPerformed
         // TODO add your handling code here:
-        Enterprise enterprise = (Enterprise) enterpriseJComboBox.getSelectedItem();
+        Enterprise enterprise;
         String username = usernameJTextField.getText();
-        String password = String.valueOf(passwordJPasswordField.getPassword());
-        String name = nameJTextField.getText();
+        String password;
+        String name;
+        if(!usernameJTextField.getText().isEmpty()){
+               username = usernameJTextField.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "User Name is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+         if(!String.valueOf(passwordJPasswordField.getPassword()).isEmpty()){
+               password = String.valueOf(passwordJPasswordField.getPassword());
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Password is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+        if(!nameJTextField.getText().isEmpty()){
+               name = nameJTextField.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Name is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+        boolean flag1;
+        flag1 = name.matches("(?i)(^[a-z])((?![ .,'-]$)[a-z .,'-]){0,24}$");
+
+        if(!flag1) {
+            JOptionPane.showMessageDialog(this, "Enter valid name");
+            return;
+        }
+        if(!enterpriseJComboBox.getSelectedItem().toString().isEmpty()){
+               enterprise = (Enterprise) enterpriseJComboBox.getSelectedItem();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Enterprise is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
 //        Organization organization = (Organization) organizationJComboBox.getSelectedItem();
         boolean flag = enterprise.getUserAccountDirectory().checkIfUsernameIsUnique(username);
         if(flag == false){
@@ -203,6 +239,10 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
     private void btnEnterpriseAdminDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterpriseAdminDeleteActionPerformed
         // TODO add your handling code here:
         int selectedrow = enterpriseJTable.getSelectedRow();
+        if(selectedrow < 0) {
+            JOptionPane.showMessageDialog(null,"Please Select a row from table", "Warining", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
         String name = enterpriseJTable.getValueAt(selectedrow, 0).toString();
         for (Network n : system.getNetworkList()){
             Enterprise e = n.getEnterpriseDirectory().getEnterprise(name);

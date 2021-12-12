@@ -117,9 +117,6 @@
       </Constraints>
     </Component>
     <Component class="javax.swing.JTextField" name="transportsearch">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="ss"/>
-      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="130" y="70" width="160" height="-1"/>

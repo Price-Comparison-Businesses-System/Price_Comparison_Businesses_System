@@ -16,6 +16,7 @@ import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author sakshi
+ * @author  tarushukla
  */
 public class ManageNetworkJPanel extends javax.swing.JPanel {
 
@@ -108,8 +109,21 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
 
     private void btnAddNetworkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddNetworkActionPerformed
         // TODO add your handling code here:
-        String name = txtNetwork.getText();
+        String name;
+        if(!txtNetwork.getText().isEmpty()){
+               name = txtNetwork.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Network name is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+        boolean flag;
+        flag = name.matches("(?i)(^[a-z])((?![ .,'-]$)[a-z .,'-]){0,24}$");
 
+        if(!flag) {
+            JOptionPane.showMessageDialog(this, "Enter valid Network name");
+            return;
+        }
         Network network = system.createAndAddNetwork();
         network.setName(name);
 	    JOptionPane.showMessageDialog(btnAddNetwork, "Network Added Successfully");
@@ -123,6 +137,10 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
     private void btnDeleteNetwrokActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteNetwrokActionPerformed
         // TODO add your handling code here:
         int selectedrow = tblNetwork.getSelectedRow();
+        if(selectedrow < 0) {
+            JOptionPane.showMessageDialog(null,"Please Select a row from table", "Warining", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
         String name = tblNetwork.getValueAt(selectedrow, 0).toString();
         Network n = system.getNetwork(name);
         system.removeNetwork(n);

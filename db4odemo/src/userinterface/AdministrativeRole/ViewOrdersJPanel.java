@@ -84,7 +84,7 @@ public class ViewOrdersJPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setText("Order Details");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 1, 77, 28));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 1, 160, 28));
 
         jLabel3.setText("Order ID :");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 61, 80, 24));

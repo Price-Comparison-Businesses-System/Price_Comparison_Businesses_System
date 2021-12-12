@@ -249,38 +249,175 @@ public class CreateCustomerJPanel extends javax.swing.JPanel {
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
 
-        String name = tfFullName.getText();
-        String phone = tfPhoneNumber.getText();
-        int age = parseInt(tfAge.getText());
-        String streetaddress = tfStreetAddress.getText();
-        String emailaddress = tfEmail.getText();
-        String country = tfCountry.getText();
-        String city = tfCity.getText();
-        int zipcode = parseInt(tfZipcode.getText());
-        String username = tfUsername.getText();
-        String password = tfPassword.getText();
-
-        if(tfFullName.getText().isEmpty() || tfPhoneNumber.getText().isEmpty() || tfStreetAddress.getText().isEmpty() || tfAge.getText().isEmpty() || tfEmail.getText().isEmpty() || tfPassword.getText().isEmpty() || tfUsername.getText().isEmpty() || tfCountry.getText().isEmpty() || tfCity.getText().isEmpty() || tfZipcode.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null, "Please fill the empty fields", "Warining", JOptionPane.WARNING_MESSAGE);
-            return;
+        String name;
+        String phone;
+        int age =0;
+        String streetaddress;
+        String emailaddress;
+        String country;
+        String city;
+        int zipcode;
+        String username;
+        String password;
+    /**
+     * validation for customer name
+     */
+        if(!tfFullName.getText().isEmpty()){
+               name = tfFullName.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Customer name is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
         }
-        if(tfPhoneNumber.getText().length() != 10){
-            JOptionPane.showMessageDialog(null, "Phone Number must be 10 digits", "Warining", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        if(tfZipcode.getText().length() < 5 || tfZipcode.getText().length() > 6){
-            JOptionPane.showMessageDialog(null, "Zip code must be 5 or 6 digits", "Warining", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-
-        String email = tfEmail.getText();
-        boolean flag1;
-        flag1 = email.matches("^[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$");
+         boolean flag1;
+        flag1 = name.matches("(?i)(^[a-z])((?![ .,'-]$)[a-z .,'-]){0,24}$");
 
         if(!flag1) {
-            JOptionPane.showMessageDialog(null, "Email Address must be in format of username@email.com");
+            JOptionPane.showMessageDialog(this, "Enter valid Customer name");
             return;
         }
+     /**
+     * validation for customer age
+     */
+        try{
+        if(!tfAge.getText().isEmpty()){
+               age = parseInt(tfAge.getText());
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Customer age is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+         if(parseInt(tfAge.getText())<0){
+           JOptionPane.showMessageDialog(this, "customer age cannot be less than 0");
+            return;
+          }
+       } catch(NumberFormatException ex){ 
+            System.out.println(ex);
+          JOptionPane.showMessageDialog(this, "Customer age must be a number","ERROR",JOptionPane.ERROR_MESSAGE);
+
+            }
+    /**
+     * validation for customer email
+     */
+        if(!tfEmail.getText().isEmpty()){
+               emailaddress = tfEmail.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Customer email address is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+        String email = tfEmail.getText();
+        boolean flagemail;
+        flagemail = email.matches("^[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$");
+
+        if(!flagemail) {
+            JOptionPane.showMessageDialog(this, "Email Address must be in format of username@email.com");
+            return;
+        }
+    /**
+     * validation for customer phone number
+     */
+        if(!tfPhoneNumber.getText().isEmpty()){
+               phone = tfPhoneNumber.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Customer phone number is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+        boolean flagphone;
+        flagphone = phone.matches("^[0-9]{10}$");
+
+        if(!flagphone) {
+            JOptionPane.showMessageDialog(this, "Phone Number must be 10 digits", "Warining", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+   /**
+     * validation for customer phone address
+     */
+        if(!tfStreetAddress.getText().isEmpty()){
+               streetaddress = tfStreetAddress.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Customer street address is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+        boolean flagaddress;
+        flagaddress = streetaddress.matches("^[a-zA-Z0-9-/, .]{1,80}$");
+
+        if(!flagaddress) {
+            JOptionPane.showMessageDialog(this, "Enter valid street address name");
+            return;
+        }
+      /**
+     * validation for customer country
+     */
+         if(!tfCountry.getText().isEmpty()){
+               country = tfCountry.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Customer country is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+         boolean flagcountry;
+        flagcountry = country.matches("^[a-zA-Z]+(?:(?:\\s+|-)[a-zA-Z]+)*$");
+
+        if(!flagcountry) {
+            JOptionPane.showMessageDialog(this, "Enter valid country name");
+            return;
+        }
+        /**
+     * validation for customer city
+     */
+        if(!tfCity.getText().isEmpty()){
+               city = tfCity.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Customer city is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+        boolean flagcity;
+        flagcity = city.matches("^[a-zA-Z]+(?:(?:\\s+|-)[a-zA-Z]+)*$");
+
+        if(!flagcity) {
+            JOptionPane.showMessageDialog(this, "Enter valid city name");
+            return;
+        }
+    /**
+     * validation for customer zip code
+     */
+        if(!tfZipcode.getText().isEmpty()){
+               zipcode = parseInt(tfZipcode.getText());
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Customer zipcode is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+        
+        if(tfZipcode.getText().length() < 5 || tfZipcode.getText().length() > 6){
+            JOptionPane.showMessageDialog(this, "Zip code must be 5 or 6 digits", "Warining", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        if(!tfUsername.getText().isEmpty()){
+               username =tfUsername.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Customer user name is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+        if(!tfPassword.getText().isEmpty()){
+               password = tfPassword.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Customer password is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+//        if(tfFullName.getText().isEmpty() || tfPhoneNumber.getText().isEmpty() || tfStreetAddress.getText().isEmpty() || tfAge.getText().isEmpty() || tfEmail.getText().isEmpty() || tfPassword.getText().isEmpty() || tfUsername.getText().isEmpty() || tfCountry.getText().isEmpty() || tfCity.getText().isEmpty() || tfZipcode.getText().isEmpty()){
+//            JOptionPane.showMessageDialog(this, "Please fill the empty fields", "ERROR", JOptionPane.ERROR_MESSAGE);
+//            return;
+//        }
+        
+        
 
         for(Customer customer : ecosystem.getCustomerdirectory().getCustomerDir()) {
             if(customer.getcustomerEmail().equals(emailaddress)) {

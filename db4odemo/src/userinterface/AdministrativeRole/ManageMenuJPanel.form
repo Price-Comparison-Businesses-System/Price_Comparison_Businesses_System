@@ -257,8 +257,8 @@
                 <StringItem index="11" value="Insuranse Plan Providers"/>
                 <StringItem index="12" value="Doctors/Therapists"/>
                 <StringItem index="13" value="Electronics Kit"/>
-                <StringItem index="14" value="SPare parts"/>
-                <StringItem index="15" value="Aceessories"/>
+                <StringItem index="14" value="Spare parts"/>
+                <StringItem index="15" value="Acessories"/>
               </StringArray>
             </Property>
           </Properties>

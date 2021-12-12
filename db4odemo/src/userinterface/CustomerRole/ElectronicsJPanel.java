@@ -75,13 +75,11 @@ public class ElectronicsJPanel extends javax.swing.JPanel {
         electronicsJTableCart = new javax.swing.JTable();
         btnDeleteCart = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        searchcombo = new javax.swing.JButton();
+        searchcombo1 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         searchelectronicsJTable1 = new javax.swing.JTable();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        transportsearch.setText("ss");
         add(transportsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 160, -1));
 
         jLabel1.setText("Services :");
@@ -90,7 +88,7 @@ public class ElectronicsJPanel extends javax.swing.JPanel {
         jLabel2.setText("Search :");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, -1, -1));
 
-        electonicsjComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Electronics kit", "Spare parts", "Accessories" }));
+        electonicsjComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Electronics Kit", "Spare parts", "Acessories" }));
         electonicsjComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 electonicsjComboBox1ActionPerformed(evt);
@@ -109,7 +107,7 @@ public class ElectronicsJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Cloth Type", "Service", "Description", "Price", "Quantity", "Selller Name", "State"
+                "Item Name", "Description", "Price", "Service", "State", "Vendor Name", "Quantity"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -122,7 +120,7 @@ public class ElectronicsJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(electronicsJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 796, 110));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 796, 110));
         add(tfTotalPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 640, 72, -1));
 
         btnAddtoCart.setText("Add to cart ^");
@@ -161,7 +159,7 @@ public class ElectronicsJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                " Item name", "Description", "Price", "services K/S/A", "State", "Vendor name", "Quantity"
+                " Item name", "Description", "Price", "Services ", "State", "Vendor name", "Quantity"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -187,8 +185,13 @@ public class ElectronicsJPanel extends javax.swing.JPanel {
         jLabel6.setText("Total Amount");
         add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 640, -1, -1));
 
-        searchcombo.setText("Search");
-        add(searchcombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 130, -1, -1));
+        searchcombo1.setText("Search");
+        searchcombo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchcombo1ActionPerformed(evt);
+            }
+        });
+        add(searchcombo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 130, -1, -1));
 
         searchelectronicsJTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -196,7 +199,7 @@ public class ElectronicsJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Cloth Type", "Service", "Description", "Price", "Quantity", "Selller Name", "State"
+                "Item Name", "Description", "Price", "Service", "State", "Selller Name", "Quantity"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -209,7 +212,7 @@ public class ElectronicsJPanel extends javax.swing.JPanel {
         });
         jScrollPane3.setViewportView(searchelectronicsJTable1);
 
-        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, 796, 110));
+        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 796, 110));
     }// </editor-fold>//GEN-END:initComponents
 
     private void electonicsjComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_electonicsjComboBox1ActionPerformed
@@ -287,6 +290,29 @@ public class ElectronicsJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(electronicsJTableCart, "Order Confirmed");
         }
     }//GEN-LAST:event_btnorderActionPerformed
+
+    private void searchcombo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchcombo1ActionPerformed
+        // TODO add your handling code here:
+        electonicsjComboBox1.getSelectedItem();
+        System.out.println(electonicsjComboBox1.getSelectedItem());
+        DefaultTableModel model = (DefaultTableModel) searchelectronicsJTable1.getModel();
+        model.setRowCount(0);
+        for(int i=0;i<itemsDirectory.getItemsList().size();i++)
+        {
+            System.out.println("line 153");
+
+            if(itemsDirectory.getItemsList().get(i).getItemname().equals(transportsearch.getText()) && itemsDirectory.getItemsList().get(i).getItemservices().equals(electonicsjComboBox1.getSelectedItem()) ){
+                System.out.println("taru ki line ");
+                System.out.println("line156 "+ itemsDirectory.getItemsList().get(i).getItemname());
+                Object[] object={itemsDirectory.getItemsList().get(i).getItemname(),itemsDirectory.getItemsList().get(i).getItemdesc(),
+                    itemsDirectory.getItemsList().get(i).getItemprice(),itemsDirectory.getItemsList().get(i).getItemservices(),
+                    itemsDirectory.getItemsList().get(i).getItemstate()
+                    ,itemsDirectory.getItemsList().get(i).getItemsellertailorname(),itemsDirectory.getItemsList().get(i).getItemquantity()};
+                model.addRow(object);
+
+            }
+        }
+    }//GEN-LAST:event_searchcombo1ActionPerformed
     private void searchcomboActionPerformed(java.awt.event.ActionEvent evt) {                                            
         // TODO add your handling code here:
         electonicsjComboBox1.getSelectedItem();
@@ -326,7 +352,7 @@ public class ElectronicsJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JButton searchcombo;
+    private javax.swing.JButton searchcombo1;
     private javax.swing.JTable searchelectronicsJTable1;
     private javax.swing.JTextField tfTotalPrice;
     private javax.swing.JTextField transportsearch;

@@ -70,16 +70,22 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
         btnFoodProducts = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+        setForeground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(1000, 1000));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnTransport.setFont(new java.awt.Font("SansSerif", 3, 12)); // NOI18N
         btnTransport.setText("Transport");
+        btnTransport.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnTransport.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTransportActionPerformed(evt);
             }
         });
-        add(btnTransport, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 100, 134, -1));
+        add(btnTransport, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 110, 134, -1));
 
+        refreshTestJButton.setFont(new java.awt.Font("SansSerif", 3, 12)); // NOI18N
         refreshTestJButton.setText("Refresh");
         refreshTestJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,44 +94,48 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
         });
         add(refreshTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(533, 28, -1, -1));
 
-        enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        enterpriseLabel.setText("Welcome ");
-        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 27, -1, 30));
+        enterpriseLabel.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
+        enterpriseLabel.setText("Hello");
+        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 60, 30));
 
+        btnClothing.setFont(new java.awt.Font("SansSerif", 3, 12)); // NOI18N
         btnClothing.setText("Clothing");
         btnClothing.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClothingActionPerformed(evt);
             }
         });
-        add(btnClothing, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 141, 134, -1));
+        add(btnClothing, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 150, 134, -1));
 
+        btnHealthCare.setFont(new java.awt.Font("SansSerif", 3, 12)); // NOI18N
         btnHealthCare.setText("Healthcare");
         btnHealthCare.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHealthCareActionPerformed(evt);
             }
         });
-        add(btnHealthCare, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 182, 134, -1));
+        add(btnHealthCare, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 190, 134, -1));
 
+        btnElectronics.setFont(new java.awt.Font("SansSerif", 3, 12)); // NOI18N
         btnElectronics.setText("Electronics");
         btnElectronics.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnElectronicsActionPerformed(evt);
             }
         });
-        add(btnElectronics, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 223, 134, -1));
+        add(btnElectronics, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 230, 134, -1));
 
+        btnFoodProducts.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
         btnFoodProducts.setText("Food Products");
         btnFoodProducts.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFoodProductsActionPerformed(evt);
             }
         });
-        add(btnFoodProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 258, -1, -1));
+        add(btnFoodProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 270, 140, -1));
 
         jLabel1.setText("<value>");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 80, 20));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 80, 20));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnTransportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransportActionPerformed

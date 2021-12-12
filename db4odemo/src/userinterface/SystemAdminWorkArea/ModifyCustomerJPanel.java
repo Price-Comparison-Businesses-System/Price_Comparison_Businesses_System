@@ -8,6 +8,7 @@ package userinterface.SystemAdminWorkArea;
 import Business.Customer.Customer;
 import Business.Customer.CustomerDirectory;
 import Business.EcoSystem;
+import Business.Role.CustomerRole;
 import java.awt.CardLayout;
 import java.awt.Component;
 import static java.lang.Integer.parseInt;
@@ -218,51 +219,120 @@ public class ModifyCustomerJPanel extends javax.swing.JPanel {
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
-        if(tfFullName.getText().isEmpty() || tfPhoneNumber.getText().isEmpty() || tfStreetAddress.getText().isEmpty() || tfAge.getText().isEmpty() || tfEmail.getText().isEmpty() || tfCountry.getText().isEmpty() || tfCity.getText().isEmpty() || tfZipcode.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null, "Please fill the empty fields", "Warining", JOptionPane.WARNING_MESSAGE);
+        String name;
+        int age;
+         String emailaddress;
+          String phone;
+          String streetaddress;
+        String country ;
+        String city ;
+        int zipcode;
+        if(!tfFullName.getText().isEmpty()){
+               name = tfFullName.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Customer name is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+        boolean flag1;
+        flag1 = name.matches("(?i)(^[a-z])((?![ .,'-]$)[a-z .,'-]){0,24}$");
+
+        if(!flag1) {
+            JOptionPane.showMessageDialog(this, "Enter valid Customer name");
             return;
         }
+        if(!tfAge.getText().isEmpty()){
+               age = parseInt(tfAge.getText());
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Customer age is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+        if(parseInt(tfAge.getText())<0){
+           JOptionPane.showMessageDialog(this, "customer age cannot be less than 0");
+            return;
+          }
+        if(!tfEmail.getText().isEmpty()){
+               emailaddress = tfEmail.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Customer email address is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+        String email = tfEmail.getText();
+        boolean flagemail;
+        flagemail = email.matches("^[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$");
 
-        //        boolean flag ;
-        //
-        //        String phoneNumber = txtPhoneNumber.getText();
-        //
-        //        if(phoneNumber.length() != 10) {
-            //            JOptionPane.showMessageDialog(null, "PhoneNumber must be of 10 digits");
-            //            return;
-            //        }
-        //        flag = phoneNumber.matches("^[0-9]+$");
-        //        if(!flag) {
-            //            JOptionPane.showMessageDialog(null, "Phone Number must have digits only");
-            //            return;
-            //        }
-        //        for(Customer customer : customerDirectory.getCustomerDirectory()) {
-            //            if(customer.getPhoneNumber().equals(phoneNumber) && this.customer != customer) {
-                //                JOptionPane.showMessageDialog(null, "Phone Number already exists");
-                //            }
-            //        }
-        //
-        //        int age = 0;
-        //
-        //        try {
-            //
-            //            age = Integer.parseInt(txtAge.getText());
-            //
-            //        } catch(Exception e) {
-            //            JOptionPane.showMessageDialog(null, "Age must have integers only");
-            //            return;
-            //        }
-        //
+        if(!flagemail) {
+            JOptionPane.showMessageDialog(this, "Email Address must be in format of username@email.com");
+            return;
+        }
+        if(!tfPhoneNumber.getText().isEmpty()){
+               phone = tfPhoneNumber.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Customer phone number is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+        
+        if(tfPhoneNumber.getText().length() != 10){
+            JOptionPane.showMessageDialog(this, "Phone Number must be 10 digits", "Warining", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        if(!tfStreetAddress.getText().isEmpty()){
+               streetaddress = tfStreetAddress.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Customer street address is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+        boolean flagaddress;
+        flagaddress = streetaddress.matches("^[a-zA-Z0-9-/, .]{1,80}$");
 
-        String name = tfFullName.getText();
-        String phone = tfPhoneNumber.getText();
-        int age = parseInt(tfAge.getText());
-        String streetaddress = tfStreetAddress.getText();
-        String emailaddress = tfEmail.getText();
-        String country = tfCountry.getText();
-        String city = tfCity.getText();
-        int zipcode = parseInt(tfZipcode.getText());
+        if(!flagaddress) {
+            JOptionPane.showMessageDialog(this, "Enter valid street address name");
+            return;
+        }
+        if(!tfCountry.getText().isEmpty()){
+               country = tfCountry.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Customer country is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+                 boolean flagcountry;
+        flagcountry = country.matches("^[a-zA-Z]+(?:(?:\\s+|-)[a-zA-Z]+)*$");
 
+        if(!flagcountry) {
+            JOptionPane.showMessageDialog(this, "Enter valid country name");
+            return;
+        }
+        if(!tfCity.getText().isEmpty()){
+               city = tfCity.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Customer city is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+        boolean flagcity;
+        flagcity = city.matches("^[a-zA-Z]+(?:(?:\\s+|-)[a-zA-Z]+)*$");
+
+        if(!flagcity) {
+            JOptionPane.showMessageDialog(this, "Enter valid city name");
+            return;
+        }
+        if(!tfZipcode.getText().isEmpty()){
+               zipcode = parseInt(tfZipcode.getText());
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Customer zipcode is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+        
+        if(tfZipcode.getText().length() < 5 || tfZipcode.getText().length() > 6){
+            JOptionPane.showMessageDialog(this, "Zip code must be 5 or 6 digits", "Warining", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
         customer.setcustomerAge(age);
         customer.setcustomerName(name);
         customer.setcustomerEmail(emailaddress);
@@ -272,7 +342,7 @@ public class ModifyCustomerJPanel extends javax.swing.JPanel {
         customer.setcustomerZipcode(zipcode);
         customer.setcustomerPhone(phone);
 
-        JOptionPane.showMessageDialog(null, "Customer Profile Updated");
+        JOptionPane.showMessageDialog(this, "Customer Profile Updated");
         tfFullName.setText("");
         tfPhoneNumber.setText("");
         tfAge.setText("");

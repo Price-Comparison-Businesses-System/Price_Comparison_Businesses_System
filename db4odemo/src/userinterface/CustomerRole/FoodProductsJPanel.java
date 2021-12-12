@@ -103,8 +103,6 @@ public class FoodProductsJPanel extends javax.swing.JPanel {
 
         jLabel1.setText("Services :");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 100, 70, 19));
-
-        transportsearch.setText("ss");
         add(transportsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 160, -1));
 
         jLabel2.setText("Search :");
@@ -151,7 +149,7 @@ public class FoodProductsJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                " Item name", "Description", "Price", "services F/V/R", "State", "Vendor name", "Quantity"
+                " Item name", "Description", "Price", "Services ", "State", "Vendor name", "Quantity"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -164,7 +162,7 @@ public class FoodProductsJPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(foodProductsJTableCart);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 796, 140));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 450, 796, 140));
 
         btnDeleteCart.setText("Delete from cart");
         btnDeleteCart.addActionListener(new java.awt.event.ActionListener() {
@@ -187,6 +185,11 @@ public class FoodProductsJPanel extends javax.swing.JPanel {
         add(tfTotalPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 610, 72, -1));
 
         searchcombo.setText("Search");
+        searchcombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchcomboActionPerformed(evt);
+            }
+        });
         add(searchcombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 100, -1, -1));
 
         searchfoodProductsTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -208,7 +211,7 @@ public class FoodProductsJPanel extends javax.swing.JPanel {
         });
         jScrollPane3.setViewportView(searchfoodProductsTable1);
 
-        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, 796, 110));
+        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 796, 110));
     }// </editor-fold>//GEN-END:initComponents
 
     private void foodProductsjComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_foodProductsjComboBox1ActionPerformed
