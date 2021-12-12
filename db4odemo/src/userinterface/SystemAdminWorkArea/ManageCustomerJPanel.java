@@ -57,8 +57,10 @@ public class ManageCustomerJPanel extends javax.swing.JPanel {
         deletebutton = new javax.swing.JButton();
         refreshbutton = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(0, 0, 0));
+        setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tblCustomer.setForeground(new java.awt.Color(0, 102, 204));
         tblCustomer.setModel(new javax.swing.table.DefaultTableModel(
@@ -82,6 +84,8 @@ public class ManageCustomerJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblCustomer);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 777, 225));
+
         btnModify.setBackground(new java.awt.Color(0, 102, 204));
         btnModify.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         btnModify.setForeground(new java.awt.Color(255, 255, 255));
@@ -91,6 +95,7 @@ public class ManageCustomerJPanel extends javax.swing.JPanel {
                 btnModifyActionPerformed(evt);
             }
         });
+        add(btnModify, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 480, 165, -1));
 
         btnCreate.setBackground(new java.awt.Color(0, 102, 204));
         btnCreate.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -101,11 +106,13 @@ public class ManageCustomerJPanel extends javax.swing.JPanel {
                 btnCreateActionPerformed(evt);
             }
         });
+        add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, 165, -1));
 
         deletebutton.setBackground(new java.awt.Color(0, 102, 204));
         deletebutton.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         deletebutton.setForeground(new java.awt.Color(255, 255, 255));
         deletebutton.setText("Delete Customer");
+        add(deletebutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 480, -1, -1));
 
         refreshbutton.setBackground(new java.awt.Color(0, 102, 204));
         refreshbutton.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -116,6 +123,7 @@ public class ManageCustomerJPanel extends javax.swing.JPanel {
                 refreshbuttonActionPerformed(evt);
             }
         });
+        add(refreshbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 80, -1, -1));
 
         btnBack.setBackground(new java.awt.Color(0, 102, 204));
         btnBack.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -126,44 +134,11 @@ public class ManageCustomerJPanel extends javax.swing.JPanel {
                 btnBackActionPerformed(evt);
             }
         });
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 80, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(292, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnBack)
-                        .addGap(18, 18, 18)
-                        .addComponent(refreshbutton))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnModify, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(141, 141, 141)
-                            .addComponent(deletebutton))
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 777, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(209, 209, 209))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(196, 196, 196)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(refreshbutton)
-                    .addComponent(btnBack))
-                .addGap(71, 71, 71)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(deletebutton)
-                    .addComponent(btnModify)
-                    .addComponent(btnCreate))
-                .addGap(94, 94, 94))
-        );
+        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/Icons/icons/custdesk.jpeg"))); // NOI18N
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 60, 330, 490));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifyActionPerformed
@@ -211,6 +186,7 @@ public class ManageCustomerJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnCreate;
     private javax.swing.JButton btnModify;
     private javax.swing.JButton deletebutton;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton refreshbutton;
     private javax.swing.JTable tblCustomer;
