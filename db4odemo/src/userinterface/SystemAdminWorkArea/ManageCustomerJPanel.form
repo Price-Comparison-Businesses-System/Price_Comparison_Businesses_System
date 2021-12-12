@@ -194,6 +194,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Delete Customer"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deletebuttonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="refreshbutton">
       <Properties>

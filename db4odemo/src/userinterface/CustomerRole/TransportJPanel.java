@@ -85,12 +85,12 @@ public class TransportJPanel extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         searchtransportJTable1 = new javax.swing.JTable();
-        searchcombo = new javax.swing.JButton();
+        searchcombo1 = new javax.swing.JButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setText("Transport");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, -1, -1));
 
         btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
@@ -106,7 +106,7 @@ public class TransportJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                " Item name", "Description", "Price", "services F/R/T", "State", "seller/tailor name", "Quantity"
+                " Item name", "Description", "Price", "Services ", "State", "seller/tailor name", "Quantity"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -122,15 +122,13 @@ public class TransportJPanel extends javax.swing.JPanel {
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 796, 100));
 
         jLabel1.setText("Services :");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, 70, 19));
-
-        transportsearch.setText("ss");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, 70, 19));
         add(transportsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 160, -1));
 
         jLabel2.setText("Search :");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, -1, -1));
 
-        clothingjComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buy Fabric", "Readymade cloths", "Tailor services" }));
+        clothingjComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buy Car", "Rent Car", "Uber/lyft service" }));
         clothingjComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 clothingjComboBox1ActionPerformed(evt);
@@ -141,7 +139,7 @@ public class TransportJPanel extends javax.swing.JPanel {
                 clothingjComboBox1KeyPressed(evt);
             }
         });
-        add(clothingjComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, 160, -1));
+        add(clothingjComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, 160, -1));
 
         btnAddtoCart.setText("Add to cart ^");
         btnAddtoCart.addActionListener(new java.awt.event.ActionListener() {
@@ -160,7 +158,7 @@ public class TransportJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                " Item name", "Description", "Price", "services M/H/D/I", "State", "Vendor name", "Quantity"
+                " Item name", "Description", "Price", "Services ", "State", "Vendor name", "Quantity"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -216,8 +214,13 @@ public class TransportJPanel extends javax.swing.JPanel {
 
         add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, 796, 100));
 
-        searchcombo.setText("Search");
-        add(searchcombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 110, -1, -1));
+        searchcombo1.setText("Search");
+        searchcombo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchcombo1ActionPerformed(evt);
+            }
+        });
+        add(searchcombo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 110, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -238,7 +241,7 @@ public class TransportJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_clothingjComboBox1KeyPressed
 
-    private void searchcomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchcomboActionPerformed
+    private void searchcombo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchcombo1ActionPerformed
         // TODO add your handling code here:
         clothingjComboBox1.getSelectedItem();
         System.out.println(clothingjComboBox1.getSelectedItem());
@@ -259,7 +262,7 @@ public class TransportJPanel extends javax.swing.JPanel {
 
             }
         }
-    }//GEN-LAST:event_searchcomboActionPerformed
+    }//GEN-LAST:event_searchcombo1ActionPerformed
     private void btnAddtoCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddtoCartActionPerformed
         // TODO add your handling code here:
         int selectedRowIndex = searchtransportJTable1.getSelectedRow();
@@ -333,7 +336,7 @@ public class TransportJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JButton searchcombo;
+    private javax.swing.JButton searchcombo1;
     private javax.swing.JTable searchtransportJTable1;
     private javax.swing.JTextField tfTotalPrice;
     private javax.swing.JTable transportJTable;

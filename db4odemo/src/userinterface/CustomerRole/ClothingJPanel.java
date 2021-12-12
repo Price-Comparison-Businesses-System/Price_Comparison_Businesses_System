@@ -129,8 +129,6 @@ public class ClothingJPanel extends javax.swing.JPanel {
 
         jLabel2.setText("Search :");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, -1, -1));
-
-        transportsearch.setText("ss");
         add(transportsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 160, -1));
 
         btnAddtoCart.setText("Add to cart ^");
