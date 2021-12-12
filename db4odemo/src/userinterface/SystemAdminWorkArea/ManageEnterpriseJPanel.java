@@ -339,7 +339,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         }
 
         if(nameJTextField.getText().isEmpty() || tfPhoneNumber.getText().isEmpty() || tfStreetAddress.getText().isEmpty() || tfEmail.getText().isEmpty() || tfCountry.getText().isEmpty() || tfCity.getText().isEmpty() || tfZipcode.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null, "Please fill the empty fields", "Warining", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Please fill the empty fields", "ERROR",JOptionPane.ERROR_MESSAGE);
             return;
         }
         if(tfPhoneNumber.getText().length() != 10){
