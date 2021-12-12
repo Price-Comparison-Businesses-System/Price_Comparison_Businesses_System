@@ -238,13 +238,12 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
             String itemPrice = tfPrice.getText();
             int itemQuantity = parseInt(txtQuantity.getText());
             
-//            String state = txtState.getText();
-//            String sellertailorname = txtSellerTailorName.getText();
-//            String services = clothingjComboBox1.getSelectedItem().toString();
+           String sellertailorname = txtSellerTailorName.getText();
+            String services = clothingjComboBox1.getSelectedItem().toString();
+            String state = txtState.getText();
             
-//            Items item = itemsdir.addItem(itemName, itemDesc, itemPrice, itemQuantity, state, sellertailorname, services);
-	    
-           // Items item = itemsdir.addItem(itemName, itemDesc, itemPrice, itemQuantity);
+            Items item = itemsdir.addItem(itemName, itemDesc, itemPrice, itemQuantity, state, sellertailorname, services);   
+
             JOptionPane.showMessageDialog(jPanel1, "Item added to the Menu");
             populateTable();
 	    tfPrice.setText("");
@@ -301,9 +300,9 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
             row[0] = i.getItemname();
             row[1] = i.getItemdesc();
             row[2] = i.getItemprice();
-//            row[3] = i.getItemservices();
-//            row[4] = i.getItemstate();
-//            row[5] = i.getItemsellertailorname();
+            row[3] = i.getItemservices();
+            row[4] = i.getItemstate();
+            row[5] = i.getItemsellertailorname();
             row[6] = i.getItemquantity();
             
             
