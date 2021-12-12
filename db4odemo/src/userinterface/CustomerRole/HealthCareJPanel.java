@@ -12,15 +12,19 @@ import Business.Enterprise.Enterprise;
 import Business.ItemCatalogue.Items;
 import Business.ItemCatalogue.ItemsDirectory;
 import Business.Network.Network;
+import Business.Orders.Orders;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
+import static java.lang.Integer.parseInt;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
 /**
- *
+ *@author netra
  * @author sakshi
  */
 public class HealthCareJPanel extends javax.swing.JPanel {
@@ -37,10 +41,15 @@ public class HealthCareJPanel extends javax.swing.JPanel {
     private CustomerDirectory customerDirectory;
     private Items items;
     private ItemsDirectory itemsDirectory;
+    private ArrayList<Items> orderItems = new ArrayList<Items>();
+    
+    private ArrayList<Orders> orderplaced = new ArrayList<Orders>();
+        //private Enterprise enterprise;
+         private Orders order;
     /**
      * Creates new form DoctorWorkAreaJPanel
      */
-    public HealthCareJPanel(JPanel userProcessContainer, EcoSystem ecosystem, Customer customer) {
+    public HealthCareJPanel(JPanel userProcessContainer, EcoSystem ecosystem, Customer customer, Enterprise enterprise ) {
        initComponents();
         this.userProcessContainer = userProcessContainer;
           this.ecosystem = ecosystem;
@@ -65,9 +74,20 @@ public class HealthCareJPanel extends javax.swing.JPanel {
         hospitalsjComboBox1 = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
+<<<<<<< HEAD
+        btnAddtoCart = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        healthcareJTableCart = new javax.swing.JTable();
+        btnDeleteCart = new javax.swing.JButton();
+        btnorder = new javax.swing.JButton();
+        tfTotalPrice = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+=======
         searchcombo = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         searchhealthcareJTable1 = new javax.swing.JTable();
+>>>>>>> main
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -90,7 +110,11 @@ public class HealthCareJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(healthcareJTable);
 
+<<<<<<< HEAD
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 209, 796, 110));
+=======
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 830, 90));
+>>>>>>> main
 
         jLabel1.setText("Services :");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 70, 19));
@@ -123,6 +147,20 @@ public class HealthCareJPanel extends javax.swing.JPanel {
         });
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
 
+<<<<<<< HEAD
+        btnAddtoCart.setText("Add to cart ^");
+        btnAddtoCart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddtoCartActionPerformed(evt);
+            }
+        });
+        add(btnAddtoCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 330, -1, -1));
+
+        jLabel4.setText("Your Cart");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 420, -1, -1));
+
+        healthcareJTableCart.setModel(new javax.swing.table.DefaultTableModel(
+=======
         searchcombo.setText("Search");
         searchcombo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,25 +170,60 @@ public class HealthCareJPanel extends javax.swing.JPanel {
         add(searchcombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 130, -1, -1));
 
         searchhealthcareJTable1.setModel(new javax.swing.table.DefaultTableModel(
+>>>>>>> main
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null}
             },
             new String [] {
+<<<<<<< HEAD
+                " Item name", "Description", "Price", "services M/H/D/I", "State", "Vendor name", "Quantity"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, true, true
+=======
                 "Cloth Type", "Service", "Description", "Price", "Quantity", "Selller Name", "State"
             }
         ) {
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false, false
+>>>>>>> main
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
+<<<<<<< HEAD
+        jScrollPane2.setViewportView(healthcareJTableCart);
+
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 796, 140));
+
+        btnDeleteCart.setText("Delete from cart");
+        btnDeleteCart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteCartActionPerformed(evt);
+            }
+        });
+        add(btnDeleteCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 600, -1, -1));
+
+        btnorder.setText("Order");
+        btnorder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnorderActionPerformed(evt);
+            }
+        });
+        add(btnorder, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 600, -1, -1));
+        add(tfTotalPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 610, 72, -1));
+
+        jLabel6.setText("Total Amount");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 610, -1, -1));
+=======
         jScrollPane2.setViewportView(searchhealthcareJTable1);
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 440, 830, 90));
+>>>>>>> main
     }// </editor-fold>//GEN-END:initComponents
 
     private void hospitalsjComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hospitalsjComboBox1ActionPerformed
@@ -171,6 +244,61 @@ public class HealthCareJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
+<<<<<<< HEAD
+    private void btnAddtoCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddtoCartActionPerformed
+        // TODO add your handling code here:
+        int selectedRowIndex = healthcareJTable.getSelectedRow();
+
+        if (selectedRowIndex<0){
+            JOptionPane.showMessageDialog(this, "Please select a row!");
+            return;
+        }
+
+        Items item =itemsDirectory.getItem(healthcareJTable.getValueAt(selectedRowIndex, 0).toString());
+        orderItems.add(item);
+        JOptionPane.showMessageDialog(healthcareJTableCart, "Item Added to cart");
+        populatecart();
+
+        
+    }//GEN-LAST:event_btnAddtoCartActionPerformed
+
+    private void btnDeleteCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteCartActionPerformed
+        int selectedCartRow = healthcareJTableCart.getSelectedRow();
+        if(selectedCartRow<0){
+            JOptionPane.showMessageDialog(null,"Select a row","Warning",JOptionPane.WARNING_MESSAGE);
+        }
+        Items item = itemsDirectory.getItem(healthcareJTable.getValueAt(selectedCartRow, 0).toString());
+        orderItems.remove(item);
+        JOptionPane.showMessageDialog(healthcareJTableCart, "Item Deleted");
+    }//GEN-LAST:event_btnDeleteCartActionPerformed
+
+    private void btnorderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnorderActionPerformed
+        // TODO add your handling code here:
+        int total = 0;
+         System.out.println("WWW"+enterprise.getEnterpriseType());
+        
+           
+            for(Items i : orderItems){
+                total = total + parseInt(i.getItemprice());
+            }
+           order = new Orders(enterprise.getEnterpriseType().toString(), customer.getcustomerName(), orderItems, total, customer.getcustomerStreetAddress(), enterprise.getOrgAddress());
+          
+            orderplaced.add(order);
+            
+            if(customer.getOrderslist() != null){
+                customer.getOrderslist().add(order);
+                ArrayList<Orders> arr=enterprise.getOrders();
+                arr.add(order);
+                enterprise.setOrders(arr);//set the list
+		JOptionPane.showMessageDialog(healthcareJTableCart, "Order Confirmed");
+            }
+            else{
+                customer.newOrderslist();
+                customer.getOrderslist().add(order);
+		JOptionPane.showMessageDialog(healthcareJTableCart, "Order Confirmed");
+            }
+    }//GEN-LAST:event_btnorderActionPerformed
+=======
     private void searchcomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchcomboActionPerformed
         // TODO add your handling code here:
         hospitalsjComboBox1.getSelectedItem();
@@ -193,19 +321,30 @@ public class HealthCareJPanel extends javax.swing.JPanel {
             }
         }
     }//GEN-LAST:event_searchcomboActionPerformed
+>>>>>>> main
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAddtoCart;
     private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnDeleteCart;
+    private javax.swing.JButton btnorder;
     private javax.swing.JTable healthcareJTable;
+    private javax.swing.JTable healthcareJTableCart;
     private javax.swing.JComboBox<String> hospitalsjComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+<<<<<<< HEAD
+    private javax.swing.JTextField tfTotalPrice;
+=======
     private javax.swing.JButton searchcombo;
     private javax.swing.JTable searchhealthcareJTable1;
+>>>>>>> main
     private javax.swing.JTextField transportsearch;
     // End of variables declaration//GEN-END:variables
 private void populateTable() {
@@ -215,6 +354,7 @@ private void populateTable() {
                
                
                       itemsDirectory=e.getItemsDirectory();
+                       enterprise=e;
                   
               }
              
@@ -242,4 +382,25 @@ private void populateTable() {
             
         }
     }
+
+    private void populatecart() {
+        int total = 0;
+            for(Items i : orderItems){
+                total = total + parseInt(i.getItemprice());
+            }
+            tfTotalPrice.setText(String.valueOf(total));
+        DefaultTableModel model = (DefaultTableModel) healthcareJTableCart.getModel();
+        model.setRowCount(0);
+        for(Items i : orderItems){
+            Object[] row = new Object[7];
+            row[0] = i.getItemname();
+            row[1] = i.getItemdesc();
+            row[2] = i.getItemprice();
+            row[3] = i.getItemservices();
+            row[4] = i.getItemstate();
+            row[5] = i.getItemsellertailorname();
+            row[6] = i.getItemquantity();
+            
+            model.addRow(row);
+        }   }
 }

@@ -12,10 +12,14 @@ import Business.Enterprise.Enterprise;
 import Business.ItemCatalogue.Items;
 import Business.ItemCatalogue.ItemsDirectory;
 import Business.Network.Network;
+import Business.Orders.Orders;
 import Business.Organization.Organization;
 import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
+import static java.lang.Integer.parseInt;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -37,10 +41,15 @@ public class TransportJPanel extends javax.swing.JPanel {
     private CustomerDirectory customerDirectory;
     private Items items;
     private ItemsDirectory itemsDirectory;
+    private ArrayList<Items> orderItems = new ArrayList<Items>();
+    
+    private ArrayList<Orders> orderplaced = new ArrayList<Orders>();
+        
+         private Orders order;
     /**
      * Creates new form DoctorWorkAreaJPanel
      */
-    public TransportJPanel(JPanel userProcessContainer, EcoSystem ecosystem, Customer customer) {
+    public TransportJPanel(JPanel userProcessContainer, EcoSystem ecosystem, Customer customer, Enterprise enterprise) {
        initComponents();
         this.userProcessContainer = userProcessContainer;
           this.ecosystem = ecosystem;
@@ -65,9 +74,20 @@ public class TransportJPanel extends javax.swing.JPanel {
         transportsearch = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         clothingjComboBox1 = new javax.swing.JComboBox<>();
+<<<<<<< HEAD
+        btnAddtoCart = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        transportJTableCart = new javax.swing.JTable();
+        btnDeleteCart = new javax.swing.JButton();
+        btnorder = new javax.swing.JButton();
+        tfTotalPrice = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+=======
         jScrollPane2 = new javax.swing.JScrollPane();
         searchtransportJTable1 = new javax.swing.JTable();
         searchcombo = new javax.swing.JButton();
+>>>>>>> main
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -123,13 +143,32 @@ public class TransportJPanel extends javax.swing.JPanel {
         });
         add(clothingjComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 160, -1));
 
+<<<<<<< HEAD
+        btnAddtoCart.setText("Add to cart ^");
+        btnAddtoCart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddtoCartActionPerformed(evt);
+            }
+        });
+        add(btnAddtoCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 330, -1, -1));
+
+        jLabel4.setText("Your Cart");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 420, -1, -1));
+
+        transportJTableCart.setModel(new javax.swing.table.DefaultTableModel(
+=======
         searchtransportJTable1.setModel(new javax.swing.table.DefaultTableModel(
+>>>>>>> main
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null}
             },
             new String [] {
+<<<<<<< HEAD
+                " Item name", "Description", "Price", "services M/H/D/I", "State", "Vendor name", "Quantity"
+=======
                 " Item name", "Description", "Price", "services F/R/T", "State", "seller/tailor name", "Quantity"
+>>>>>>> main
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -140,6 +179,31 @@ public class TransportJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+<<<<<<< HEAD
+        jScrollPane2.setViewportView(transportJTableCart);
+
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 450, 796, 140));
+
+        btnDeleteCart.setText("Delete from cart");
+        btnDeleteCart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteCartActionPerformed(evt);
+            }
+        });
+        add(btnDeleteCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 600, -1, -1));
+
+        btnorder.setText("Order");
+        btnorder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnorderActionPerformed(evt);
+            }
+        });
+        add(btnorder, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 600, -1, -1));
+        add(tfTotalPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 600, 72, -1));
+
+        jLabel6.setText("Total Amount");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 600, -1, -1));
+=======
         jScrollPane2.setViewportView(searchtransportJTable1);
 
         add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 430, 790, 140));
@@ -151,6 +215,7 @@ public class TransportJPanel extends javax.swing.JPanel {
             }
         });
         add(searchcombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 130, -1, -1));
+>>>>>>> main
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -171,6 +236,66 @@ public class TransportJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_clothingjComboBox1KeyPressed
 
+<<<<<<< HEAD
+    private void btnAddtoCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddtoCartActionPerformed
+        // TODO add your handling code here:
+        int selectedRowIndex = transportJTable.getSelectedRow();
+
+        if (selectedRowIndex<0){
+            JOptionPane.showMessageDialog(this, "Please select a row!");
+            return;
+        }
+
+        Items item =itemsDirectory.getItem(transportJTable.getValueAt(selectedRowIndex, 0).toString());
+        orderItems.add(item);
+        JOptionPane.showMessageDialog(transportJTableCart, "Item Added to cart");
+        populatecart();
+
+        //        else {
+            //            // Dishes item=(Dishes)menuTable.getValueAt(selectedRow, 0);
+            //
+            //            Items cartitems =(Items)clothingJTable1.getValueAt(2, 0);
+            //            populatecart(cartitems);
+            //        }
+    }//GEN-LAST:event_btnAddtoCartActionPerformed
+
+    private void btnDeleteCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteCartActionPerformed
+        int selectedCartRow = transportJTableCart.getSelectedRow();
+        if(selectedCartRow<0){
+            JOptionPane.showMessageDialog(null,"Select a row","Warning",JOptionPane.WARNING_MESSAGE);
+        }
+        Items item = itemsDirectory.getItem(transportJTable.getValueAt(selectedCartRow, 0).toString());
+        orderItems.remove(item);
+        JOptionPane.showMessageDialog(transportJTableCart, "Item Deleted");
+    }//GEN-LAST:event_btnDeleteCartActionPerformed
+
+    private void btnorderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnorderActionPerformed
+        // TODO add your handling code here:
+        int total = 0;
+         System.out.println("WWW"+enterprise.getEnterpriseType());
+        
+           
+            for(Items i : orderItems){
+                total = total + parseInt(i.getItemprice());
+            }
+           order = new Orders(enterprise.getEnterpriseType().toString(), customer.getcustomerName(), orderItems, total, customer.getcustomerStreetAddress(), enterprise.getOrgAddress());
+          
+            orderplaced.add(order);
+            
+            if(customer.getOrderslist() != null){
+                customer.getOrderslist().add(order);
+                ArrayList<Orders> arr=enterprise.getOrders();
+                arr.add(order);
+                enterprise.setOrders(arr);//set the list
+		JOptionPane.showMessageDialog(transportJTableCart, "Order Confirmed");
+            }
+            else{
+                customer.newOrderslist();
+                customer.getOrderslist().add(order);
+		JOptionPane.showMessageDialog(transportJTableCart, "Order Confirmed");
+            }
+    }//GEN-LAST:event_btnorderActionPerformed
+=======
     private void searchcomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchcomboActionPerformed
         // TODO add your handling code here:
         clothingjComboBox1.getSelectedItem();
@@ -193,19 +318,30 @@ public class TransportJPanel extends javax.swing.JPanel {
             }
         }
     }//GEN-LAST:event_searchcomboActionPerformed
+>>>>>>> main
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAddtoCart;
     private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnDeleteCart;
+    private javax.swing.JButton btnorder;
     private javax.swing.JComboBox<String> clothingjComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+<<<<<<< HEAD
+    private javax.swing.JTextField tfTotalPrice;
+=======
     private javax.swing.JButton searchcombo;
     private javax.swing.JTable searchtransportJTable1;
+>>>>>>> main
     private javax.swing.JTable transportJTable;
+    private javax.swing.JTable transportJTableCart;
     private javax.swing.JTextField transportsearch;
     // End of variables declaration//GEN-END:variables
 private void populateTable() {
@@ -215,6 +351,7 @@ private void populateTable() {
                
                
                       itemsDirectory=e.getItemsDirectory();
+                      enterprise=e;
                   
               }
              
@@ -242,4 +379,24 @@ private void populateTable() {
             
         }
     }
+
+    private void populatecart() {
+        int total = 0;
+            for(Items i : orderItems){
+                total = total + parseInt(i.getItemprice());
+            }
+        DefaultTableModel model = (DefaultTableModel) transportJTableCart.getModel();
+        model.setRowCount(0);
+        for(Items i : orderItems){
+            Object[] row = new Object[7];
+            row[0] = i.getItemname();
+            row[1] = i.getItemdesc();
+            row[2] = i.getItemprice();
+            row[3] = i.getItemservices();
+            row[4] = i.getItemstate();
+            row[5] = i.getItemsellertailorname();
+            row[6] = i.getItemquantity();
+            
+            model.addRow(row);
+        }  }
 }
