@@ -63,19 +63,18 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
 
         btnTransport = new javax.swing.JButton();
         refreshTestJButton = new javax.swing.JButton();
-        enterpriseLabel = new javax.swing.JLabel();
         btnClothing = new javax.swing.JButton();
         btnHealthCare = new javax.swing.JButton();
         btnElectronics = new javax.swing.JButton();
         btnFoodProducts = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        enterpriseLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setForeground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1000, 1000));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnTransport.setFont(new java.awt.Font("SansSerif", 3, 12)); // NOI18N
+        btnTransport.setBackground(new java.awt.Color(255, 255, 255));
+        btnTransport.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
         btnTransport.setText("Transport");
         btnTransport.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnTransport.addActionListener(new java.awt.event.ActionListener() {
@@ -83,48 +82,44 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
                 btnTransportActionPerformed(evt);
             }
         });
-        add(btnTransport, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 110, 134, -1));
 
-        refreshTestJButton.setFont(new java.awt.Font("SansSerif", 3, 12)); // NOI18N
+        refreshTestJButton.setBackground(new java.awt.Color(255, 255, 255));
+        refreshTestJButton.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
         refreshTestJButton.setText("Refresh");
         refreshTestJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 refreshTestJButtonActionPerformed(evt);
             }
         });
-        add(refreshTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(533, 28, -1, -1));
 
-        enterpriseLabel.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
-        enterpriseLabel.setText("Hello");
-        add(enterpriseLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 60, 30));
-
-        btnClothing.setFont(new java.awt.Font("SansSerif", 3, 12)); // NOI18N
+        btnClothing.setBackground(new java.awt.Color(255, 255, 255));
+        btnClothing.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
         btnClothing.setText("Clothing");
         btnClothing.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnClothingActionPerformed(evt);
             }
         });
-        add(btnClothing, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 150, 134, -1));
 
-        btnHealthCare.setFont(new java.awt.Font("SansSerif", 3, 12)); // NOI18N
+        btnHealthCare.setBackground(new java.awt.Color(255, 255, 255));
+        btnHealthCare.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
         btnHealthCare.setText("Healthcare");
         btnHealthCare.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHealthCareActionPerformed(evt);
             }
         });
-        add(btnHealthCare, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 190, 134, -1));
 
-        btnElectronics.setFont(new java.awt.Font("SansSerif", 3, 12)); // NOI18N
+        btnElectronics.setBackground(new java.awt.Color(255, 255, 255));
+        btnElectronics.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
         btnElectronics.setText("Electronics");
         btnElectronics.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnElectronicsActionPerformed(evt);
             }
         });
-        add(btnElectronics, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 230, 134, -1));
 
+        btnFoodProducts.setBackground(new java.awt.Color(255, 255, 255));
         btnFoodProducts.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
         btnFoodProducts.setText("Food Products");
         btnFoodProducts.addActionListener(new java.awt.event.ActionListener() {
@@ -132,10 +127,53 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
                 btnFoodProductsActionPerformed(evt);
             }
         });
-        add(btnFoodProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 270, 140, -1));
 
-        jLabel1.setText("<value>");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 80, 20));
+        enterpriseLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        enterpriseLabel1.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
+        enterpriseLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\saksh\\Desktop\\welcome.jpg")); // NOI18N
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(730, 730, 730)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnTransport, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnClothing, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnHealthCare, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnFoodProducts, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnElectronics, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(299, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(enterpriseLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(757, 757, 757))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(refreshTestJButton)
+                        .addGap(486, 486, 486))))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(99, 99, 99)
+                .addComponent(refreshTestJButton)
+                .addGap(53, 53, 53)
+                .addComponent(btnTransport)
+                .addGap(33, 33, 33)
+                .addComponent(btnClothing)
+                .addGap(33, 33, 33)
+                .addComponent(btnHealthCare)
+                .addGap(33, 33, 33)
+                .addComponent(btnElectronics)
+                .addGap(26, 26, 26)
+                .addComponent(btnFoodProducts)
+                .addGap(54, 54, 54)
+                .addComponent(enterpriseLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(990, Short.MAX_VALUE))
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnTransportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransportActionPerformed
@@ -198,8 +236,7 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnFoodProducts;
     private javax.swing.JButton btnHealthCare;
     private javax.swing.JButton btnTransport;
-    private javax.swing.JLabel enterpriseLabel;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel enterpriseLabel1;
     private javax.swing.JButton refreshTestJButton;
     // End of variables declaration//GEN-END:variables
 }
