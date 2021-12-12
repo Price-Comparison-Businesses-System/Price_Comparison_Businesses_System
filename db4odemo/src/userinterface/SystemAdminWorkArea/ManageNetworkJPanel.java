@@ -16,6 +16,7 @@ import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author sakshi
+ * @author  tarushukla
  */
 public class ManageNetworkJPanel extends javax.swing.JPanel {
 
@@ -128,6 +129,10 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
     private void btnDeleteNetwrokActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteNetwrokActionPerformed
         // TODO add your handling code here:
         int selectedrow = tblNetwork.getSelectedRow();
+        if(selectedrow < 0) {
+            JOptionPane.showMessageDialog(null,"Please Select a row from table", "Warining", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
         String name = tblNetwork.getValueAt(selectedrow, 0).toString();
         Network n = system.getNetwork(name);
         system.removeNetwork(n);

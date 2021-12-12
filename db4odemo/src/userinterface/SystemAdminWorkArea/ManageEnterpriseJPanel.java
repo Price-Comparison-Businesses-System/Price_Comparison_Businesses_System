@@ -424,6 +424,10 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
         // TODO add your handling code here:
         int selectedrow = enterpriseJTable.getSelectedRow();
+        if(selectedrow < 0) {
+            JOptionPane.showMessageDialog(null,"Please Select a row from table", "Warining", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
         String name = enterpriseJTable.getValueAt(selectedrow, 0).toString();
         for (Network n : system.getNetworkList()){
             Enterprise e = n.getEnterpriseDirectory().getEnterprise(name);

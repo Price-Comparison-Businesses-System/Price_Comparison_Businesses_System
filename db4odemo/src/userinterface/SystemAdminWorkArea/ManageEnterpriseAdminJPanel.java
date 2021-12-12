@@ -21,6 +21,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author sakshi
  * @author Netra
+ * @author tarushukla
  */
 public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 
@@ -223,6 +224,10 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
     private void btnEnterpriseAdminDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterpriseAdminDeleteActionPerformed
         // TODO add your handling code here:
         int selectedrow = enterpriseJTable.getSelectedRow();
+        if(selectedrow < 0) {
+            JOptionPane.showMessageDialog(null,"Please Select a row from table", "Warining", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
         String name = enterpriseJTable.getValueAt(selectedrow, 0).toString();
         for (Network n : system.getNetworkList()){
             Enterprise e = n.getEnterpriseDirectory().getEnterprise(name);
