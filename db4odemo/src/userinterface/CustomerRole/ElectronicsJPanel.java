@@ -40,7 +40,7 @@ public class ElectronicsJPanel extends javax.swing.JPanel {
         private Enterprise enterprise;
          private Orders order;
         
-	public ElectronicsJPanel(JPanel userProcessContainer, EcoSystem ecosystem, Customer customer) {
+	public ElectronicsJPanel(JPanel userProcessContainer, EcoSystem ecosystem, Customer customer, Enterprise enterprise ) {
             initComponents();
             this.userProcessContainer = userProcessContainer;
             this.ecosystem = ecosystem;
@@ -288,7 +288,7 @@ public class ElectronicsJPanel extends javax.swing.JPanel {
                
                
                       itemsDirectory=e.getItemsDirectory();
-                  
+                  enterprise=e;
               }
              
            }

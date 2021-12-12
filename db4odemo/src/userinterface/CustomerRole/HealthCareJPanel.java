@@ -49,7 +49,7 @@ public class HealthCareJPanel extends javax.swing.JPanel {
     /**
      * Creates new form DoctorWorkAreaJPanel
      */
-    public HealthCareJPanel(JPanel userProcessContainer, EcoSystem ecosystem, Customer customer) {
+    public HealthCareJPanel(JPanel userProcessContainer, EcoSystem ecosystem, Customer customer, Enterprise enterprise ) {
        initComponents();
         this.userProcessContainer = userProcessContainer;
           this.ecosystem = ecosystem;
@@ -290,6 +290,7 @@ private void populateTable() {
                
                
                       itemsDirectory=e.getItemsDirectory();
+                       enterprise=e;
                   
               }
              

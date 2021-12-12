@@ -183,7 +183,8 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnHealthCareActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHealthCareActionPerformed
         // TODO add your handling code here:
-       HealthCareJPanel healthcareJPanel = new HealthCareJPanel(userProcessContainer, ecosystem, customer);
+        Customer c=    ecosystem.getCustomerdirectory().findCustomer(account.getUsername());
+       HealthCareJPanel healthcareJPanel = new HealthCareJPanel(userProcessContainer, ecosystem, c, enterprise);
             userProcessContainer.add("healthcareJPanel", healthcareJPanel);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.next(userProcessContainer);
@@ -191,7 +192,8 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnElectronicsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnElectronicsActionPerformed
         // TODO add your handling code here:
-        ElectronicsJPanel electronicsJPanel = new ElectronicsJPanel(userProcessContainer, ecosystem, customer);
+        Customer c=    ecosystem.getCustomerdirectory().findCustomer(account.getUsername());
+        ElectronicsJPanel electronicsJPanel = new ElectronicsJPanel(userProcessContainer, ecosystem, c, enterprise);
             userProcessContainer.add("electronicsJPanel", electronicsJPanel);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.next(userProcessContainer);
@@ -199,7 +201,8 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btnFoodProductsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFoodProductsActionPerformed
         // TODO add your handling code here:
-        FoodProductsJPanel foodproductsJPanel = new FoodProductsJPanel(userProcessContainer, ecosystem, customer);
+        Customer c=    ecosystem.getCustomerdirectory().findCustomer(account.getUsername());
+        FoodProductsJPanel foodproductsJPanel = new FoodProductsJPanel(userProcessContainer, ecosystem, c, enterprise);
             userProcessContainer.add("foodproductsJPanel", foodproductsJPanel);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.next(userProcessContainer);

@@ -41,7 +41,7 @@ public class FoodProductsJPanel extends javax.swing.JPanel {
         private Enterprise enterprise;
          private Orders order;
         
-	public FoodProductsJPanel(JPanel userProcessContainer, EcoSystem ecosystem, Customer customer) {
+	public FoodProductsJPanel(JPanel userProcessContainer, EcoSystem ecosystem, Customer customer, Enterprise enterprise ) {
             initComponents();
             this.userProcessContainer = userProcessContainer;
             this.ecosystem = ecosystem;
@@ -245,17 +245,7 @@ public class FoodProductsJPanel extends javax.swing.JPanel {
             for(Items i : orderItems){
                 total = total + parseInt(i.getItemprice());
             }
-//        for(Network n: ecosystem.getNetworkList()){
-//                for(Enterprise e : n.getEnterpriseDirectory().getEnterpriseList()){
-//                    if(e.getEnterpriseType().toString().equalsIgnoreCase("Clothing")){
-//                       
-//                      
-//                    }
-//                    
-//                }}
-     
-           
-//            System.out.println("order placed" );
+
            order = new Orders(enterprise.getEnterpriseType().toString(), customer.getcustomerName(), orderItems, total, customer.getcustomerStreetAddress(), enterprise.getOrgAddress());
           
             orderplaced.add(order);
@@ -301,7 +291,7 @@ public class FoodProductsJPanel extends javax.swing.JPanel {
                
                
                       itemsDirectory=e.getItemsDirectory();
-                  
+                  enterprise=e;
               }
              
            }
