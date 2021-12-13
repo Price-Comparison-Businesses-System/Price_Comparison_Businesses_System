@@ -76,22 +76,27 @@ public class ClothingJPanel extends javax.swing.JPanel {
         jScrollPane3 = new javax.swing.JScrollPane();
         searchJTable = new javax.swing.JTable();
         searchcombobtn = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnBack.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
         btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, -1, -1));
 
-        jLabel3.setText("Clothing");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, -1, -1));
+        jLabel3.setIcon(new javax.swing.ImageIcon("D:\\__MACOSX\\New folder\\Price_Comparison_Businesses_System\\db4odemo\\images icons\\models.jpg")); // NOI18N
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1280, 30, 280, 660));
 
+        jLabel1.setFont(new java.awt.Font("SansSerif", 3, 12)); // NOI18N
         jLabel1.setText("Services :");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, 70, 19));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 70, 19));
 
         clothingjComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buy Fabric", "Readymade cloths", "Tailor services" }));
         clothingjComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -104,7 +109,7 @@ public class ClothingJPanel extends javax.swing.JPanel {
                 clothingjComboBox1KeyPressed(evt);
             }
         });
-        add(clothingjComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, 160, -1));
+        add(clothingjComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 160, -1));
 
         clothingJTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -125,19 +130,20 @@ public class ClothingJPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(clothingJTable1);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 796, 140));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 210, 796, 110));
 
+        jLabel2.setFont(new java.awt.Font("SansSerif", 3, 12)); // NOI18N
         jLabel2.setText("Search :");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, -1, -1));
-        add(transportsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 160, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, -1));
+        add(transportsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 160, -1));
 
-        btnAddtoCart.setText("Add to cart ^");
+        btnAddtoCart.setText("Add to cart ");
         btnAddtoCart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddtoCartActionPerformed(evt);
             }
         });
-        add(btnAddtoCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 420, -1, -1));
+        add(btnAddtoCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 470, -1, -1));
 
         tblclothingCart.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -158,7 +164,7 @@ public class ClothingJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tblclothingCart);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, 796, 140));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 500, 796, 120));
 
         btnOrder.setText("Order");
         btnOrder.addActionListener(new java.awt.event.ActionListener() {
@@ -166,11 +172,11 @@ public class ClothingJPanel extends javax.swing.JPanel {
                 btnOrderActionPerformed(evt);
             }
         });
-        add(btnOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 610, -1, -1));
-        add(tfTotalPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 620, 72, -1));
+        add(btnOrder, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 630, -1, -1));
+        add(tfTotalPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 630, 72, -1));
 
         jLabel6.setText("Total Amount");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 620, -1, -1));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 630, -1, -1));
 
         btnDeleteCart.setText("Delete from cart");
         btnDeleteCart.addActionListener(new java.awt.event.ActionListener() {
@@ -178,7 +184,7 @@ public class ClothingJPanel extends javax.swing.JPanel {
                 btnDeleteCartActionPerformed(evt);
             }
         });
-        add(btnDeleteCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 610, -1, -1));
+        add(btnDeleteCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 630, -1, -1));
 
         searchJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -199,7 +205,7 @@ public class ClothingJPanel extends javax.swing.JPanel {
         });
         jScrollPane3.setViewportView(searchJTable);
 
-        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 796, 140));
+        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 330, 796, 130));
 
         searchcombobtn.setText("Search");
         searchcombobtn.addActionListener(new java.awt.event.ActionListener() {
@@ -207,7 +213,15 @@ public class ClothingJPanel extends javax.swing.JPanel {
                 searchcombobtnActionPerformed(evt);
             }
         });
-        add(searchcombobtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 70, -1, -1));
+        add(searchcombobtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, -1, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/CustomerRole/1clothing.jpg"))); // NOI18N
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 50, -1, 140));
+
+        jLabel5.setBackground(new java.awt.Color(167, 199, 231));
+        jLabel5.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
+        jLabel5.setText("Your Cart");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 470, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -411,6 +425,8 @@ public class ClothingJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

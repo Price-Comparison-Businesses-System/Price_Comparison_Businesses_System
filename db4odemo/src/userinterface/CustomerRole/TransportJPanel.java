@@ -86,27 +86,35 @@ public class TransportJPanel extends javax.swing.JPanel {
         jScrollPane3 = new javax.swing.JScrollPane();
         searchtransportJTable1 = new javax.swing.JTable();
         searchcombo1 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel3.setBackground(new java.awt.Color(167, 199, 231));
+        jLabel3.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/CustomerRole/transport.jpg"))); // NOI18N
         jLabel3.setText("Transport");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, 600, 90));
 
+        btnBack.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
         btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
 
         transportJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                " Item name", "Description", "Price", "Services ", "State", "seller/tailor name", "Quantity"
+                " Item name", "Description", "Price", "Services ", "State", "Vendor", "Quantity"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -119,15 +127,19 @@ public class TransportJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(transportJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 796, 100));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 190, 796, 90));
 
+        jLabel1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel1.setText("Services :");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, 70, 19));
-        add(transportsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 160, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 80, 19));
+        add(transportsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, 160, -1));
 
+        jLabel2.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
         jLabel2.setText("Search :");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
 
+        clothingjComboBox1.setBackground(new java.awt.Color(167, 199, 231));
+        clothingjComboBox1.setEditable(true);
         clothingjComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buy Car", "Rent Car", "Uber/lyft service" }));
         clothingjComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,7 +151,7 @@ public class TransportJPanel extends javax.swing.JPanel {
                 clothingjComboBox1KeyPressed(evt);
             }
         });
-        add(clothingjComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, 160, -1));
+        add(clothingjComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 160, -1));
 
         btnAddtoCart.setText("Add to cart ^");
         btnAddtoCart.addActionListener(new java.awt.event.ActionListener() {
@@ -147,10 +159,12 @@ public class TransportJPanel extends javax.swing.JPanel {
                 btnAddtoCartActionPerformed(evt);
             }
         });
-        add(btnAddtoCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, -1, -1));
+        add(btnAddtoCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 440, -1, -1));
 
+        jLabel4.setBackground(new java.awt.Color(167, 199, 231));
+        jLabel4.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
         jLabel4.setText("Your Cart");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 440, -1, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 440, -1, -1));
 
         transportJTableCart.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -171,7 +185,7 @@ public class TransportJPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(transportJTableCart);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 470, 796, 140));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 470, 796, 140));
 
         btnDeleteCart.setText("Delete from cart");
         btnDeleteCart.addActionListener(new java.awt.event.ActionListener() {
@@ -179,7 +193,7 @@ public class TransportJPanel extends javax.swing.JPanel {
                 btnDeleteCartActionPerformed(evt);
             }
         });
-        add(btnDeleteCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 620, -1, -1));
+        add(btnDeleteCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 630, -1, -1));
 
         btnorder.setText("Order");
         btnorder.addActionListener(new java.awt.event.ActionListener() {
@@ -187,11 +201,11 @@ public class TransportJPanel extends javax.swing.JPanel {
                 btnorderActionPerformed(evt);
             }
         });
-        add(btnorder, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 620, -1, -1));
-        add(tfTotalPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 620, 72, -1));
+        add(btnorder, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 620, -1, -1));
+        add(tfTotalPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 620, 72, -1));
 
         jLabel6.setText("Total Amount");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 620, -1, -1));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 620, -1, -1));
 
         searchtransportJTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -199,7 +213,7 @@ public class TransportJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                " Item name", "Description", "Price", "services F/R/T", "State", "seller/tailor name", "Quantity"
+                " Item name", "Description", "Price", "services F/R/T", "State", "Vendor", "Quantity"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -212,7 +226,7 @@ public class TransportJPanel extends javax.swing.JPanel {
         });
         jScrollPane3.setViewportView(searchtransportJTable1);
 
-        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, 796, 100));
+        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 320, 796, 100));
 
         searchcombo1.setText("Search");
         searchcombo1.addActionListener(new java.awt.event.ActionListener() {
@@ -220,7 +234,11 @@ public class TransportJPanel extends javax.swing.JPanel {
                 searchcombo1ActionPerformed(evt);
             }
         });
-        add(searchcombo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 110, -1, -1));
+        add(searchcombo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, -1, -1));
+
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/CustomerRole/car.jpg"))); // NOI18N
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 390, -1, 240));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -332,6 +350,7 @@ public class TransportJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

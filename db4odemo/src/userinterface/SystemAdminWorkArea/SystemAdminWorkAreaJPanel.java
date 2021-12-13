@@ -35,6 +35,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         initComponents();
         this.userProcessContainer=userProcessContainer;
         this.ecosystem=ecosystem;
+        lblSelectedNode.setText("sysadmin");
         populateTree();
     }
     
@@ -99,9 +100,9 @@ public void populateTree(){
         btnManageNetwork = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
 
-        setLayout(new java.awt.BorderLayout());
+        setBackground(new java.awt.Color(255, 255, 255));
 
-        jSplitPane.setBackground(new java.awt.Color(0, 0, 0));
+        jSplitPane.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -122,109 +123,86 @@ public void populateTree(){
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1470, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 596, Short.MAX_VALUE)
         );
 
         jSplitPane.setLeftComponent(jPanel1);
 
-        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
         jLabel1.setText("Selected Node:");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
 
+        lblSelectedNode.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
         lblSelectedNode.setText("<View_selected_node>");
+        jPanel2.add(lblSelectedNode, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, -1, -1));
 
-        manageCustomer.setBackground(new java.awt.Color(0, 102, 204));
-        manageCustomer.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        manageCustomer.setForeground(new java.awt.Color(255, 255, 255));
+        manageCustomer.setBackground(new java.awt.Color(167, 199, 231));
+        manageCustomer.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
         manageCustomer.setText("Manage Customers");
         manageCustomer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 manageCustomerActionPerformed(evt);
             }
         });
+        jPanel2.add(manageCustomer, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 200, 240, -1));
 
-        btnManageAdmin1.setBackground(new java.awt.Color(0, 102, 204));
-        btnManageAdmin1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnManageAdmin1.setForeground(new java.awt.Color(255, 255, 255));
+        btnManageAdmin1.setBackground(new java.awt.Color(167, 199, 231));
+        btnManageAdmin1.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
         btnManageAdmin1.setText("Manage Enterprise Admin");
         btnManageAdmin1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageAdmin1ActionPerformed(evt);
             }
         });
+        jPanel2.add(btnManageAdmin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(485, 160, 240, -1));
 
-        btnManageEnterprise1.setBackground(new java.awt.Color(0, 102, 204));
-        btnManageEnterprise1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnManageEnterprise1.setForeground(new java.awt.Color(255, 255, 255));
+        btnManageEnterprise1.setBackground(new java.awt.Color(167, 199, 231));
+        btnManageEnterprise1.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
         btnManageEnterprise1.setText("Manage Enterprise");
         btnManageEnterprise1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageEnterprise1ActionPerformed(evt);
             }
         });
+        jPanel2.add(btnManageEnterprise1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 120, 240, -1));
 
-        btnManageNetwork.setBackground(new java.awt.Color(0, 102, 204));
-        btnManageNetwork.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        btnManageNetwork.setForeground(new java.awt.Color(255, 255, 255));
+        btnManageNetwork.setBackground(new java.awt.Color(167, 199, 231));
+        btnManageNetwork.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
         btnManageNetwork.setText("Manage Network");
         btnManageNetwork.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnManageNetworkActionPerformed(evt);
             }
         });
+        jPanel2.add(btnManageNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 70, 240, -1));
 
-        jButton1.setBackground(new java.awt.Color(0, 102, 204));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setBackground(new java.awt.Color(167, 199, 231));
+        jButton1.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
         jButton1.setText("View Statistics");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(218, 218, 218)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(manageCustomer, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnManageAdmin1, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnManageEnterprise1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(26, 26, 26)
-                        .addComponent(lblSelectedNode)
-                        .addGap(211, 211, 211)
-                        .addComponent(btnManageNetwork, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(563, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(1135, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(lblSelectedNode)
-                        .addComponent(jLabel1))
-                    .addComponent(btnManageNetwork))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnManageEnterprise1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnManageAdmin1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(manageCustomer)
-                .addGap(142, 142, 142))
-        );
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 30, 240, -1));
 
         jSplitPane.setRightComponent(jPanel2);
 
-        add(jSplitPane, java.awt.BorderLayout.CENTER);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSplitPane, javax.swing.GroupLayout.PREFERRED_SIZE, 1499, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jSplitPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void manageCustomerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageCustomerActionPerformed

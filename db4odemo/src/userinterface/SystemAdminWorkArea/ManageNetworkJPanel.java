@@ -47,7 +47,6 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblNetwork = new javax.swing.JTable();
         btnAddNetwork = new javax.swing.JButton();
@@ -55,11 +54,10 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         txtNetwork = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setText("OUR Network");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 50, -1, -1));
 
         tblNetwork.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -74,7 +72,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tblNetwork);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 95, 375, 155));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 375, 155));
 
         btnAddNetwork.setText("Add Network");
         btnAddNetwork.addActionListener(new java.awt.event.ActionListener() {
@@ -82,7 +80,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
                 btnAddNetworkActionPerformed(evt);
             }
         });
-        add(btnAddNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(198, 323, -1, -1));
+        add(btnAddNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 350, -1, -1));
 
         btnDeleteNetwrok.setText("Delete Network");
         btnDeleteNetwrok.addActionListener(new java.awt.event.ActionListener() {
@@ -90,19 +88,23 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
                 btnDeleteNetwrokActionPerformed(evt);
             }
         });
-        add(btnDeleteNetwrok, new org.netbeans.lib.awtextra.AbsoluteConstraints(476, 323, -1, -1));
-        add(txtNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(422, 279, 108, -1));
+        add(btnDeleteNetwrok, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 350, -1, -1));
+        add(txtNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 300, 108, -1));
 
         jLabel2.setText("State Netwrok Name");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(282, 284, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, -1, -1));
 
-        btnBack.setText("<< Back");
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/Icons/icons/93634-2.png"))); // NOI18N
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, -1, -1));
+
+        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/Icons/icons/network.png"))); // NOI18N
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 70, 480, 370));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAddNetworkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddNetworkActionPerformed
@@ -161,7 +163,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnAddNetwork;
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnDeleteNetwrok;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblNetwork;

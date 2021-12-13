@@ -67,7 +67,6 @@ public class ElectronicsJPanel extends javax.swing.JPanel {
         electronicsJTable = new javax.swing.JTable();
         tfTotalPrice = new javax.swing.JTextField();
         btnAddtoCart = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
         btnorder = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
@@ -78,15 +77,22 @@ public class ElectronicsJPanel extends javax.swing.JPanel {
         searchcombo1 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         searchelectronicsJTable1 = new javax.swing.JTable();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        add(transportsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 160, -1));
+        add(transportsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 150, -1));
 
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("SansSerif", 3, 12)); // NOI18N
         jLabel1.setText("Services :");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, 70, 19));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 70, 19));
 
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("SansSerif", 3, 12)); // NOI18N
         jLabel2.setText("Search :");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
 
         electonicsjComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Electronics Kit", "Spare parts", "Acessories" }));
         electonicsjComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -99,7 +105,9 @@ public class ElectronicsJPanel extends javax.swing.JPanel {
                 electonicsjComboBox1KeyPressed(evt);
             }
         });
-        add(electonicsjComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 130, 150, -1));
+        add(electonicsjComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, 150, -1));
+
+        jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
 
         electronicsJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -120,31 +128,33 @@ public class ElectronicsJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(electronicsJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 180, 796, 110));
-        add(tfTotalPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 640, 72, -1));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, 796, 110));
+        add(tfTotalPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 630, 72, -1));
 
-        btnAddtoCart.setText("Add to cart ^");
+        btnAddtoCart.setBackground(new java.awt.Color(255, 255, 255));
+        btnAddtoCart.setText("Add to cart ");
         btnAddtoCart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddtoCartActionPerformed(evt);
             }
         });
-        add(btnAddtoCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 450, -1, -1));
+        add(btnAddtoCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 440, -1, -1));
 
-        jLabel4.setText("Your Cart");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 450, -1, -1));
-
+        btnorder.setBackground(new java.awt.Color(255, 255, 255));
         btnorder.setText("Order");
         btnorder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnorderActionPerformed(evt);
             }
         });
-        add(btnorder, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 630, -1, -1));
+        add(btnorder, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 630, -1, -1));
 
-        jLabel3.setText("Electronics");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, -1, -1));
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/CustomerRole/electronics.jpg"))); // NOI18N
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 30, -1, 60));
 
+        btnBack.setBackground(new java.awt.Color(255, 255, 255));
+        btnBack.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
         btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -152,6 +162,8 @@ public class ElectronicsJPanel extends javax.swing.JPanel {
             }
         });
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
+
+        jScrollPane2.setBackground(new java.awt.Color(255, 255, 255));
 
         electronicsJTableCart.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -172,26 +184,31 @@ public class ElectronicsJPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(electronicsJTableCart);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 480, 796, 140));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 480, 796, 140));
 
+        btnDeleteCart.setBackground(new java.awt.Color(255, 255, 255));
         btnDeleteCart.setText("Delete from cart");
         btnDeleteCart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteCartActionPerformed(evt);
             }
         });
-        add(btnDeleteCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 640, -1, -1));
+        add(btnDeleteCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 630, -1, -1));
 
+        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Total Amount");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 640, -1, -1));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 630, -1, -1));
 
+        searchcombo1.setBackground(new java.awt.Color(255, 255, 255));
         searchcombo1.setText("Search");
         searchcombo1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 searchcombo1ActionPerformed(evt);
             }
         });
-        add(searchcombo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 130, -1, -1));
+        add(searchcombo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, -1, -1));
+
+        jScrollPane3.setBackground(new java.awt.Color(255, 255, 255));
 
         searchelectronicsJTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -199,7 +216,7 @@ public class ElectronicsJPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Item Name", "Description", "Price", "Service", "State", "Selller Name", "Quantity"
+                "Item Name", "Description", "Price", "Service", "State", "Vendor Name", "Quantity"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -212,7 +229,16 @@ public class ElectronicsJPanel extends javax.swing.JPanel {
         });
         jScrollPane3.setViewportView(searchelectronicsJTable1);
 
-        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 796, 110));
+        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 320, 796, 110));
+
+        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/CustomerRole/speakers.jpg"))); // NOI18N
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1080, 80, 460, 680));
+
+        jLabel4.setBackground(new java.awt.Color(167, 199, 231));
+        jLabel4.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
+        jLabel4.setText("Your Cart");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 460, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void electonicsjComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_electonicsjComboBox1ActionPerformed
@@ -348,6 +374,7 @@ public class ElectronicsJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
