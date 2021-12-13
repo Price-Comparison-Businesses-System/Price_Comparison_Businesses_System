@@ -72,6 +72,7 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setForeground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1000, 1000));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnTransport.setBackground(new java.awt.Color(255, 255, 255));
         btnTransport.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
@@ -82,6 +83,7 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
                 btnTransportActionPerformed(evt);
             }
         });
+        add(btnTransport, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 150, 134, -1));
 
         refreshTestJButton.setBackground(new java.awt.Color(255, 255, 255));
         refreshTestJButton.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
@@ -91,6 +93,7 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
                 refreshTestJButtonActionPerformed(evt);
             }
         });
+        add(refreshTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 60, -1, -1));
 
         btnClothing.setBackground(new java.awt.Color(255, 255, 255));
         btnClothing.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
@@ -100,6 +103,7 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
                 btnClothingActionPerformed(evt);
             }
         });
+        add(btnClothing, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 210, 134, -1));
 
         btnHealthCare.setBackground(new java.awt.Color(255, 255, 255));
         btnHealthCare.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
@@ -109,6 +113,7 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
                 btnHealthCareActionPerformed(evt);
             }
         });
+        add(btnHealthCare, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 270, 134, -1));
 
         btnElectronics.setBackground(new java.awt.Color(255, 255, 255));
         btnElectronics.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
@@ -118,6 +123,7 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
                 btnElectronicsActionPerformed(evt);
             }
         });
+        add(btnElectronics, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 330, 134, -1));
 
         btnFoodProducts.setBackground(new java.awt.Color(255, 255, 255));
         btnFoodProducts.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
@@ -127,53 +133,12 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
                 btnFoodProductsActionPerformed(evt);
             }
         });
+        add(btnFoodProducts, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 400, 140, -1));
 
         enterpriseLabel1.setBackground(new java.awt.Color(255, 255, 255));
         enterpriseLabel1.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
         enterpriseLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\saksh\\Desktop\\welcome.jpg")); // NOI18N
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(730, 730, 730)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnTransport, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnClothing, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnHealthCare, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnFoodProducts, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnElectronics, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(299, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(enterpriseLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(757, 757, 757))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(refreshTestJButton)
-                        .addGap(486, 486, 486))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(99, 99, 99)
-                .addComponent(refreshTestJButton)
-                .addGap(53, 53, 53)
-                .addComponent(btnTransport)
-                .addGap(33, 33, 33)
-                .addComponent(btnClothing)
-                .addGap(33, 33, 33)
-                .addComponent(btnHealthCare)
-                .addGap(33, 33, 33)
-                .addComponent(btnElectronics)
-                .addGap(26, 26, 26)
-                .addComponent(btnFoodProducts)
-                .addGap(54, 54, 54)
-                .addComponent(enterpriseLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(990, Short.MAX_VALUE))
-        );
+        add(enterpriseLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 510, 1750, 350));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnTransportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransportActionPerformed
