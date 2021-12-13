@@ -10,7 +10,26 @@ AED PROJECT.
  Proposed Solution : 
  
  Each item from  the Enterprise is displayed for the comparison from  different City as the common Network. 
-Example: Snow jackets have different prices in Boston and Arlington!
+Example: Snow jackets have different prices in Boston and Arlington!  
+Wide spectrum of Enterprises considered  ->.      
+Clothing, Transport, Health Care, Electronics, Food Products.      
+Every Enterprise provides possibility to search and compare an item for its own features. 
+Example: A car can be bought or rented, Meal can be provided by a Restaurant or cooked at home!     
+
+
+
+Team -      
+Netra Awate - 001529534      
+Sakshi Nayak- 002193939        
+Taru Shukla- 002193864        
+
+
+
+
+
+
+
+
 
 
 
