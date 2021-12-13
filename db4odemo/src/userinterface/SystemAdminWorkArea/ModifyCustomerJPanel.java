@@ -220,7 +220,7 @@ public class ModifyCustomerJPanel extends javax.swing.JPanel {
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
         String name;
-        int age;
+        int age=0;
          String emailaddress;
           String phone;
           String streetaddress;

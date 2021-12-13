@@ -58,8 +58,8 @@ public class ManageCustomerJPanel extends javax.swing.JPanel {
         btnCreate = new javax.swing.JButton();
         deletebutton = new javax.swing.JButton();
         refreshbutton = new javax.swing.JButton();
-        btnBack = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
+        btnBack = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -116,13 +116,6 @@ public class ManageCustomerJPanel extends javax.swing.JPanel {
         deletebutton.setText("Delete Customer");
         add(deletebutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 480, -1, -1));
 
-        deletebutton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                deletebuttonActionPerformed(evt);
-            }
-        });
-
-
         refreshbutton.setBackground(new java.awt.Color(0, 102, 204));
         refreshbutton.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         refreshbutton.setForeground(new java.awt.Color(255, 255, 255));
@@ -134,20 +127,17 @@ public class ManageCustomerJPanel extends javax.swing.JPanel {
         });
         add(refreshbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 80, -1, -1));
 
-        btnBack.setBackground(new java.awt.Color(0, 102, 204));
-        btnBack.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        btnBack.setForeground(new java.awt.Color(255, 255, 255));
-        btnBack.setText("<< Back");
+        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/Icons/icons/custdesk.jpeg"))); // NOI18N
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 60, 330, 490));
+
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/Icons/icons/93634-2.png"))); // NOI18N
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 80, -1, -1));
-
-        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/Icons/icons/custdesk.jpeg"))); // NOI18N
-        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 60, 330, 490));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnModifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifyActionPerformed
@@ -178,17 +168,6 @@ public class ManageCustomerJPanel extends javax.swing.JPanel {
         populateTable();
     }//GEN-LAST:event_refreshbuttonActionPerformed
 
-    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
-        // TODO add your handling code here:
-        userProcessContainer.remove(this);
-        Component[] componentArray = userProcessContainer.getComponents();
-        Component component = componentArray[componentArray.length - 1];
-                SystemAdminWorkAreaJPanel sysAdminwjp = (SystemAdminWorkAreaJPanel) component;
-                sysAdminwjp.populateTree();
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);
-    }//GEN-LAST:event_btnBackActionPerformed
-
     private void deletebuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deletebuttonActionPerformed
         // TODO add your handling code here:
         int selectedRow = tblCustomer.getSelectedRow();
@@ -202,6 +181,17 @@ public class ManageCustomerJPanel extends javax.swing.JPanel {
 	JOptionPane.showMessageDialog(btnCreate, "Customer deleted from the database");
         populateTable();
     }//GEN-LAST:event_deletebuttonActionPerformed
+
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        SystemAdminWorkAreaJPanel sysAdminwjp = (SystemAdminWorkAreaJPanel) component;
+        sysAdminwjp.populateTree();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_btnBackActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
