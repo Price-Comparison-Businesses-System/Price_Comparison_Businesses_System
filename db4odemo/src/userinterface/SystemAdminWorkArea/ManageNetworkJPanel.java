@@ -67,7 +67,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
                 {null}
             },
             new String [] {
-                "State ->Network"
+                "Network"
             }
         ));
         jScrollPane1.setViewportView(tblNetwork);
@@ -91,7 +91,7 @@ public class ManageNetworkJPanel extends javax.swing.JPanel {
         add(btnDeleteNetwrok, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 350, -1, -1));
         add(txtNetwork, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 300, 108, -1));
 
-        jLabel2.setText("State Netwrok Name");
+        jLabel2.setText(" Network Name");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, -1, -1));
 
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/Icons/icons/93634-2.png"))); // NOI18N
