@@ -241,6 +241,21 @@ public class ModifyCustomerJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Enter valid Customer name");
             return;
         }
+//        if(!tfAge.getText().isEmpty()){
+//               age = parseInt(tfAge.getText());
+//          }
+//          else{
+//               JOptionPane.showMessageDialog(this, "Customer age is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+//               return;
+//        }
+//        if(parseInt(tfAge.getText())<0){
+//           JOptionPane.showMessageDialog(this, "customer age cannot be less than 0");
+//            return;
+//          } 
+     /**
+     * validation for customer age
+     */
+        try{
         if(!tfAge.getText().isEmpty()){
                age = parseInt(tfAge.getText());
           }
@@ -248,10 +263,15 @@ public class ModifyCustomerJPanel extends javax.swing.JPanel {
                JOptionPane.showMessageDialog(this, "Customer age is empty","ERROR",JOptionPane.ERROR_MESSAGE);
                return;
         }
-        if(parseInt(tfAge.getText())<0){
+         if(parseInt(tfAge.getText())<0){
            JOptionPane.showMessageDialog(this, "customer age cannot be less than 0");
             return;
           }
+       } catch(NumberFormatException ex){ 
+            System.out.println(ex);
+          JOptionPane.showMessageDialog(this, "Customer age must be a number","ERROR",JOptionPane.ERROR_MESSAGE);
+
+         }
         if(!tfEmail.getText().isEmpty()){
                emailaddress = tfEmail.getText();
           }
@@ -267,6 +287,21 @@ public class ModifyCustomerJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Email Address must be in format of username@email.com");
             return;
         }
+//        if(!tfPhoneNumber.getText().isEmpty()){
+//               phone = tfPhoneNumber.getText();
+//          }
+//          else{
+//               JOptionPane.showMessageDialog(this, "Customer phone number is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+//               return;
+//        }
+//        
+//        if(tfPhoneNumber.getText().length() != 10){
+//            JOptionPane.showMessageDialog(this, "Phone Number must be 10 digits", "Warining", JOptionPane.WARNING_MESSAGE);
+//            return;
+//        }
+ /**
+     * validation for customer phone number
+     */
         if(!tfPhoneNumber.getText().isEmpty()){
                phone = tfPhoneNumber.getText();
           }
@@ -274,8 +309,10 @@ public class ModifyCustomerJPanel extends javax.swing.JPanel {
                JOptionPane.showMessageDialog(this, "Customer phone number is empty","ERROR",JOptionPane.ERROR_MESSAGE);
                return;
         }
-        
-        if(tfPhoneNumber.getText().length() != 10){
+        boolean flagphone;
+        flagphone = phone.matches("^[0-9]{10}$");
+
+        if(!flagphone) {
             JOptionPane.showMessageDialog(this, "Phone Number must be 10 digits", "Warining", JOptionPane.WARNING_MESSAGE);
             return;
         }
