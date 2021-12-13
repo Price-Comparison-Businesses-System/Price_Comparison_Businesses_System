@@ -1,1 +1,21 @@
-AED PROJECT
+AED PROJECT.  
+  
+  Team - RatesPerk (Price_Comparison_Businesses_System).    
+  
+  Problem statement :
+  
+ Comparison platform for all enterprise and  organizational items from multiple small e-commerce ecosystems for the customer to have inexpensive shopping experience. To cater customer inconvenience while  considering  all the available options from online websites to remote stores at one place for vital enterprises. Provide statistical view to the Enterprise owners in terms of graph to enhance the service and increase revenue.     
+ 
+ 
+ Proposed Solution : 
+ 
+ Each item from  the Enterprise is displayed for the comparison from  different City as the common Network. 
+Example: Snow jackets have different prices in Boston and Arlington!
+
+
+
+
+
+
+  
+  
