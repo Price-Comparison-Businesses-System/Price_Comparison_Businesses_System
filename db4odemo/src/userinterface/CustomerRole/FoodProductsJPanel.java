@@ -67,7 +67,6 @@ public class FoodProductsJPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
         btnAddtoCart = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         foodProductsJTableCart = new javax.swing.JTable();
         btnDeleteCart = new javax.swing.JButton();
@@ -77,8 +76,11 @@ public class FoodProductsJPanel extends javax.swing.JPanel {
         searchcombo = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         searchfoodProductsTable1 = new javax.swing.JTable();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setBackground(new java.awt.Color(255, 255, 255));
+        setMinimumSize(new java.awt.Dimension(1000, 1000));
 
         foodProductsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -99,14 +101,11 @@ public class FoodProductsJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(foodProductsTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 796, 110));
-
+        jLabel1.setFont(new java.awt.Font("SansSerif", 3, 12)); // NOI18N
         jLabel1.setText("Services :");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 100, 70, 19));
-        add(transportsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 160, -1));
 
+        jLabel2.setFont(new java.awt.Font("SansSerif", 3, 12)); // NOI18N
         jLabel2.setText("Search :");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, -1, -1));
 
         foodProductsjComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Restaurants", "Veggies/Fruits", "Frozen/Packaged" }));
         foodProductsjComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -119,29 +118,23 @@ public class FoodProductsJPanel extends javax.swing.JPanel {
                 foodProductsjComboBox1KeyPressed(evt);
             }
         });
-        add(foodProductsjComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, 170, -1));
 
-        jLabel3.setText("Food Products");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, -1, -1));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/CustomerRole/food.jpg"))); // NOI18N
 
+        btnBack.setFont(new java.awt.Font("SansSerif", 3, 12)); // NOI18N
         btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
 
-        btnAddtoCart.setText("Add to cart ^");
+        btnAddtoCart.setText("Add to cart ");
         btnAddtoCart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddtoCartActionPerformed(evt);
             }
         });
-        add(btnAddtoCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 400, -1, -1));
-
-        jLabel4.setText("Your Cart");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 420, -1, -1));
 
         foodProductsJTableCart.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -162,15 +155,12 @@ public class FoodProductsJPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(foodProductsJTableCart);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 450, 796, 140));
-
         btnDeleteCart.setText("Delete from cart");
         btnDeleteCart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteCartActionPerformed(evt);
             }
         });
-        add(btnDeleteCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 600, -1, -1));
 
         jButton1.setText("Order");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -178,11 +168,8 @@ public class FoodProductsJPanel extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 600, -1, -1));
 
         jLabel6.setText("Total Amount");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 610, -1, -1));
-        add(tfTotalPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 610, 72, -1));
 
         searchcombo.setText("Search");
         searchcombo.addActionListener(new java.awt.event.ActionListener() {
@@ -190,7 +177,6 @@ public class FoodProductsJPanel extends javax.swing.JPanel {
                 searchcomboActionPerformed(evt);
             }
         });
-        add(searchcombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 100, -1, -1));
 
         searchfoodProductsTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -211,7 +197,109 @@ public class FoodProductsJPanel extends javax.swing.JPanel {
         });
         jScrollPane3.setViewportView(searchfoodProductsTable1);
 
-        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 796, 110));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/CustomerRole/indian.jpg"))); // NOI18N
+        jLabel7.setAutoscrolls(true);
+
+        jLabel8.setBackground(new java.awt.Color(167, 199, 231));
+        jLabel8.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
+        jLabel8.setText("Your Cart");
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(btnBack)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(470, 470, 470))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(81, 81, 81)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(46, 46, 46)
+                        .addComponent(transportsearch))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(foodProductsjComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(searchcombo, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(110, 110, 110)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 796, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(458, 458, 458)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btnDeleteCart)
+                        .addGap(411, 411, 411)
+                        .addComponent(jLabel6)
+                        .addGap(13, 13, 13)
+                        .addComponent(tfTotalPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(72, 72, 72)
+                        .addComponent(jButton1))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 796, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAddtoCart)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 796, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel7)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(354, 354, 354)
+                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(67, 67, 67)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnBack))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(97, 97, 97)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(transportsearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jLabel2))
+                                        .addGap(18, 18, 18)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(foodProductsjComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(29, 29, 29)
+                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(18, 18, 18)
+                                .addComponent(searchcombo)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnAddtoCart)
+                        .addGap(30, 30, 30)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tfTotalPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6)
+                            .addComponent(jButton1)
+                            .addComponent(btnDeleteCart))))
+                .addGap(314, 362, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jLabel8)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void foodProductsjComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_foodProductsjComboBox1ActionPerformed
@@ -321,8 +409,9 @@ public class FoodProductsJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

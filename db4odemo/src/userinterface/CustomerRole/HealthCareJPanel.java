@@ -74,7 +74,6 @@ public class HealthCareJPanel extends javax.swing.JPanel {
         hospitalsjComboBox1 = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         btnAddtoCart = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         healthcareJTableCart = new javax.swing.JTable();
         btnDeleteCart = new javax.swing.JButton();
@@ -86,9 +85,13 @@ public class HealthCareJPanel extends javax.swing.JPanel {
         jScrollPane3 = new javax.swing.JScrollPane();
         searchhealthcareJTable1 = new javax.swing.JTable();
         searchcombo = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnBack.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
         btnBack.setText("<< Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,12 +100,14 @@ public class HealthCareJPanel extends javax.swing.JPanel {
         });
         add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
 
+        jLabel1.setFont(new java.awt.Font("SansSerif", 3, 12)); // NOI18N
         jLabel1.setText("Services :");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 130, 70, 19));
-        add(transportsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 130, 160, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 70, 19));
+        add(transportsearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 160, -1));
 
+        jLabel2.setFont(new java.awt.Font("SansSerif", 3, 12)); // NOI18N
         jLabel2.setText("Search :");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
 
         hospitalsjComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Medicines", "Doctors/Therapists", "Insurance Plan Providers", "Hospitals" }));
         hospitalsjComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -115,21 +120,18 @@ public class HealthCareJPanel extends javax.swing.JPanel {
                 hospitalsjComboBox1KeyPressed(evt);
             }
         });
-        add(hospitalsjComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 140, -1));
+        add(hospitalsjComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 160, -1));
 
-        jLabel3.setText("Health Care");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, -1, -1));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/CustomerRole/carehealth.jpg"))); // NOI18N
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 70, 770, 90));
 
-        btnAddtoCart.setText("Add to cart ^");
+        btnAddtoCart.setText("Add to cart ");
         btnAddtoCart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddtoCartActionPerformed(evt);
             }
         });
-        add(btnAddtoCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, -1, -1));
-
-        jLabel4.setText("Your Cart");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 440, -1, -1));
+        add(btnAddtoCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 440, -1, -1));
 
         healthcareJTableCart.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -150,7 +152,7 @@ public class HealthCareJPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(healthcareJTableCart);
 
-        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, 796, 140));
+        add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 470, 810, 140));
 
         btnDeleteCart.setText("Delete from cart");
         btnDeleteCart.addActionListener(new java.awt.event.ActionListener() {
@@ -158,7 +160,7 @@ public class HealthCareJPanel extends javax.swing.JPanel {
                 btnDeleteCartActionPerformed(evt);
             }
         });
-        add(btnDeleteCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 610, -1, -1));
+        add(btnDeleteCart, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 620, -1, -1));
 
         btnorder.setText("Order");
         btnorder.addActionListener(new java.awt.event.ActionListener() {
@@ -166,11 +168,11 @@ public class HealthCareJPanel extends javax.swing.JPanel {
                 btnorderActionPerformed(evt);
             }
         });
-        add(btnorder, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 610, -1, -1));
+        add(btnorder, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 610, -1, -1));
 
         jLabel6.setText("Total Amount");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 610, -1, -1));
-        add(tfTotalPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 610, 72, -1));
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 620, -1, -1));
+        add(tfTotalPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 620, 72, -1));
 
         healthcareJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -191,7 +193,7 @@ public class HealthCareJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(healthcareJTable);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 796, 110));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, 796, 110));
 
         searchhealthcareJTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -212,7 +214,7 @@ public class HealthCareJPanel extends javax.swing.JPanel {
         });
         jScrollPane3.setViewportView(searchhealthcareJTable1);
 
-        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 796, 110));
+        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 290, 796, 110));
 
         searchcombo.setText("Search");
         searchcombo.addActionListener(new java.awt.event.ActionListener() {
@@ -220,7 +222,16 @@ public class HealthCareJPanel extends javax.swing.JPanel {
                 searchcomboActionPerformed(evt);
             }
         });
-        add(searchcombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 120, -1, -1));
+        add(searchcombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 250, -1, -1));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/CustomerRole/doctor.png"))); // NOI18N
+        jLabel5.setText("Health Care");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1160, 60, 560, 620));
+
+        jLabel4.setBackground(new java.awt.Color(167, 199, 231));
+        jLabel4.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
+        jLabel4.setText("Your Cart");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 450, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -328,6 +339,7 @@ public class HealthCareJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
