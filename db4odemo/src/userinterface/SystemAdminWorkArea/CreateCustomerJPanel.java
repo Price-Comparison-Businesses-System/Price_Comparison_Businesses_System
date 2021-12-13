@@ -269,7 +269,7 @@ public class CreateCustomerJPanel extends javax.swing.JPanel {
                JOptionPane.showMessageDialog(this, "Customer name is empty","ERROR",JOptionPane.ERROR_MESSAGE);
                return;
         }
-         boolean flag1;
+        boolean flag1;
         flag1 = name.matches("(?i)(^[a-z])((?![ .,'-]$)[a-z .,'-]){0,24}$");
 
         if(!flag1) {

@@ -85,6 +85,7 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
         btndelete = new javax.swing.JButton();
         btnAdd = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -102,7 +103,7 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
 
         jLabel3.setForeground(new java.awt.Color(0, 102, 204));
         jLabel3.setText("Price:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, -1, -1));
         jPanel1.add(tfItemName, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 70, 107, -1));
         jPanel1.add(tfItemDescription, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, 107, -1));
 
@@ -123,7 +124,7 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Item Name", "Description", "Price", "Services F/R/T", "State", "Seller/Tailor Name", "quantity"
+                "Item Name", "Description", "Price", "Services ", "State", "Seller/Tailor Name", "quantity"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -139,17 +140,15 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 288, 771, 137));
 
         jLabel5.setForeground(new java.awt.Color(0, 102, 204));
-        jLabel5.setText("State");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 70, -1, -1));
+        jLabel5.setText("Service :");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 170, -1, -1));
         jPanel1.add(txtState, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 70, 107, -1));
 
         jLabel7.setForeground(new java.awt.Color(0, 102, 204));
         jLabel7.setText("Seller/Vendor name:");
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 120, -1, -1));
         jPanel1.add(txtSellerTailorName, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 110, 107, -1));
-
-        jLabel8.setText("Services");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 170, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 170, -1, -1));
 
         clothingjComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Buy Car", "Rent Car", "Uber/lyft service", "Buy Fabric", "Readymade cloths", "Tailor services", "Restaurants", "Frozen/Packaged", "Veggies/Fruits", "Medicines", "Hospitals", "Insuranse Plan Providers", "Doctors/Therapists", "Electronics Kit", "Spare parts", "Acessories" }));
         clothingjComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -162,11 +161,11 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
                 clothingjComboBox1KeyPressed(evt);
             }
         });
-        jPanel1.add(clothingjComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 160, 160, -1));
+        jPanel1.add(clothingjComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 160, 110, -1));
 
         jLabel9.setForeground(new java.awt.Color(0, 102, 204));
-        jLabel9.setText("Quantity");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 200, -1, -1));
+        jLabel9.setText("Quantity:");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, -1, -1));
 
         txtQuantity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -203,28 +202,154 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/Icons/icons/cat4.png"))); // NOI18N
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 0, 740, 490));
 
+        jLabel10.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel10.setText("State");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 70, -1, -1));
+
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 560));
     }// </editor-fold>//GEN-END:initComponents
 
-        private void tfPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfPriceActionPerformed
-                // TODO add your handling code here:
-        }//GEN-LAST:event_tfPriceActionPerformed
-
-    private void clothingjComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clothingjComboBox1ActionPerformed
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_clothingjComboBox1ActionPerformed
+        String itemName;
+        String itemDesc;
+        String itemPrice = null;
+        int itemQuantity=0;
+        String sellertailorname;
+        String services;
+        String state;
+        if(!tfItemName.getText().isEmpty()){
+            itemName = tfItemName.getText();
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "Item name is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        boolean flag1;
+        flag1 = itemName.matches("(?i)(^[a-z])((?![.,'-]$)[a-z .,'-]){0,24}$");
 
-    private void clothingjComboBox1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_clothingjComboBox1KeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_clothingjComboBox1KeyPressed
+        if(!flag1) {
+            JOptionPane.showMessageDialog(this, "Enter valid Item Name");
+            return;
+        }
+     /**
+     * validation for tfItemDescription
+     */
+        
+        
+        if(!tfItemDescription.getText().isEmpty()){
+            itemDesc = tfItemDescription.getText();
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "Item Description is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        boolean flag2;
+        flag2 = itemName.matches("(?i)(^[a-z])((?![.,'-]$)[a-z .,'-]){0,24}$");
 
-    private void txtQuantityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtQuantityActionPerformed
+        if(!flag2) {
+            JOptionPane.showMessageDialog(this, "Enter valid Description");
+            return;
+        }
+        /**
+     * validation for tfPrice
+     */
+        try{
+                if(!tfPrice.getText().isEmpty()){
+                    itemPrice = tfPrice.getText();
+                }
+
+                else{
+                    JOptionPane.showMessageDialog(this, "Item Price is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+                if(parseInt(tfPrice.getText())<0){
+                    JOptionPane.showMessageDialog(this, " Item price cannot be less than 0");
+                    return;
+                }
+        }catch(NumberFormatException ex){ 
+            System.out.println(ex);
+          JOptionPane.showMessageDialog(this, "Price must be a number","ERROR",JOptionPane.ERROR_MESSAGE);
+
+            }
+        
+        try{
+            if(!txtQuantity.getText().isEmpty()){
+                itemQuantity = parseInt(txtQuantity.getText());
+            }
+            else{
+                JOptionPane.showMessageDialog(this, "Item Quantity is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            if(parseInt(txtQuantity.getText())<0){
+                JOptionPane.showMessageDialog(this, " Item quantity cannot be less than 0");
+                return;
+            }
+        }catch(NumberFormatException ex){ 
+            System.out.println(ex);
+          JOptionPane.showMessageDialog(this, "Price must be a number","ERROR",JOptionPane.ERROR_MESSAGE);
+
+            }
+        
+        
+        if(!txtSellerTailorName.getText().isEmpty()){
+            sellertailorname = txtSellerTailorName.getText();
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "Seller is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        boolean flag3;
+        flag3 = itemName.matches("(?i)(^[a-z])((?![.,'-]$)[a-z .,'-]){0,24}$");
+
+        if(!flag3) {
+            JOptionPane.showMessageDialog(this, "Enter valid Description");
+            return;
+        }
+        /**
+     * validation 
+     */
+        if(!clothingjComboBox1.getSelectedItem().toString().isEmpty()){
+            services = clothingjComboBox1.getSelectedItem().toString();
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "services is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if(!txtState.getText().isEmpty()){
+            state = txtState.getText();
+        }
+        else{
+            JOptionPane.showMessageDialog(this, "state is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        Items item = itemsdir.addItem(itemName, itemDesc, itemPrice, itemQuantity, state, sellertailorname, services);
+
+        JOptionPane.showMessageDialog(jPanel1, "Item added to the Menu");
+        populateTable();
+        tfPrice.setText("");
+        tfItemDescription.setText("");
+        tfItemName.setText("");
+        txtQuantity.setText("");
+    }//GEN-LAST:event_btnAddActionPerformed
+
+    private void btndeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndeleteActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtQuantityActionPerformed
+        int selectedRow = menuJTable.getSelectedRow();
+        if(selectedRow < 0) {
+            JOptionPane.showMessageDialog(null,"Please Select a row from table first", "Warining", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        Items item = itemsdir.getItem(menuJTable.getValueAt(selectedRow, 0).toString());
+        itemsdir.deleteItem(item);
+        JOptionPane.showMessageDialog(jPanel1, "Item deleted from the Menu");
+        populateTable();
+    }//GEN-LAST:event_btndeleteActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
-         userProcessContainer.remove(this);
+        userProcessContainer.remove(this);
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
         AdminWorkAreaJPanel adminAreajp = (AdminWorkAreaJPanel) component;
@@ -232,95 +357,21 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
-    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+    private void txtQuantityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtQuantityActionPerformed
         // TODO add your handling code here:
-        String itemName;
-        String itemDesc;
-        String itemPrice;
-        int itemQuantity;
-        String sellertailorname;
-        String services;
-        String state;
-         if(!tfItemName.getText().isEmpty()){
-               itemName = tfItemName.getText();
-          }
-          else{
-               JOptionPane.showMessageDialog(this, "Item name is empty","ERROR",JOptionPane.ERROR_MESSAGE);
-               return;
-        }
-         if(!tfItemDescription.getText().isEmpty()){
-               itemDesc = tfItemDescription.getText();
-          }
-          else{
-               JOptionPane.showMessageDialog(this, "Item Description is empty","ERROR",JOptionPane.ERROR_MESSAGE);
-               return;
-        }
-         if(!tfPrice.getText().isEmpty()){
-               itemPrice = tfPrice.getText();
-          }
-          else{
-               JOptionPane.showMessageDialog(this, "Item Price is empty","ERROR",JOptionPane.ERROR_MESSAGE);
-               return;
-        }
-         if(parseInt(tfPrice.getText())<0){
-           JOptionPane.showMessageDialog(this, " Item price cannot be less than 0");
-            return;
-          }
-          if(!txtQuantity.getText().isEmpty()){
-               itemQuantity = parseInt(txtQuantity.getText());
-          }
-          else{
-               JOptionPane.showMessageDialog(this, "Item Quantity is empty","ERROR",JOptionPane.ERROR_MESSAGE);
-               return;
-        }
-          if(parseInt(txtQuantity.getText())<0){
-           JOptionPane.showMessageDialog(this, " Item quantity cannot be less than 0");
-            return;
-          }
-          if(!txtSellerTailorName.getText().isEmpty()){
-               sellertailorname = txtSellerTailorName.getText();
-          }
-          else{
-               JOptionPane.showMessageDialog(this, "Seller is empty","ERROR",JOptionPane.ERROR_MESSAGE);
-               return;
-        }
-          if(!clothingjComboBox1.getSelectedItem().toString().isEmpty()){
-               services = clothingjComboBox1.getSelectedItem().toString();
-          }
-          else{
-               JOptionPane.showMessageDialog(this, "services is empty","ERROR",JOptionPane.ERROR_MESSAGE);
-               return;
-        }
-           if(!txtState.getText().isEmpty()){
-               state = txtState.getText();
-          }
-          else{
-               JOptionPane.showMessageDialog(this, "state is empty","ERROR",JOptionPane.ERROR_MESSAGE);
-               return;
-        }
-            Items item = itemsdir.addItem(itemName, itemDesc, itemPrice, itemQuantity, state, sellertailorname, services);   
+    }//GEN-LAST:event_txtQuantityActionPerformed
 
-            JOptionPane.showMessageDialog(jPanel1, "Item added to the Menu");
-            populateTable();
-	    tfPrice.setText("");
-	    tfItemDescription.setText("");
-	    tfItemName.setText("");
-	    txtQuantity.setText("");
-    }//GEN-LAST:event_btnAddActionPerformed
-
-    private void btndeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndeleteActionPerformed
+    private void clothingjComboBox1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_clothingjComboBox1KeyPressed
         // TODO add your handling code here:
-        int selectedRow = menuJTable.getSelectedRow();
-            if(selectedRow < 0) {
-                JOptionPane.showMessageDialog(null,"Please Select a row from table first", "Warining", JOptionPane.WARNING_MESSAGE);
-            return;
-            }
-            
-            Items item = itemsdir.getItem(menuJTable.getValueAt(selectedRow, 0).toString());
-            itemsdir.deleteItem(item);
-	    JOptionPane.showMessageDialog(jPanel1, "Item deleted from the Menu");
-            populateTable();
-    }//GEN-LAST:event_btndeleteActionPerformed
+    }//GEN-LAST:event_clothingjComboBox1KeyPressed
+
+    private void clothingjComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clothingjComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clothingjComboBox1ActionPerformed
+
+    private void tfPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfPriceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfPriceActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -329,6 +380,7 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btndelete;
     private javax.swing.JComboBox<String> clothingjComboBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

@@ -57,8 +57,6 @@ public class ViewStatisticJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         btnNetworkData = new javax.swing.JButton();
         btnEnterpriseData = new javax.swing.JButton();
-        btnCustomerData = new javax.swing.JButton();
-        btnOrderData = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -94,25 +92,7 @@ public class ViewStatisticJPanel extends javax.swing.JPanel {
                 btnEnterpriseDataActionPerformed(evt);
             }
         });
-        add(btnEnterpriseData, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 118, -1, -1));
-
-        btnCustomerData.setForeground(new java.awt.Color(51, 102, 255));
-        btnCustomerData.setText("Customer Data");
-        btnCustomerData.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCustomerDataActionPerformed(evt);
-            }
-        });
-        add(btnCustomerData, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 165, 140, -1));
-
-        btnOrderData.setForeground(new java.awt.Color(51, 102, 255));
-        btnOrderData.setText("Orders Data");
-        btnOrderData.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOrderDataActionPerformed(evt);
-            }
-        });
-        add(btnOrderData, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 212, 140, -1));
+        add(btnEnterpriseData, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 118, 140, -1));
 
         jLabel12.setBackground(new java.awt.Color(255, 255, 255));
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/Icons/icons/stats101.jpeg"))); // NOI18N
@@ -162,62 +142,11 @@ public class ViewStatisticJPanel extends javax.swing.JPanel {
         frame.setSize(1000, 1000);
     }//GEN-LAST:event_btnEnterpriseDataActionPerformed
 
-    private void btnCustomerDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCustomerDataActionPerformed
-        // TODO add your handling code here:
-        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-        for(Network n : ecosystem.getNetworkList()){
-            int customercounter = 0;
-            for(Enterprise e : n.getEnterpriseDirectory().getEnterpriseList()){
-                for(Customer c : ecosystem.getCustomerdirectory().getCustomerDir()){
-                    if(c.getcustomerCity()== e.getOrgCity()){
-                        customercounter++;
-                    }
-                }
-                dataset.setValue(customercounter, "Number of Customers", String.valueOf(e.getOrgCity()));
-            }
-        }
-
-        JFreeChart chart = ChartFactory.createBarChart("Enterprises", "Customers", "Number", dataset, PlotOrientation.VERTICAL, false, true, false);
-        CategoryPlot p = chart.getCategoryPlot();
-        p.setRangeGridlinePaint(Color.black);
-        ChartFrame frame = new ChartFrame("Bar Chart", chart);
-        frame.setVisible(true);
-        frame.setSize(1000, 1000);
-    }//GEN-LAST:event_btnCustomerDataActionPerformed
-
-    private void btnOrderDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrderDataActionPerformed
-        // TODO add your handling code here:
-        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-        for(Network n : ecosystem.getNetworkList()){
-            int ordercounter = 0;
-            for(Enterprise e : n.getEnterpriseDirectory().getEnterpriseList()){
-                for(Customer c : ecosystem.getCustomerdirectory().getCustomerDir()){
-//                    if(c.getcustomerZipcode() == e.getOrgZipCode()){
-                      if(c.getcustomerCity() == e.getOrgCity()){
-                        if(c.getOrderslist() != null){
-                            ordercounter = ordercounter + c.getOrderslist().size();
-                        }
-                    }
-                }
-                dataset.setValue(ordercounter, "Number of Customers", String.valueOf(e.getOrgCity()));
-            }
-        }
-
-        JFreeChart chart = ChartFactory.createBarChart("Enterprises", "Customers", "Number", dataset, PlotOrientation.VERTICAL, false, true, false);
-        CategoryPlot p = chart.getCategoryPlot();
-        p.setRangeGridlinePaint(Color.black);
-        ChartFrame frame = new ChartFrame("Bar Chart", chart);
-        frame.setVisible(true);
-        frame.setSize(1000, 1000);
-    }//GEN-LAST:event_btnOrderDataActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
-    private javax.swing.JButton btnCustomerData;
     private javax.swing.JButton btnEnterpriseData;
     private javax.swing.JButton btnNetworkData;
-    private javax.swing.JButton btnOrderData;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     // End of variables declaration//GEN-END:variables

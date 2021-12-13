@@ -101,7 +101,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
             }
         });
         add(createUserJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(371, 450, 48, 45));
-        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 362, 146, -1));
+        add(nameJTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 360, 146, -1));
 
         jLabel1.setForeground(new java.awt.Color(0, 102, 204));
         jLabel1.setText("User Name");
