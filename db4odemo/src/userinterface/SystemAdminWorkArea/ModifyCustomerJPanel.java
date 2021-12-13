@@ -8,6 +8,7 @@ package userinterface.SystemAdminWorkArea;
 import Business.Customer.Customer;
 import Business.Customer.CustomerDirectory;
 import Business.EcoSystem;
+import Business.Role.CustomerRole;
 import java.awt.CardLayout;
 import java.awt.Component;
 import static java.lang.Integer.parseInt;
@@ -65,48 +66,63 @@ public class ModifyCustomerJPanel extends javax.swing.JPanel {
         tfZipcode = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         backbutton = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        btnBack = new javax.swing.JButton();
+
+        setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setForeground(new java.awt.Color(0, 102, 204));
         jLabel2.setText("Full Name :");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, 77, 27));
 
         tfFullName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfFullNameActionPerformed(evt);
             }
         });
+        jPanel1.add(tfFullName, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 131, 27));
 
         jLabel4.setForeground(new java.awt.Color(0, 102, 204));
         jLabel4.setText("Age :");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 130, 77, 27));
 
         tfAge.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfAgeActionPerformed(evt);
             }
         });
+        jPanel1.add(tfAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 130, 131, 27));
 
         jLabel3.setForeground(new java.awt.Color(0, 102, 204));
         jLabel3.setText("Email Address :");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 91, 27));
 
         tfEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfEmailActionPerformed(evt);
             }
         });
+        jPanel1.add(tfEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, 131, 27));
 
         tfPhoneNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfPhoneNumberActionPerformed(evt);
             }
         });
+        jPanel1.add(tfPhoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 220, 131, 27));
 
         jLabel5.setForeground(new java.awt.Color(0, 102, 204));
         jLabel5.setText("Phone Number :");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, 91, 27));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 102, 204));
         jLabel1.setText("Modify Customer");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, -1, -1));
 
         btnCreate.setBackground(new java.awt.Color(0, 102, 204));
         btnCreate.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -116,42 +132,51 @@ public class ModifyCustomerJPanel extends javax.swing.JPanel {
                 btnCreateActionPerformed(evt);
             }
         });
+        jPanel1.add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, 131, -1));
 
         jLabel6.setForeground(new java.awt.Color(0, 102, 204));
         jLabel6.setText("Street Address:");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 91, 27));
 
         tfStreetAddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfStreetAddressActionPerformed(evt);
             }
         });
+        jPanel1.add(tfStreetAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, 131, 27));
 
         tfCountry.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfCountryActionPerformed(evt);
             }
         });
+        jPanel1.add(tfCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 131, 27));
 
         jLabel9.setForeground(new java.awt.Color(0, 102, 204));
         jLabel9.setText("Country:");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 310, 91, 27));
 
         jLabel10.setForeground(new java.awt.Color(0, 102, 204));
         jLabel10.setText("City:");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 360, 91, 27));
 
         tfCity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfCityActionPerformed(evt);
             }
         });
+        jPanel1.add(tfCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 360, 131, 27));
 
         tfZipcode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfZipcodeActionPerformed(evt);
             }
         });
+        jPanel1.add(tfZipcode, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 400, 131, 27));
 
         jLabel11.setForeground(new java.awt.Color(0, 102, 204));
         jLabel11.setText("Zipcode:");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 400, 91, 27));
 
         backbutton.setText("BACK");
         backbutton.addActionListener(new java.awt.event.ActionListener() {
@@ -159,117 +184,21 @@ public class ModifyCustomerJPanel extends javax.swing.JPanel {
                 backbuttonActionPerformed(evt);
             }
         });
+        jPanel1.add(backbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(-90, 10, -1, -1));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(backbutton)
-                .addGap(104, 104, 104)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(53, 53, 53)
-                        .addComponent(tfFullName, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
-                        .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(53, 53, 53)
-                        .addComponent(tfAge, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
-                        .addComponent(tfPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel1)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
-                        .addComponent(tfStreetAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
-                        .addComponent(tfCountry, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
-                        .addComponent(tfCity, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(39, 39, 39)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnCreate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(tfZipcode, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE))))
-                .addContainerGap(190, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(backbutton))
-                .addGap(50, 50, 50)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tfFullName, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tfAge, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tfPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tfStreetAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tfCountry, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tfCity, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(tfZipcode, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(btnCreate)
-                .addContainerGap(37, Short.MAX_VALUE))
-        );
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 660, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 524, Short.MAX_VALUE)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
+        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/Icons/icons/custdesk.jpeg"))); // NOI18N
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 0, 330, 490));
+
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/Icons/icons/93634-2.png"))); // NOI18N
+        btnBack.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBackActionPerformed(evt);
+            }
+        });
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     private void tfFullNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfFullNameActionPerformed
@@ -290,51 +219,120 @@ public class ModifyCustomerJPanel extends javax.swing.JPanel {
 
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
-        if(tfFullName.getText().isEmpty() || tfPhoneNumber.getText().isEmpty() || tfStreetAddress.getText().isEmpty() || tfAge.getText().isEmpty() || tfEmail.getText().isEmpty() || tfCountry.getText().isEmpty() || tfCity.getText().isEmpty() || tfZipcode.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null, "Please fill the empty fields", "Warining", JOptionPane.WARNING_MESSAGE);
+        String name;
+        int age;
+         String emailaddress;
+          String phone;
+          String streetaddress;
+        String country ;
+        String city ;
+        int zipcode;
+        if(!tfFullName.getText().isEmpty()){
+               name = tfFullName.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Customer name is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+        boolean flag1;
+        flag1 = name.matches("(?i)(^[a-z])((?![ .,'-]$)[a-z .,'-]){0,24}$");
+
+        if(!flag1) {
+            JOptionPane.showMessageDialog(this, "Enter valid Customer name");
             return;
         }
+        if(!tfAge.getText().isEmpty()){
+               age = parseInt(tfAge.getText());
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Customer age is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+        if(parseInt(tfAge.getText())<0){
+           JOptionPane.showMessageDialog(this, "customer age cannot be less than 0");
+            return;
+          }
+        if(!tfEmail.getText().isEmpty()){
+               emailaddress = tfEmail.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Customer email address is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+        String email = tfEmail.getText();
+        boolean flagemail;
+        flagemail = email.matches("^[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$");
 
-        //        boolean flag ;
-        //
-        //        String phoneNumber = txtPhoneNumber.getText();
-        //
-        //        if(phoneNumber.length() != 10) {
-            //            JOptionPane.showMessageDialog(null, "PhoneNumber must be of 10 digits");
-            //            return;
-            //        }
-        //        flag = phoneNumber.matches("^[0-9]+$");
-        //        if(!flag) {
-            //            JOptionPane.showMessageDialog(null, "Phone Number must have digits only");
-            //            return;
-            //        }
-        //        for(Customer customer : customerDirectory.getCustomerDirectory()) {
-            //            if(customer.getPhoneNumber().equals(phoneNumber) && this.customer != customer) {
-                //                JOptionPane.showMessageDialog(null, "Phone Number already exists");
-                //            }
-            //        }
-        //
-        //        int age = 0;
-        //
-        //        try {
-            //
-            //            age = Integer.parseInt(txtAge.getText());
-            //
-            //        } catch(Exception e) {
-            //            JOptionPane.showMessageDialog(null, "Age must have integers only");
-            //            return;
-            //        }
-        //
+        if(!flagemail) {
+            JOptionPane.showMessageDialog(this, "Email Address must be in format of username@email.com");
+            return;
+        }
+        if(!tfPhoneNumber.getText().isEmpty()){
+               phone = tfPhoneNumber.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Customer phone number is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+        
+        if(tfPhoneNumber.getText().length() != 10){
+            JOptionPane.showMessageDialog(this, "Phone Number must be 10 digits", "Warining", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        if(!tfStreetAddress.getText().isEmpty()){
+               streetaddress = tfStreetAddress.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Customer street address is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+        boolean flagaddress;
+        flagaddress = streetaddress.matches("^[a-zA-Z0-9-/, .]{1,80}$");
 
-        String name = tfFullName.getText();
-        String phone = tfPhoneNumber.getText();
-        int age = parseInt(tfAge.getText());
-        String streetaddress = tfStreetAddress.getText();
-        String emailaddress = tfEmail.getText();
-        String country = tfCountry.getText();
-        String city = tfCity.getText();
-        int zipcode = parseInt(tfZipcode.getText());
+        if(!flagaddress) {
+            JOptionPane.showMessageDialog(this, "Enter valid street address name");
+            return;
+        }
+        if(!tfCountry.getText().isEmpty()){
+               country = tfCountry.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Customer country is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+                 boolean flagcountry;
+        flagcountry = country.matches("^[a-zA-Z]+(?:(?:\\s+|-)[a-zA-Z]+)*$");
 
+        if(!flagcountry) {
+            JOptionPane.showMessageDialog(this, "Enter valid country name");
+            return;
+        }
+        if(!tfCity.getText().isEmpty()){
+               city = tfCity.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Customer city is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+        boolean flagcity;
+        flagcity = city.matches("^[a-zA-Z]+(?:(?:\\s+|-)[a-zA-Z]+)*$");
+
+        if(!flagcity) {
+            JOptionPane.showMessageDialog(this, "Enter valid city name");
+            return;
+        }
+        if(!tfZipcode.getText().isEmpty()){
+               zipcode = parseInt(tfZipcode.getText());
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Customer zipcode is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+        
+        if(tfZipcode.getText().length() < 5 || tfZipcode.getText().length() > 6){
+            JOptionPane.showMessageDialog(this, "Zip code must be 5 or 6 digits", "Warining", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
         customer.setcustomerAge(age);
         customer.setcustomerName(name);
         customer.setcustomerEmail(emailaddress);
@@ -344,7 +342,7 @@ public class ModifyCustomerJPanel extends javax.swing.JPanel {
         customer.setcustomerZipcode(zipcode);
         customer.setcustomerPhone(phone);
 
-        JOptionPane.showMessageDialog(null, "Customer Profile Updated");
+        JOptionPane.showMessageDialog(this, "Customer Profile Updated");
         tfFullName.setText("");
         tfPhoneNumber.setText("");
         tfAge.setText("");
@@ -390,13 +388,26 @@ public class ModifyCustomerJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backbuttonActionPerformed
 
+    private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        SystemAdminWorkAreaJPanel sysAdminwjp = (SystemAdminWorkAreaJPanel) component;
+        sysAdminwjp.populateTree();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_btnBackActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backbutton;
+    private javax.swing.JButton btnBack;
     private javax.swing.JButton btnCreate;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

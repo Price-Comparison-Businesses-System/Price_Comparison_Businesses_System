@@ -73,7 +73,6 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         menuJTable = new javax.swing.JTable();
-        jLabel6 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         txtState = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
@@ -85,6 +84,7 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
         btnBack = new javax.swing.JButton();
         btndelete = new javax.swing.JButton();
         btnAdd = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -138,9 +138,6 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
 
         jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 288, 771, 137));
 
-        jLabel6.setText("<<- add to menu");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 250, -1, -1));
-
         jLabel5.setForeground(new java.awt.Color(0, 102, 204));
         jLabel5.setText("State");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 70, -1, -1));
@@ -178,13 +175,13 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
         });
         jPanel1.add(txtQuantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 107, -1));
 
-        btnBack.setText("<< back");
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/Icons/icons/93634-2_1.png"))); // NOI18N
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
-        jPanel1.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
+        jPanel1.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
         btndelete.setText("delete item");
         btndelete.addActionListener(new java.awt.event.ActionListener() {
@@ -201,6 +198,10 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
             }
         });
         jPanel1.add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 240, -1, -1));
+
+        jLabel6.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/Icons/icons/cat4.png"))); // NOI18N
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 0, 740, 490));
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1120, 560));
     }// </editor-fold>//GEN-END:initComponents
@@ -233,15 +234,70 @@ public class ManageMenuJPanel extends javax.swing.JPanel {
 
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         // TODO add your handling code here:
-        String itemName = tfItemName.getText();
-            String itemDesc = tfItemDescription.getText();
-            String itemPrice = tfPrice.getText();
-            int itemQuantity = parseInt(txtQuantity.getText());
-            
-           String sellertailorname = txtSellerTailorName.getText();
-            String services = clothingjComboBox1.getSelectedItem().toString();
-            String state = txtState.getText();
-            
+        String itemName;
+        String itemDesc;
+        String itemPrice;
+        int itemQuantity;
+        String sellertailorname;
+        String services;
+        String state;
+         if(!tfItemName.getText().isEmpty()){
+               itemName = tfItemName.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Item name is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+         if(!tfItemDescription.getText().isEmpty()){
+               itemDesc = tfItemDescription.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Item Description is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+         if(!tfPrice.getText().isEmpty()){
+               itemPrice = tfPrice.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Item Price is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+         if(parseInt(tfPrice.getText())<0){
+           JOptionPane.showMessageDialog(this, " Item price cannot be less than 0");
+            return;
+          }
+          if(!txtQuantity.getText().isEmpty()){
+               itemQuantity = parseInt(txtQuantity.getText());
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Item Quantity is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+          if(parseInt(txtQuantity.getText())<0){
+           JOptionPane.showMessageDialog(this, " Item quantity cannot be less than 0");
+            return;
+          }
+          if(!txtSellerTailorName.getText().isEmpty()){
+               sellertailorname = txtSellerTailorName.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Seller is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+          if(!clothingjComboBox1.getSelectedItem().toString().isEmpty()){
+               services = clothingjComboBox1.getSelectedItem().toString();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "services is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+           if(!txtState.getText().isEmpty()){
+               state = txtState.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "state is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
             Items item = itemsdir.addItem(itemName, itemDesc, itemPrice, itemQuantity, state, sellertailorname, services);   
 
             JOptionPane.showMessageDialog(jPanel1, "Item added to the Menu");

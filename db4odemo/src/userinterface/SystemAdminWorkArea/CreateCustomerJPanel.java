@@ -76,84 +76,107 @@ public class CreateCustomerJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         tfCountry = new javax.swing.JTextField();
         backbutton = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+
+        setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setForeground(new java.awt.Color(0, 102, 204));
         jLabel2.setText("Full Name :");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 143, 77, 19));
 
         tfFullName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfFullNameActionPerformed(evt);
             }
         });
+        add(tfFullName, new org.netbeans.lib.awtextra.AbsoluteConstraints(428, 139, 131, -1));
 
         jLabel4.setForeground(new java.awt.Color(0, 102, 204));
         jLabel4.setText("Age :");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 177, 77, 27));
 
         tfAge.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfAgeActionPerformed(evt);
             }
         });
+        add(tfAge, new org.netbeans.lib.awtextra.AbsoluteConstraints(428, 177, 131, -1));
 
         jLabel3.setForeground(new java.awt.Color(0, 102, 204));
         jLabel3.setText("Email Address :");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(299, 222, 111, 27));
 
         tfEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfEmailActionPerformed(evt);
             }
         });
+        add(tfEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(428, 222, 131, -1));
 
         jLabel5.setForeground(new java.awt.Color(0, 102, 204));
         jLabel5.setText("Phone Number :");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 267, -1, 27));
 
         tfPhoneNumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfPhoneNumberActionPerformed(evt);
             }
         });
+        add(tfPhoneNumber, new org.netbeans.lib.awtextra.AbsoluteConstraints(428, 267, 131, -1));
 
         jLabel6.setForeground(new java.awt.Color(0, 102, 204));
         jLabel6.setText("Street Address:");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 312, 100, 27));
 
         tfStreetAddress.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfStreetAddressActionPerformed(evt);
             }
         });
+        add(tfStreetAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(428, 312, 131, -1));
 
         jLabel9.setForeground(new java.awt.Color(0, 102, 204));
         jLabel9.setText("Country:");
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(319, 357, 91, 27));
 
         jLabel10.setForeground(new java.awt.Color(0, 102, 204));
         jLabel10.setText("City:");
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(319, 402, 91, 27));
 
         tfCity.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfCityActionPerformed(evt);
             }
         });
+        add(tfCity, new org.netbeans.lib.awtextra.AbsoluteConstraints(428, 402, 131, -1));
 
         tfZipcode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfZipcodeActionPerformed(evt);
             }
         });
+        add(tfZipcode, new org.netbeans.lib.awtextra.AbsoluteConstraints(428, 447, 131, -1));
 
         jLabel11.setForeground(new java.awt.Color(0, 102, 204));
         jLabel11.setText("Zipcode:");
+        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(319, 447, 91, 27));
 
         jLabel7.setForeground(new java.awt.Color(0, 102, 204));
         jLabel7.setText("Username :");
+        add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(319, 492, 91, 27));
 
         tfUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfUsernameActionPerformed(evt);
             }
         });
+        add(tfUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(428, 492, 131, -1));
+        add(tfPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(428, 537, 131, -1));
 
         jLabel8.setForeground(new java.awt.Color(0, 102, 204));
         jLabel8.setText("Password  :");
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(319, 537, 91, 27));
 
         btnCreate.setBackground(new java.awt.Color(0, 102, 204));
         btnCreate.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -164,122 +187,31 @@ public class CreateCustomerJPanel extends javax.swing.JPanel {
                 btnCreateActionPerformed(evt);
             }
         });
+        add(btnCreate, new org.netbeans.lib.awtextra.AbsoluteConstraints(372, 576, -1, -1));
 
+        jLabel1.setFont(new java.awt.Font("Lucida Grande", 3, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 102, 204));
         jLabel1.setText("Create Customer");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(361, 94, 134, 33));
 
         tfCountry.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfCountryActionPerformed(evt);
             }
         });
+        add(tfCountry, new org.netbeans.lib.awtextra.AbsoluteConstraints(428, 357, 131, -1));
 
-        backbutton.setText("BACK");
+        backbutton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/Icons/93634-2.png"))); // NOI18N
         backbutton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 backbuttonActionPerformed(evt);
             }
         });
+        add(backbutton, new org.netbeans.lib.awtextra.AbsoluteConstraints(85, 43, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(85, 85, 85)
-                        .addComponent(backbutton))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(372, 372, 372)
-                        .addComponent(btnCreate)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(299, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfZipcode, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfCity, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfCountry, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfStreetAddress, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfAge, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tfFullName, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(364, 364, 364))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(446, 446, 446)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(343, Short.MAX_VALUE)))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(backbutton)
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfFullName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfAge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfPhoneNumber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfStreetAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfCountry, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfCity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfZipcode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnCreate)
-                .addContainerGap(84, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(59, 59, 59)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(563, Short.MAX_VALUE)))
-        );
+        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/Icons/icons/cust101.png"))); // NOI18N
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 90, 440, 490));
     }// </editor-fold>//GEN-END:initComponents
 
     private void tfFullNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfFullNameActionPerformed
@@ -317,38 +249,175 @@ public class CreateCustomerJPanel extends javax.swing.JPanel {
     private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
         // TODO add your handling code here:
 
-        String name = tfFullName.getText();
-        String phone = tfPhoneNumber.getText();
-        int age = parseInt(tfAge.getText());
-        String streetaddress = tfStreetAddress.getText();
-        String emailaddress = tfEmail.getText();
-        String country = tfCountry.getText();
-        String city = tfCity.getText();
-        int zipcode = parseInt(tfZipcode.getText());
-        String username = tfUsername.getText();
-        String password = tfPassword.getText();
-
-        if(tfFullName.getText().isEmpty() || tfPhoneNumber.getText().isEmpty() || tfStreetAddress.getText().isEmpty() || tfAge.getText().isEmpty() || tfEmail.getText().isEmpty() || tfPassword.getText().isEmpty() || tfUsername.getText().isEmpty() || tfCountry.getText().isEmpty() || tfCity.getText().isEmpty() || tfZipcode.getText().isEmpty()){
-            JOptionPane.showMessageDialog(null, "Please fill the empty fields", "Warining", JOptionPane.WARNING_MESSAGE);
-            return;
+        String name;
+        String phone;
+        int age =0;
+        String streetaddress;
+        String emailaddress;
+        String country;
+        String city;
+        int zipcode;
+        String username;
+        String password;
+    /**
+     * validation for customer name
+     */
+        if(!tfFullName.getText().isEmpty()){
+               name = tfFullName.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Customer name is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
         }
-        if(tfPhoneNumber.getText().length() != 10){
-            JOptionPane.showMessageDialog(null, "Phone Number must be 10 digits", "Warining", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-        if(tfZipcode.getText().length() < 5 || tfZipcode.getText().length() > 6){
-            JOptionPane.showMessageDialog(null, "Zip code must be 5 or 6 digits", "Warining", JOptionPane.WARNING_MESSAGE);
-            return;
-        }
-
-        String email = tfEmail.getText();
-        boolean flag1;
-        flag1 = email.matches("^[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$");
+         boolean flag1;
+        flag1 = name.matches("(?i)(^[a-z])((?![ .,'-]$)[a-z .,'-]){0,24}$");
 
         if(!flag1) {
-            JOptionPane.showMessageDialog(null, "Email Address must be in format of username@email.com");
+            JOptionPane.showMessageDialog(this, "Enter valid Customer name");
             return;
         }
+     /**
+     * validation for customer age
+     */
+        try{
+        if(!tfAge.getText().isEmpty()){
+               age = parseInt(tfAge.getText());
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Customer age is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+         if(parseInt(tfAge.getText())<0){
+           JOptionPane.showMessageDialog(this, "customer age cannot be less than 0");
+            return;
+          }
+       } catch(NumberFormatException ex){ 
+            System.out.println(ex);
+          JOptionPane.showMessageDialog(this, "Customer age must be a number","ERROR",JOptionPane.ERROR_MESSAGE);
+
+            }
+    /**
+     * validation for customer email
+     */
+        if(!tfEmail.getText().isEmpty()){
+               emailaddress = tfEmail.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Customer email address is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+        String email = tfEmail.getText();
+        boolean flagemail;
+        flagemail = email.matches("^[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$");
+
+        if(!flagemail) {
+            JOptionPane.showMessageDialog(this, "Email Address must be in format of username@email.com");
+            return;
+        }
+    /**
+     * validation for customer phone number
+     */
+        if(!tfPhoneNumber.getText().isEmpty()){
+               phone = tfPhoneNumber.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Customer phone number is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+        boolean flagphone;
+        flagphone = phone.matches("^[0-9]{10}$");
+
+        if(!flagphone) {
+            JOptionPane.showMessageDialog(this, "Phone Number must be 10 digits", "Warining", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+   /**
+     * validation for customer phone address
+     */
+        if(!tfStreetAddress.getText().isEmpty()){
+               streetaddress = tfStreetAddress.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Customer street address is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+        boolean flagaddress;
+        flagaddress = streetaddress.matches("^[a-zA-Z0-9-/, .]{1,80}$");
+
+        if(!flagaddress) {
+            JOptionPane.showMessageDialog(this, "Enter valid street address name");
+            return;
+        }
+      /**
+     * validation for customer country
+     */
+         if(!tfCountry.getText().isEmpty()){
+               country = tfCountry.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Customer country is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+         boolean flagcountry;
+        flagcountry = country.matches("^[a-zA-Z]+(?:(?:\\s+|-)[a-zA-Z]+)*$");
+
+        if(!flagcountry) {
+            JOptionPane.showMessageDialog(this, "Enter valid country name");
+            return;
+        }
+        /**
+     * validation for customer city
+     */
+        if(!tfCity.getText().isEmpty()){
+               city = tfCity.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Customer city is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+        boolean flagcity;
+        flagcity = city.matches("^[a-zA-Z]+(?:(?:\\s+|-)[a-zA-Z]+)*$");
+
+        if(!flagcity) {
+            JOptionPane.showMessageDialog(this, "Enter valid city name");
+            return;
+        }
+    /**
+     * validation for customer zip code
+     */
+        if(!tfZipcode.getText().isEmpty()){
+               zipcode = parseInt(tfZipcode.getText());
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Customer zipcode is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+        
+        if(tfZipcode.getText().length() < 5 || tfZipcode.getText().length() > 6){
+            JOptionPane.showMessageDialog(this, "Zip code must be 5 or 6 digits", "Warining", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+
+        if(!tfUsername.getText().isEmpty()){
+               username =tfUsername.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Customer user name is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+        if(!tfPassword.getText().isEmpty()){
+               password = tfPassword.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Customer password is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+//        if(tfFullName.getText().isEmpty() || tfPhoneNumber.getText().isEmpty() || tfStreetAddress.getText().isEmpty() || tfAge.getText().isEmpty() || tfEmail.getText().isEmpty() || tfPassword.getText().isEmpty() || tfUsername.getText().isEmpty() || tfCountry.getText().isEmpty() || tfCity.getText().isEmpty() || tfZipcode.getText().isEmpty()){
+//            JOptionPane.showMessageDialog(this, "Please fill the empty fields", "ERROR", JOptionPane.ERROR_MESSAGE);
+//            return;
+//        }
+        
+        
 
         for(Customer customer : ecosystem.getCustomerdirectory().getCustomerDir()) {
             if(customer.getcustomerEmail().equals(emailaddress)) {
@@ -459,6 +528,7 @@ public class CreateCustomerJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

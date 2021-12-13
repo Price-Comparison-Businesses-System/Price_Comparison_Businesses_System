@@ -21,6 +21,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author sakshi
  * @author Netra
+ * @author tarushukla
  */
 public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 
@@ -66,9 +67,13 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         btnEnterpriseAdminAdd = new javax.swing.JButton();
         btnEnterpriseAdminDelete = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(255, 255, 255));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 102, 204));
         jLabel1.setText("Enterprise Admin");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 16, 150, 30));
 
@@ -151,13 +156,17 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         });
         add(btnEnterpriseAdminDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 520, -1, -1));
 
-        btnBack.setText("<< Back");
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/Icons/icons/93634-2.png"))); // NOI18N
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
-        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
+
+        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/Icons/icons/eadmin.png"))); // NOI18N
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 40, 440, 490));
     }// </editor-fold>//GEN-END:initComponents
 
     private void networkJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_networkJComboBoxActionPerformed
@@ -171,10 +180,45 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 
     private void btnEnterpriseAdminAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterpriseAdminAddActionPerformed
         // TODO add your handling code here:
-        Enterprise enterprise = (Enterprise) enterpriseJComboBox.getSelectedItem();
+        Enterprise enterprise;
         String username = usernameJTextField.getText();
-        String password = String.valueOf(passwordJPasswordField.getPassword());
-        String name = nameJTextField.getText();
+        String password;
+        String name;
+        if(!usernameJTextField.getText().isEmpty()){
+               username = usernameJTextField.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "User Name is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+         if(!String.valueOf(passwordJPasswordField.getPassword()).isEmpty()){
+               password = String.valueOf(passwordJPasswordField.getPassword());
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Password is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+        if(!nameJTextField.getText().isEmpty()){
+               name = nameJTextField.getText();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Name is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
+        boolean flag1;
+        flag1 = name.matches("(?i)(^[a-z])((?![ .,'-]$)[a-z .,'-]){0,24}$");
+
+        if(!flag1) {
+            JOptionPane.showMessageDialog(this, "Enter valid name");
+            return;
+        }
+        if(!enterpriseJComboBox.getSelectedItem().toString().isEmpty()){
+               enterprise = (Enterprise) enterpriseJComboBox.getSelectedItem();
+          }
+          else{
+               JOptionPane.showMessageDialog(this, "Enterprise is empty","ERROR",JOptionPane.ERROR_MESSAGE);
+               return;
+        }
 //        Organization organization = (Organization) organizationJComboBox.getSelectedItem();
         boolean flag = enterprise.getUserAccountDirectory().checkIfUsernameIsUnique(username);
         if(flag == false){
@@ -195,6 +239,10 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
     private void btnEnterpriseAdminDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnterpriseAdminDeleteActionPerformed
         // TODO add your handling code here:
         int selectedrow = enterpriseJTable.getSelectedRow();
+        if(selectedrow < 0) {
+            JOptionPane.showMessageDialog(null,"Please Select a row from table", "Warining", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
         String name = enterpriseJTable.getValueAt(selectedrow, 0).toString();
         for (Network n : system.getNetworkList()){
             Enterprise e = n.getEnterpriseDirectory().getEnterprise(name);
@@ -223,6 +271,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
     private javax.swing.JComboBox enterpriseJComboBox;
     private javax.swing.JTable enterpriseJTable;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

@@ -59,6 +59,10 @@ public class ViewStatisticJPanel extends javax.swing.JPanel {
         btnEnterpriseData = new javax.swing.JButton();
         btnCustomerData = new javax.swing.JButton();
         btnOrderData = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+
+        setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnBack.setBackground(new java.awt.Color(255, 255, 255));
         btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/Icons/93634-2.png"))); // NOI18N
@@ -67,79 +71,52 @@ public class ViewStatisticJPanel extends javax.swing.JPanel {
                 btnBackActionPerformed(evt);
             }
         });
+        add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 66, 66));
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 102, 255));
         jLabel1.setText("Select label from below to view statistics");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 26, -1, 33));
 
+        btnNetworkData.setForeground(new java.awt.Color(51, 102, 255));
         btnNetworkData.setText("Network Data");
         btnNetworkData.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNetworkDataActionPerformed(evt);
             }
         });
+        add(btnNetworkData, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 71, 140, -1));
 
+        btnEnterpriseData.setForeground(new java.awt.Color(51, 102, 255));
         btnEnterpriseData.setText("Enterprise Data");
         btnEnterpriseData.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEnterpriseDataActionPerformed(evt);
             }
         });
+        add(btnEnterpriseData, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 118, -1, -1));
 
+        btnCustomerData.setForeground(new java.awt.Color(51, 102, 255));
         btnCustomerData.setText("Customer Data");
         btnCustomerData.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCustomerDataActionPerformed(evt);
             }
         });
+        add(btnCustomerData, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 165, 140, -1));
 
+        btnOrderData.setForeground(new java.awt.Color(51, 102, 255));
         btnOrderData.setText("Orders Data");
         btnOrderData.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnOrderDataActionPerformed(evt);
             }
         });
+        add(btnOrderData, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 212, 140, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(101, 101, 101)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(187, 187, 187)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnEnterpriseData, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnNetworkData, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnCustomerData, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnOrderData, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(369, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnNetworkData))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(btnEnterpriseData)
-                .addGap(18, 18, 18)
-                .addComponent(btnCustomerData)
-                .addGap(18, 18, 18)
-                .addComponent(btnOrderData)
-                .addContainerGap(273, Short.MAX_VALUE))
-        );
+        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/Icons/icons/stats101.jpeg"))); // NOI18N
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, 500, 490));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
@@ -242,5 +219,6 @@ public class ViewStatisticJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnNetworkData;
     private javax.swing.JButton btnOrderData;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel12;
     // End of variables declaration//GEN-END:variables
 }
