@@ -71,7 +71,8 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
         setForeground(new java.awt.Color(255, 255, 255));
-        setPreferredSize(new java.awt.Dimension(1000, 1000));
+        setMinimumSize(new java.awt.Dimension(3000, 3000));
+        setPreferredSize(new java.awt.Dimension(3000, 3000));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnTransport.setBackground(new java.awt.Color(255, 255, 255));
@@ -93,7 +94,7 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
                 refreshTestJButtonActionPerformed(evt);
             }
         });
-        add(refreshTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 60, -1, -1));
+        add(refreshTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 60, -1, -1));
 
         btnClothing.setBackground(new java.awt.Color(255, 255, 255));
         btnClothing.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
@@ -137,8 +138,8 @@ public class CustomerWorkAreaJPanel extends javax.swing.JPanel {
 
         enterpriseLabel1.setBackground(new java.awt.Color(255, 255, 255));
         enterpriseLabel1.setFont(new java.awt.Font("SansSerif", 3, 14)); // NOI18N
-        enterpriseLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\saksh\\Desktop\\welcome.jpg")); // NOI18N
-        add(enterpriseLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 510, 1750, 350));
+        enterpriseLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/Icons/welcome.jpg"))); // NOI18N
+        add(enterpriseLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 100, 1750, 560));
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnTransportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTransportActionPerformed

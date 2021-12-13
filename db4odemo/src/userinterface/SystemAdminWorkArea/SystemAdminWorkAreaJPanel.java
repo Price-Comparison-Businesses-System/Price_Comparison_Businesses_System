@@ -99,6 +99,7 @@ public void populateTree(){
         btnManageEnterprise1 = new javax.swing.JButton();
         btnManageNetwork = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -123,7 +124,7 @@ public void populateTree(){
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 596, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 835, Short.MAX_VALUE)
         );
 
         jSplitPane.setLeftComponent(jPanel1);
@@ -188,6 +189,9 @@ public void populateTree(){
             }
         });
         jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 30, 240, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userinterface/Icons/taru.jpeg"))); // NOI18N
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 10, 990, 710));
 
         jSplitPane.setRightComponent(jPanel2);
 
@@ -257,6 +261,7 @@ public void populateTree(){
     private javax.swing.JButton btnManageNetwork;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
